@@ -1,15 +1,16 @@
 import os
 import sys
 import argparse
-import seaborn as sns
+
 import pandas as pd
 import numpy as np
 from question_counter import count_question
-import matplotlib.pyplot as plt
-import matplotlib
 from column_analysis import get_arr_info
 
-# matplotlib.use('Agg')
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 def save_pie_chart(wh_count, aux_count, normal, save_dir):
     total = wh_count + aux_count + normal

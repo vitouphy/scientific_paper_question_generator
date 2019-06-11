@@ -1,9 +1,8 @@
 import os
-
+import matplotlib
+matplotlib.use('Agg')
 import seaborn as sns
 import matplotlib.pyplot as plt
-import matplotlib
-# matplotlib.use('Agg')
 
 def get_arr_info(arr, column, save_dir, render=False):
     
