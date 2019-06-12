@@ -1,7 +1,7 @@
 import os
 import sys
 import argparse
-
+import pickle
 import pandas as pd
 import numpy as np
 from question_counter import count_question
@@ -11,6 +11,42 @@ import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import seaborn as sns
+from wordcloud import WordCloud, STOPWORDS, ImageColorGenerator
+
+def export_vocab(questions, answers):
+
+    print ("Vocab Size: ")
+    print ("==========")
+    
+    vocab = {}
+    # Get token from questions title
+    for titles in questions['Title']:
+        for token in titles.split():
+            if token not in vocab:
+                vocab[token] = 0
+            vocab[token] += 1     
+    print ("num of vocabs in question: {}".format(len(vocab)))
+
+    # Get token from questions title
+    for body in answers['Body']:
+        for token in body.split():
+            if token not in vocab:
+                vocab[token] = 0
+            vocab[token] += 1    
+    print ("num of vocabs: {}".format(len(vocab)))
+    
+    return vocab
+
+def create_wordcloud(dict, save_dir):
+    # Create and generate a word cloud image:
+    wordcloud = WordCloud(width=1200, height=700, max_font_size=100, max_words=100, background_color="white")
+    wordcloud = wordcloud.generate_from_frequencies(dict)
+
+    # Display the generated image:
+    plt.figure(figsize=(12,7))
+    plt.imshow(wordcloud, interpolation='bilinear')
+    plt.axis("off")
+    plt.savefig(os.path.join(save_dir, 'wordcloud.png'), dpi=600)
 
 def save_pie_chart(wh_count, aux_count, normal, save_dir):
     total = wh_count + aux_count + normal
@@ -32,6 +68,16 @@ def save_pie_chart(wh_count, aux_count, normal, save_dir):
     )
     ax1.axis('equal')
     fig1.savefig(os.path.join(save_dir, 'question_type_chart.png'), dpi=300)
+
+def prepare_save_output_directory(name):
+    save_dir = "../outputs/"
+    save_dir = os.path.join(save_dir, name)
+
+    if not os.path.exists(save_dir):
+        os.mkdir(save_dir)
+        print("Directory " , save_dir ,  " Created ") 
+    
+    return save_dir
 
 def prepare_save_directory(name):
     save_dir = "../figures/"
@@ -113,6 +159,27 @@ def process(name, question_file, answer_file, dst):
     print ("Question Title Length Analysis")
     print ("======================\n")
     get_arr_info(questions.TitleLength, 'titles', save_dir)
+
+    # Analysis the tags
+    tags_dict = {}
+    for tags in questions['Tags']:
+        for t in tags.split():
+            if t not in tags_dict:
+                tags_dict[t] = 0
+            tags_dict[t] += 1
+
+    create_wordcloud(tags_dict, save_dir) 
+    vocab = export_vocab(questions, answers)
+
+    dict = {
+        'vocab': vocab, 
+        'tags': tags_dict
+    }
+    out_dir = prepare_save_output_directory(name)
+    out_file = os.path.join(out_dir, "analysis.pickle")
+    pickle_out = open(,"wb")
+    pickle.dump(dict, pickle_out)
+    pickle_out.close()
     
 
 if __name__ == "__main__":
