@@ -105,6 +105,7 @@ def read_files(name, question_file, answer_file):
         a = row['Title']
         return len(a.split())
 
+    questions.dropna(subset=['Title'], inplace=True)
     questions['TitleLength'] = questions.apply(get_title_length, axis=1)
 
     return questions, answers
@@ -177,7 +178,7 @@ def process(name, question_file, answer_file, dst):
     }
     out_dir = prepare_save_output_directory(name)
     out_file = os.path.join(out_dir, "analysis.pickle")
-    pickle_out = open(,"wb")
+    pickle_out = open(out_file, "wb")
     pickle.dump(dict, pickle_out)
     pickle_out.close()
     

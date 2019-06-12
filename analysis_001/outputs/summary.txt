@@ -1,0 +1,49 @@
+WH-Question: 6906
+AUX-Question: 2955
+Total : 30756
+Number of Answer at Score: 
+Score 0: 4995
+Score 1: 9085
+Score 2: 6970
+Score 3: 4702
+Score 4: 3026
+Score 5: 1974
+Score 6: 1286
+Score 7: 922
+Score 8: 628
+Score 9: 447
+Score 10: 368
+Score 11: 273
+Score 12: 203
+Answer Length Analysis
+======================
+
+Overview (num tokens):
+=========
+count    37131.000000
+mean       213.959441
+std        224.614432
+min          2.000000
+25%         84.000000
+50%        153.000000
+75%        268.000000
+max       7271.000000
+Name: AnswerLength, dtype: float64
+Question Title Length Analysis
+======================
+
+Overview (num tokens):
+=========
+count    30756.000000
+mean        10.384088
+std          4.942682
+min          1.000000
+25%          7.000000
+50%         10.000000
+75%         13.000000
+max         45.000000
+Name: TitleLength, dtype: float64
+Vocab Size: 
+==========
+num of vocabs in question: 14759
+num of vocabs: 153022
