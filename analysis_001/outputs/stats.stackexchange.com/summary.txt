@@ -1,0 +1,100 @@
+Directory  ../figures/stats.stackexchange.com  Created 
+WH-Question: 32793
+AUX-Question: 7651
+Total : 139297
+Number of Answer at Score: 
+Score 0: 28335
+Score 1: 38905
+Score 2: 23500
+Score 3: 14034
+Score 4: 8889
+Score 5: 5857
+Score 6: 4056
+Score 7: 2862
+Score 8: 2154
+Score 9: 1508
+Score 10: 1343
+Score 11: 1073
+Score 12: 850
+Answer Length Analysis
+======================
+
+Overview (num tokens):
+=========
+count    141479.000000
+mean        212.631104
+std         217.775747
+min           1.000000
+25%          82.000000
+50%         149.000000
+75%         266.000000
+max        7333.000000
+Name: AnswerLength, dtype: float64
+Question Title Length Analysis
+======================
+
+Overview (num tokens):
+=========
+count    139297.000000
+mean         10.138000
+std           4.735049
+min           1.000000
+25%           7.000000
+50%           9.000000
+75%          13.000000
+max          50.000000
+Name: TitleLength, dtype: float64
+Vocab Size: 
+==========
+num of vocabs in question: 26572
+num of vocabs: 664839
+Directory  ../outputs/stats.stackexchange.com  Created 
+WH-Question: 32793
+AUX-Question: 7651
+Total : 139297
+Number of Answer at Score: 
+Score 0: 28335
+Score 1: 38905
+Score 2: 23500
+Score 3: 14034
+Score 4: 8889
+Score 5: 5857
+Score 6: 4056
+Score 7: 2862
+Score 8: 2154
+Score 9: 1508
+Score 10: 1343
+Score 11: 1073
+Score 12: 850
+Answer Length Analysis
+======================
+
+Overview (num tokens):
+=========
+count    141479.000000
+mean        212.631104
+std         217.775747
+min           1.000000
+25%          82.000000
+50%         149.000000
+75%         266.000000
+max        7333.000000
+Name: AnswerLength, dtype: float64
+Question Title Length Analysis
+======================
+
+Overview (num tokens):
+=========
+count    139297.000000
+mean         10.138000
+std           4.735049
+min           1.000000
+25%           7.000000
+50%           9.000000
+75%          13.000000
+max          50.000000
+Name: TitleLength, dtype: float64
+Vocab Size: 
+==========
+num of vocabs in question: 26572
+num of vocabs: 664839
