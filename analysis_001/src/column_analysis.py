@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 
 def get_arr_info(arr, column, save_dir, render=False):
     
-    """ Get info with graph about a column of DF """
+    """ Get info + figure about a column of DF """
     
     # Describe overview of data
     print ("Overview (num tokens):")
@@ -30,7 +30,7 @@ def get_arr_info(arr, column, save_dir, render=False):
     ax2.set_ylabel('number of tokens')
     
     plt.suptitle(column + ' length')
-    plt.savefig(os.path.join(save_dir, 'boxplot_answer_length.png'), dpi=300)
+    plt.savefig(os.path.join(save_dir, 'boxplot_{}_length.png'.format(column)), dpi=300)
     if render: plt.show() 
     
     # Display Distrubtion of the data
@@ -62,6 +62,6 @@ def get_arr_info(arr, column, save_dir, render=False):
     ax5.set_ylabel("num of " + column)
     
     plt.suptitle("Distribution of Answer\'s token")
-    plt.savefig(os.path.join(save_dir, 'dist_answer_token.png'), dpi=300)
+    plt.savefig(os.path.join(save_dir, 'dist_{}_token.png'.format(column)), dpi=300)
     if render: plt.show()
     
