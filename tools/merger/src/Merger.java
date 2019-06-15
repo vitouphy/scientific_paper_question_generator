@@ -69,7 +69,7 @@ public class Merger {
     }
 
     public static String[] tokenize(String line) {
-        return line.split(",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)", -1);
+        return line.split(",(?=(?>[^\\\"]*\\\"[^\\\"]*\\\")*[^\\\"]*$)", -1);
     }
 
     public static void process(String line) {
