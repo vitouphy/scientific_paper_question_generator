@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5a108c3e-6d47-4e5d-a647-0e7ca3f29338" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../analysis_001/outputs/ai.stackexchange.com/analysis.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../analysis_001/outputs/cs.stackexchange.com/analysis.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../analysis_001/outputs/stats.stackexchange.com/analysis.pickle" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/merger/QASeparator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/merger/QASeparator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/merger/XmlPreparer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/merger/XmlPreparer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Merger.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Merger.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/QASeparator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QASeparator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/XmlPreparer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/XmlPreparer.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,16 +20,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/XmlPreparer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="284">
-              <caret line="41" column="30" lean-forward="true" selection-start-line="41" selection-start-column="30" selection-end-line="41" selection-end-column="30" />
+            <state relative-caret-position="210">
+              <caret line="40" column="38" selection-start-line="40" selection-start-column="38" selection-end-line="40" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#selectKQuestions#0;class#XmlPreparer#0" />
-                <element signature="e#2359#2368#0" expanded="true" />
                 <element signature="method#clean#0;class#XmlPreparer#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/QASeparator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="518">
+              <caret line="29" column="28" lean-forward="true" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="28" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#getQ#0;class#QASeparator#0" />
+                <element signature="method#hasTag#0;class#QASeparator#0" />
               </folding>
             </state>
           </provider>
@@ -64,14 +75,14 @@
         <option value="$PROJECT_DIR$/src/QuestionSelector.java" />
         <option value="$PROJECT_DIR$/src/QAFilter.java" />
         <option value="$PROJECT_DIR$/src/Merger.java" />
-        <option value="$PROJECT_DIR$/src/QASeparator.java" />
         <option value="$PROJECT_DIR$/src/XmlPreparer.java" />
+        <option value="$PROJECT_DIR$/src/QASeparator.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="110" />
-    <option name="y" value="23" />
+    <option name="x" value="-1726" />
+    <option name="y" value="54" />
     <option name="width" value="1608" />
     <option name="height" value="947" />
   </component>
@@ -81,7 +92,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -98,6 +108,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -176,10 +187,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="110" y="23" width="1608" height="947" extended-state="0" />
+    <frame x="-1726" y="54" width="1608" height="947" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13920817" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1449553" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -188,7 +199,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32970297" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.34152046" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.34152046" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -236,27 +247,8 @@
     </layout-to-restore>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/QuestionSelector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="30" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#784#793#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/QAFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="45" selection-start-line="16" selection-start-column="45" selection-end-line="16" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/QuestionSelector.java" />
+    <entry file="file://$PROJECT_DIR$/src/QAFilter.java" />
     <entry file="file://$PROJECT_DIR$/src/Playground.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
@@ -268,36 +260,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Merger.java">
+    <entry file="file://$PROJECT_DIR$/src/Merger.java" />
+    <entry file="file://$PROJECT_DIR$/src/XmlPreparer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2774">
-          <caret line="131" column="2" selection-start-line="131" selection-start-column="2" selection-end-line="131" selection-end-column="2" />
+        <state relative-caret-position="210">
+          <caret line="40" column="38" selection-start-line="40" selection-start-column="38" selection-end-line="40" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#selectKQuestions#0;class#XmlPreparer#0" />
+            <element signature="method#clean#0;class#XmlPreparer#0" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/QASeparator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="725">
-          <caret line="29" column="5" lean-forward="true" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+        <state relative-caret-position="518">
+          <caret line="29" column="28" lean-forward="true" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#getQ#0;class#QASeparator#0" />
-            <element signature="e#17989#18004#0" expanded="true" />
-            <element signature="e#18088#18103#0" expanded="true" />
             <element signature="method#hasTag#0;class#QASeparator#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/XmlPreparer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="41" column="30" lean-forward="true" selection-start-line="41" selection-start-column="30" selection-end-line="41" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#selectKQuestions#0;class#XmlPreparer#0" />
-            <element signature="e#2359#2368#0" expanded="true" />
-            <element signature="method#clean#0;class#XmlPreparer#0" />
           </folding>
         </state>
       </provider>
