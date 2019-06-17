@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5a108c3e-6d47-4e5d-a647-0e7ca3f29338" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/XmlPreparer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/XmlPreparer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../sanitizer.py" beforeDir="false" afterPath="$PROJECT_DIR$/../sanitizer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../string_sanitizer.py" beforeDir="false" afterPath="$PROJECT_DIR$/../string_sanitizer.py" afterDir="false" />
+    <list default="true" id="8c67dbe3-389a-4d5c-8cde-fd81f736ff80" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QASeparator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QASeparator.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,22 +20,22 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/XmlPreparer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="33" column="35" selection-start-line="33" selection-start-column="35" selection-end-line="33" selection-end-column="35" />
+            <state relative-caret-position="-233">
+              <caret line="43" column="37" selection-start-line="43" selection-start-column="37" selection-end-line="43" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#merge#0;class#XmlPreparer#0" />
+                <element signature="method#selectKQuestions#0;class#XmlPreparer#0" />
                 <element signature="method#clean#0;class#XmlPreparer#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/QASeparator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+            <state relative-caret-position="348">
+              <caret line="29" column="1385" selection-start-line="29" selection-start-column="1385" selection-end-line="29" selection-end-column="1385" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#getQ#0;class#QASeparator#0" />
@@ -79,10 +78,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1441" />
+    <option name="x" value="840" />
     <option name="y" value="23" />
-    <option name="width" value="1131" />
-    <option name="height" value="1057" />
+    <option name="width" value="840" />
+    <option name="height" value="952" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -96,6 +95,11 @@
             <path>
               <item name="merger" type="b2602c69:ProjectViewProjectNode" />
               <item name="merger" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="merger" type="b2602c69:ProjectViewProjectNode" />
+              <item name="merger" type="462c0819:PsiDirectoryNode" />
+              <item name=".idea" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="merger" type="b2602c69:ProjectViewProjectNode" />
@@ -186,10 +190,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1441" y="23" width="1131" height="1057" extended-state="0" />
+    <frame x="840" y="23" width="840" height="952" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16620754" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13283208" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -260,13 +264,20 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Merger.java" />
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/XmlPreparer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="33" column="35" selection-start-line="33" selection-start-column="35" selection-end-line="33" selection-end-column="35" />
+        <state relative-caret-position="-233">
+          <caret line="43" column="37" selection-start-line="43" selection-start-column="37" selection-end-line="43" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#merge#0;class#XmlPreparer#0" />
+            <element signature="method#selectKQuestions#0;class#XmlPreparer#0" />
             <element signature="method#clean#0;class#XmlPreparer#0" />
           </folding>
         </state>
@@ -274,8 +285,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/QASeparator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+        <state relative-caret-position="348">
+          <caret line="29" column="1385" selection-start-line="29" selection-start-column="1385" selection-end-line="29" selection-end-column="1385" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#getQ#0;class#QASeparator#0" />
