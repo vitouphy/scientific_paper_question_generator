@@ -1,46 +1,53 @@
 import xml.etree.ElementTree as ET
 
-questions_headers = [
-    'Id',
-    'PostTypeId',
-    'AcceptedAnswerId',
-    'CreationDate',
-    'Score',
-    "ViewCount",
-    "Body",
-    "OwnerUserId",
-    "LastEditorUserId",
-    "LastEditDate",
-    "LastActivityDate",
-    "Title",
-    "Tags",
-    "AnswerCount",
-    "CommentCount",
-    "FavoriteCount"
+# questions_headers = [
+#     'Id',
+#     'PostTypeId',
+#     'AcceptedAnswerId',
+#     'CreationDate',
+#     'Score',
+#     "ViewCount",
+#     "Body",
+#     "OwnerUserId",
+#     "LastEditorUserId",
+#     "LastEditDate",
+#     "LastActivityDate",
+#     "Title",
+#     "Tags",
+#     "AnswerCount",
+#     "CommentCount",
+#     "FavoriteCount"
+# ]
+
+# answers_headers = [
+#     'Id', 
+#     'PostTypeId', 
+#     'ParentId', 
+#     'CreationDate', 
+#     'Score', 
+#     'Body', 
+#     'OwnerUserId', 
+#     'LastActivityDate', 
+#     'CommentCount'
+# ]
+
+headers = [
+    'QuestionId',
+    'AnswerId',
+    'Title',
+    'Tags',
+    'QuestionBody',
+    'QuestionScore',
+    'AnswerBody',
+    'AnswerScore'
 ]
 
-answers_headers = [
-    'Id', 
-    'PostTypeId', 
-    'ParentId', 
-    'CreationDate', 
-    'Score', 
-    'Body', 
-    'OwnerUserId', 
-    'LastActivityDate', 
-    'CommentCount'
-]
+# post_columns = [questions_headers, answers_headers]
 
-post_columns = [questions_headers, answers_headers]
-
-def parseElement(element, type):
+def parseElement(element):
     arr = []
-    if type == 1:
-        keys = questions_headers
-    else:
-        keys = answers_headers
-    for key in keys:
-        arr.append(element.get(key))
+    for column in headers:
+        arr.append(element.get(column))
     return arr
 
 
@@ -50,20 +57,14 @@ def parse(path):
         Args:
             - Path: path of the file
         Return:
-            - Parsed Questions
-            - Parsed Answers
+            - Parsed Data into an CSV-like array
     """
 
-    questions = []
-    answers = []
+    data = []
     root = ET.parse(path).getroot()
 
     for row in root.findall('row'):
-        type = int(row.get('PostTypeId'))
-        parse_elements = parseElement(row, type)
-        if type == 1:  # Question Type
-            questions.append(parse_elements)
-        else:
-            answers.append(parse_elements)
-    
-    return questions, answers
+        parse_elements = parseElement(row)
+        data.append(parse_elements)
+
+    return data

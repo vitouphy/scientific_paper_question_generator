@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5a108c3e-6d47-4e5d-a647-0e7ca3f29338" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/merger/XmlPreparer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/merger/XmlPreparer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/XmlPreparer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/XmlPreparer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/../parser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sanitizer.py" beforeDir="false" afterPath="$PROJECT_DIR$/../sanitizer.py" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,12 +23,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/XmlPreparer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="236">
-              <caret line="40" column="25" selection-start-line="40" selection-start-column="25" selection-end-line="40" selection-end-column="25" />
+            <state relative-caret-position="537">
+              <caret line="86" column="23" lean-forward="true" selection-start-line="86" selection-start-column="23" selection-end-line="86" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#4240#4249#0" expanded="true" />
-                <element signature="e#4138#4147#0" expanded="true" />
                 <element signature="method#merge#0;class#XmlPreparer#0" />
                 <element signature="method#clean#0;class#XmlPreparer#0" />
               </folding>
@@ -37,7 +37,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/QASeparator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="522">
+            <state relative-caret-position="435">
               <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -83,7 +83,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="1441" />
     <option name="y" value="23" />
-    <option name="width" value="1129" />
+    <option name="width" value="1131" />
     <option name="height" value="1057" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -108,8 +108,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -188,10 +188,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1441" y="23" width="1129" height="1057" extended-state="0" />
+    <frame x="1441" y="23" width="1131" height="1057" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16375345" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16620754" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -262,28 +262,26 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Merger.java" />
+    <entry file="file://$PROJECT_DIR$/src/XmlPreparer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="537">
+          <caret line="86" column="23" lean-forward="true" selection-start-line="86" selection-start-column="23" selection-end-line="86" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#merge#0;class#XmlPreparer#0" />
+            <element signature="method#clean#0;class#XmlPreparer#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/QASeparator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
+        <state relative-caret-position="435">
           <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#getQ#0;class#QASeparator#0" />
             <element signature="method#hasTag#0;class#QASeparator#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/XmlPreparer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="40" column="25" selection-start-line="40" selection-start-column="25" selection-end-line="40" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#4240#4249#0" expanded="true" />
-            <element signature="e#4138#4147#0" expanded="true" />
-            <element signature="method#merge#0;class#XmlPreparer#0" />
-            <element signature="method#clean#0;class#XmlPreparer#0" />
           </folding>
         </state>
       </provider>

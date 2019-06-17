@@ -31,18 +31,18 @@ import java.util.stream.Stream;
 public class XmlPreparer {
 
 //    final static int NUM_QUESTIONS = 5000;
-    static int NUM_QUESTIONS = 1500000;
+    static int NUM_QUESTIONS = 200;
 
     public static void main(String[] args) throws ParserConfigurationException, IOException, SAXException {
 
         // Specify the file
-        NUM_QUESTIONS = Integer.parseInt(args[0]);
-//        String inputFile = "/Users/vitou/Workspace/scientific_paper_question_generator/data/ai.stackexchange.com/Posts.xml";
-//        String outputFile = "/Users/vitou/Workspace/scientific_paper_question_generator/analysis_001/data/ai.stackexchange.com.xml";
+//        NUM_QUESTIONS = Integer.parseInt(args[0]);
+        String inputFile = "/Users/vitou/Workspace/scientific_paper_question_generator/data/ai.stackexchange.com/Posts.xml";
+        String outputFile = "/Users/vitou/Workspace/scientific_paper_question_generator/analysis_001/data/ai.stackexchange.com.xml";
 //        String inputFile = "/Users/vitou/Workspaces/AizawaLab/scientific_question_generation/data/ai.stackexchange.com/Posts.xml";
 //        String outputFile = "/Users/vitou/Workspaces/AizawaLab/scientific_question_generation/analysis_001/data/ai.stackexchange.com.xml";
-        String inputFile = args[1];
-        String outputFile = args[2];
+//        String inputFile = args[1];
+//        String outputFile = args[2];
         System.out.println("Expected Number of Question: " + NUM_QUESTIONS);
 
         long startTime = System.nanoTime();
@@ -74,17 +74,20 @@ public class XmlPreparer {
         System.out.println("Number of Selected Question: " + csQuestions.size());
         System.out.println("\n============\n");
 
-        Optional<String> output = qaSeparator.getA(nodeStream2, csQuestions)
+        List<String> outputs = qaSeparator.getA(nodeStream2, csQuestions)
                 .map(row -> merge(row, csQuestions))
-                .reduce((total, row) -> total + row);
+                .collect(Collectors.toList());
 
         // Output the string
-        if (!output.isPresent()) return;
-        String out = "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<posts>\n" + output.get();
-        out += "\n</posts>";
+        String header = "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<posts>\n";
+        String ender = "\n</posts>";
 
         FileWriter fw = new FileWriter(outputFile);
-        fw.write(out);
+        fw.write(header);
+        for (String out : outputs) {
+            fw.write(out);
+        }
+        fw.write(ender);
         fw.close();
 
         long endTime = System.nanoTime();
