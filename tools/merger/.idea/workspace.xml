@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5a108c3e-6d47-4e5d-a647-0e7ca3f29338" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/merger/XmlPreparer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/merger/XmlPreparer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/XmlPreparer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/XmlPreparer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/../parser.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../sanitizer.py" beforeDir="false" afterPath="$PROJECT_DIR$/../sanitizer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../string_sanitizer.py" beforeDir="false" afterPath="$PROJECT_DIR$/../string_sanitizer.py" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,8 +21,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/XmlPreparer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="537">
-              <caret line="86" column="23" lean-forward="true" selection-start-line="86" selection-start-column="23" selection-end-line="86" selection-end-column="23" />
+            <state relative-caret-position="330">
+              <caret line="33" column="35" selection-start-line="33" selection-start-column="35" selection-end-line="33" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#merge#0;class#XmlPreparer#0" />
@@ -264,8 +262,8 @@
     <entry file="file://$PROJECT_DIR$/src/Merger.java" />
     <entry file="file://$PROJECT_DIR$/src/XmlPreparer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="537">
-          <caret line="86" column="23" lean-forward="true" selection-start-line="86" selection-start-column="23" selection-end-line="86" selection-end-column="23" />
+        <state relative-caret-position="330">
+          <caret line="33" column="35" selection-start-line="33" selection-start-column="35" selection-end-line="33" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#merge#0;class#XmlPreparer#0" />

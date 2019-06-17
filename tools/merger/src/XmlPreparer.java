@@ -31,7 +31,7 @@ import java.util.stream.Stream;
 public class XmlPreparer {
 
 //    final static int NUM_QUESTIONS = 5000;
-    static int NUM_QUESTIONS = 200;
+    static int NUM_QUESTIONS = 5000;
 
     public static void main(String[] args) throws ParserConfigurationException, IOException, SAXException {
 
