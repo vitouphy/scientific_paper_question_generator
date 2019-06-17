@@ -66,15 +66,15 @@ public class QASeparator {
             String type = element.getAttribute("PostTypeId");
             if (type.equals("1")) return false;
 
-
             String parentId = element.getAttribute("ParentId");
 
             // Keep if the answer has parent id
             if (parentId.isEmpty())
                 return false;
-            return true;
+
             // Keep if the corresponding question exists
-//            return questions.containsKey(Integer.parseInt(parentId));
+            return questions.containsKey(Integer.parseInt(parentId));
+
         });
     }
 

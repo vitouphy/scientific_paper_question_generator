@@ -1,5 +1,4 @@
-import com.sun.xml.internal.ws.util.StringUtils;
-import html.HtmlEscape;
+
 import org.w3c.dom.*;
 import org.xml.sax.SAXException;
 import xml.XmlEscape;
@@ -31,13 +30,18 @@ import java.util.stream.Stream;
 
 public class XmlPreparer {
 
+//    final static int NUM_QUESTIONS = 5000;
+    static int NUM_QUESTIONS = 5000;
+
     public static void main(String[] args) throws ParserConfigurationException, IOException, SAXException {
 
         // Specify the file
+        NUM_QUESTIONS = Integer.parseInt(args[0]);
 //        String inputFile = "/Users/vitou/Workspaces/AizawaLab/scientific_question_generation/data/ai.stackexchange.com/Posts.xml";
 //        String outputFile = "/Users/vitou/Workspaces/AizawaLab/scientific_question_generation/analysis_001/data/ai.stackexchange.com.xml";
-        String inputFile = args[0];
-        String outputFile = args[1];
+        String inputFile = args[1];
+        String outputFile = args[2];
+        System.out.println("Expected Number of Question: " + NUM_QUESTIONS);
 
         long startTime = System.nanoTime();
 
@@ -46,7 +50,7 @@ public class XmlPreparer {
         DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
         DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
         Document doc = dBuilder.parse(fXmlFile);
-        doc.getDocumentElement().normalize();
+//        doc.getDocumentElement().normalize();
 
         // Preparing the stream
         NodeList nodeList = doc.getElementsByTagName("row");
@@ -60,31 +64,18 @@ public class XmlPreparer {
         ConcurrentHashMap[] arr = qaSeparator.getQ(nodeStream);
         ConcurrentHashMap<Integer, Node> csQuestions = arr[0];
         ConcurrentHashMap<Integer, Node> randomQuestions = arr[1];
-        System.out.println("Number of CS Question: " + csQuestions.size());
+        System.out.println("Number of CS Set: " + csQuestions.size());
+        System.out.println("Number of Random Set: " + randomQuestions.size());
 
         // Select K Questions
-        selectKQuestions(5000, csQuestions, randomQuestions);
+        selectKQuestions(NUM_QUESTIONS, csQuestions, randomQuestions);
         System.out.println("Number of Selected Question: " + csQuestions.size());
 
-//        csQuestions = null;
-        // Ger Answer and Merge
-//        String output = "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<posts>";
-        ArrayList<String> arr2 = new ArrayList<>();
         Optional<String> output = qaSeparator.getA(nodeStream2, csQuestions)
                 .map(row -> merge(row, csQuestions))
                 .reduce((total, row) -> total + row);
 
-//        System.out.println(list);
-//        for (String item : items) {
-//            output += item;
-//        }
-
-
-//        for (int i=0; i<arr2.size(); i++) {
-//            output += arr2.get(i);
-//        }
-//        output += "\n</posts>";
-//        System.out.println(output);
+        // Output the string
         if (!output.isPresent()) return;
         String out = "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<posts>\n" + output.get();
         out += "\n</posts>";
@@ -150,22 +141,6 @@ public class XmlPreparer {
                         "AnswerBody=\"" + XmlEscape.escapeXml10(clean(answerBody)) + "\" " +
                         "AnswerScore=\"" + answerScore + "\"/>\n";
 
-
-//            return HtmlEscape.escapeHtml5(answerBody);
-//            node.setAttribute("AnswerId", answerId);
-//
-//            element.setAttribute("AnswerId", answerId);
-//            element.setAttribute("AnswerBody", answerBody);
-//            element.setAttribute("AnswerScore", answerScore);
-//            StringUtils/
-//            StringUtils.
-//            String
-//            StringEs
-//            try {
-//                output = convertNodeToHtml(element);
-//            } catch (TransformerException e) {
-//                e.printStackTrace();
-//            }
 
         }
 
