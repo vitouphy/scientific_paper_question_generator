@@ -31,12 +31,14 @@ import java.util.stream.Stream;
 public class XmlPreparer {
 
 //    final static int NUM_QUESTIONS = 5000;
-    static int NUM_QUESTIONS = 5000;
+    static int NUM_QUESTIONS = 1500000;
 
     public static void main(String[] args) throws ParserConfigurationException, IOException, SAXException {
 
         // Specify the file
         NUM_QUESTIONS = Integer.parseInt(args[0]);
+//        String inputFile = "/Users/vitou/Workspace/scientific_paper_question_generator/data/ai.stackexchange.com/Posts.xml";
+//        String outputFile = "/Users/vitou/Workspace/scientific_paper_question_generator/analysis_001/data/ai.stackexchange.com.xml";
 //        String inputFile = "/Users/vitou/Workspaces/AizawaLab/scientific_question_generation/data/ai.stackexchange.com/Posts.xml";
 //        String outputFile = "/Users/vitou/Workspaces/AizawaLab/scientific_question_generation/analysis_001/data/ai.stackexchange.com.xml";
         String inputFile = args[1];
@@ -70,6 +72,7 @@ public class XmlPreparer {
         // Select K Questions
         selectKQuestions(NUM_QUESTIONS, csQuestions, randomQuestions);
         System.out.println("Number of Selected Question: " + csQuestions.size());
+        System.out.println("\n============\n");
 
         Optional<String> output = qaSeparator.getA(nodeStream2, csQuestions)
                 .map(row -> merge(row, csQuestions))
@@ -85,7 +88,7 @@ public class XmlPreparer {
         fw.close();
 
         long endTime = System.nanoTime();
-        System.out.println("Execution Took: " + ((endTime - startTime) * 1e-9) + "seconds ") ;
+        System.out.println("Execution Took: " + ((endTime - startTime) * 1e-9) + " seconds ") ;
 
     }
 
@@ -94,11 +97,25 @@ public class XmlPreparer {
         int csLength = csQuestions.size();
         int randomLength = randomQuestions.size();
 
+        // Remove element until we have K Questions
+        if (csLength > k) {
+            int diff = csLength - k;
+            List<Integer> keys = new ArrayList<Integer>(csQuestions.keySet());
+            Collections.shuffle(keys);
+            for (int i=0; i<diff; i++) {
+                int key = keys.get(i);
+                csQuestions.remove(key);
+            }
+        }
+        System.out.println("============\n\nSelecting K Question\n");
+        System.out.println("number of chosen cs question: " + csQuestions.size());
+
         int target_length = k - csLength;
         target_length = Math.max(0, target_length);
         target_length = Math.min(target_length, randomLength);
 
-        System.out.println("number of random questions: " + target_length);
+        System.out.println("number of chosen random questions: " + target_length);
+        if (target_length == 0) return;
 
         // Random Select Question from Random Set
         List<Integer> keys = new ArrayList<Integer>(randomQuestions.keySet());
