@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8c67dbe3-389a-4d5c-8cde-fd81f736ff80" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/QASeparator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QASeparator.java" afterDir="false" />
-    </list>
+    <list default="true" id="8c67dbe3-389a-4d5c-8cde-fd81f736ff80" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,10 +31,9 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/QASeparator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="348">
-              <caret line="29" column="1385" selection-start-line="29" selection-start-column="1385" selection-end-line="29" selection-end-column="1385" />
+            <state relative-caret-position="2">
+              <caret line="10" column="27" lean-forward="true" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
               <folding>
-                <element signature="imports" expanded="true" />
                 <element signature="method#getQ#0;class#QASeparator#0" />
                 <element signature="method#hasTag#0;class#QASeparator#0" />
               </folding>
@@ -81,7 +77,7 @@
     <option name="x" value="840" />
     <option name="y" value="23" />
     <option name="width" value="840" />
-    <option name="height" value="952" />
+    <option name="height" value="949" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -190,8 +186,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="840" y="23" width="840" height="952" extended-state="0" />
-    <editor active="true" />
+    <frame x="840" y="23" width="840" height="949" extended-state="0" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13283208" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -285,10 +280,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/QASeparator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="29" column="1385" selection-start-line="29" selection-start-column="1385" selection-end-line="29" selection-end-column="1385" />
+        <state relative-caret-position="2">
+          <caret line="10" column="27" lean-forward="true" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="method#getQ#0;class#QASeparator#0" />
             <element signature="method#hasTag#0;class#QASeparator#0" />
           </folding>

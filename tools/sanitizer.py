@@ -18,7 +18,7 @@ def sanitize(name, src_file, dst_file):
 
     data = parse(src_file)
     df = pd.DataFrame(data, columns=headers)
-    
+
     startTime = time.time()
     pool = mp.Pool(mp.cpu_count())
 
@@ -33,11 +33,11 @@ def sanitize(name, src_file, dst_file):
     result = pd.DataFrame(result, columns=headers)
     pool.close()
     pool.join()
-
     endTime = time.time()
     print("total conversion time: {:0.2f} s".format(endTime - startTime))
 
-    result.to_csv(dst_file, columns=headers, index=False)
+    return result
+    # result.to_csv(dst_file, columns=headers, index=False)
     # df.to_csv(dst_file, columns=headers, index=False)
 
 if __name__ == "__main__":
