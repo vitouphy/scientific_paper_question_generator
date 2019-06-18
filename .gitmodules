@@ -1,0 +1,3 @@
+[submodule "models/seq2seq"]
+	path = models/seq2seq
+	url = git@github.com:vitouphy/seq2seq.git
