@@ -134,7 +134,7 @@ if __name__ == "__main__":
     parser.add_argument('--dst', action="store", dest="dst_folder")
 
     # Case for mode == full preprocessing
-    parser.add_argument('--num_words', type=int, const=10000, nargs='?',
+    parser.add_argument('--num_words', type=int, default=10000,
                         action="store", dest="num_words")
 
     # Getting parameters argument
@@ -144,6 +144,7 @@ if __name__ == "__main__":
     dst_folder = args.dst_folder
     num_words = args.num_words
     mode = args.mode
+    print(num_words)
 
     data_ratio = None
     if args.split_ratio is not None:
