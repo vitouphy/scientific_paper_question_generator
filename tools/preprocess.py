@@ -57,7 +57,7 @@ def get_vocab_dict(df):
     return word_dict
 
 def choose_n_words(word_freq, n):
-    sort_words = sorted(word_freq.items(), key=lambda x: x[0], reverse=True)
+    sort_words = sorted(word_freq.items(), key=lambda x: x[1], reverse=True)
     top_n_words = sort_words[:n]
     word_list = [ word for (word, count) in top_n_words ]
     return sorted(word_list)
