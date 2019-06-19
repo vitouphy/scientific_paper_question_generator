@@ -1,0 +1,18 @@
+total conversion time: 0.14 s
+['20', '2', '2']
+Traceback (most recent call last):
+  File "preprocess.py", line 168, in <module>
+    split_and_save_df_to_files(df, data_ratio, dst_folder)
+  File "preprocess.py", line 88, in split_and_save_df_to_files
+    df_train = df[:num_train]
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pandas/core/frame.py", line 2908, in __getitem__
+    indexer = convert_to_index_sliceable(self, key)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pandas/core/indexing.py", line 2456, in convert_to_index_sliceable
+    return idx._convert_slice_indexer(key, kind='getitem')
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pandas/core/indexes/base.py", line 2929, in _convert_slice_indexer
+    self._validate_indexer('slice', key.stop, kind),
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pandas/core/indexes/base.py", line 4710, in _validate_indexer
+    self._invalid_indexer(form, key)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pandas/core/indexes/base.py", line 3067, in _invalid_indexer
+    kind=type(key)))
+TypeError: cannot do slice indexing on <class 'pandas.core.indexes.range.RangeIndex'> with these indexers [20] of <class 'str'>

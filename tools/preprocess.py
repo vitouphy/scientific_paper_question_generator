@@ -71,7 +71,7 @@ def save_word_to_file(words, dst_folder):
     f.close()
 
 def split_and_save_df_to_files(df, data_ratio, dst_folder):
-
+    # print (data_ratio)
     # Fill in data if no info provided
     if data_ratio is None:
         total = len(df)
@@ -79,7 +79,7 @@ def split_and_save_df_to_files(df, data_ratio, dst_folder):
         num_dev = int(total * .2)
         num_test = total - num_train - num_dev
     else:
-        num_train, num_dev, num_test = data_ratio
+        num_train, num_dev, num_test = [int(x) for x in data_ratio]
     
     # Shuffling the data
     df = df.sample(frac=1).reset_index(drop=True) 
@@ -144,7 +144,6 @@ if __name__ == "__main__":
     dst_folder = args.dst_folder
     num_words = args.num_words
     mode = args.mode
-    print(num_words)
 
     data_ratio = None
     if args.split_ratio is not None:
