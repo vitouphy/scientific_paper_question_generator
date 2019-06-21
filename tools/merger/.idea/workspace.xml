@@ -1,7 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8c67dbe3-389a-4d5c-8cde-fd81f736ff80" name="Default Changelist" comment="" />
+    <list default="true" id="8c67dbe3-389a-4d5c-8cde-fd81f736ff80" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/TrainingSetSplitter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../analysis_001/data/ai.stackexchange.com_answers.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../analysis_001/data/ai.stackexchange.com_questions.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../analysis_001/data/cs.stackexchange.com_answers.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../analysis_001/data/cs.stackexchange.com_questions.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../analysis_001/figures/ai.stackexchange.com/boxplot_answer_length.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../analysis_001/figures/ai.stackexchange.com/dist_answer_token.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../analysis_001/figures/ai.stackexchange.com/hist_score.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../analysis_001/figures/ai.stackexchange.com/question_type_chart.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../analysis_001/figures/ai.stackexchange.com/wordcloud.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../analysis_001/figures/cs.stackexchange.com/boxplot_answer_length.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../analysis_001/figures/cs.stackexchange.com/boxplot_answers_length.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../analysis_001/figures/cs.stackexchange.com/boxplot_titles_length.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../analysis_001/figures/cs.stackexchange.com/dist_answer_token.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../analysis_001/figures/cs.stackexchange.com/dist_answers_token.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../analysis_001/figures/cs.stackexchange.com/dist_titles_token.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../analysis_001/figures/cs.stackexchange.com/hist_score.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../analysis_001/figures/cs.stackexchange.com/question_type_chart.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../analysis_001/figures/cs.stackexchange.com/wordcloud.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../analysis_001/figures/stats.stackexchange.com/boxplot_answer_length.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../analysis_001/figures/stats.stackexchange.com/boxplot_answers_length.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../analysis_001/figures/stats.stackexchange.com/boxplot_titles_length.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../analysis_001/figures/stats.stackexchange.com/dist_answer_token.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../analysis_001/figures/stats.stackexchange.com/dist_answers_token.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../analysis_001/figures/stats.stackexchange.com/dist_titles_token.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../analysis_001/figures/stats.stackexchange.com/hist_score.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../analysis_001/figures/stats.stackexchange.com/question_type_chart.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../analysis_001/figures/stats.stackexchange.com/wordcloud.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../analysis_001/outputs/ai.stackexchange.com/ai_analysis.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../analysis_001/outputs/cs.stackexchange.com/cs_analysis.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../analysis_001/outputs/stats.stackexchange.com/stats_analysis.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../analysis_001/outputs/stats.stackexchange.com/summary.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../analysis_001/outputs/summary.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../analysis_001/src/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../analysis_001/src/analysis.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../analysis_001/src/analysis_draft.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../analysis_001/src/column_analysis.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../analysis_001/src/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../analysis_001/src/question_counter.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../analysis_001/src/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/merger/QASeparator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/merger/QASeparator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/merger/XmlPreparer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/XmlPreparer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/XmlExtractor.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,27 +61,30 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/XmlPreparer.java">
+        <entry file="file://$PROJECT_DIR$/src/XmlExtractor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-233">
-              <caret line="43" column="37" selection-start-line="43" selection-start-column="37" selection-end-line="43" selection-end-column="37" />
+            <state relative-caret-position="384">
+              <caret line="84" column="51" lean-forward="true" selection-start-line="84" selection-start-column="51" selection-end-line="84" selection-end-column="51" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#selectKQuestions#0;class#XmlPreparer#0" />
-                <element signature="method#clean#0;class#XmlPreparer#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/QASeparator.java">
+        <entry file="file://$PROJECT_DIR$/src/TrainingSetSplitter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2">
-              <caret line="10" column="27" lean-forward="true" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
+            <state relative-caret-position="459">
+              <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
               <folding>
-                <element signature="method#getQ#0;class#QASeparator#0" />
-                <element signature="method#hasTag#0;class#QASeparator#0" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#1278#1293#0" expanded="true" />
+                <element signature="e#1842#1851#0" expanded="true" />
+                <element signature="e#1994#2003#0" expanded="true" />
+                <element signature="e#2149#2158#0" expanded="true" />
+                <element signature="method#convertNodeToString#0;class#TrainingSetSplitter#0" />
+                <element signature="method#clean#0;class#TrainingSetSplitter#0" />
               </folding>
             </state>
           </provider>
@@ -70,14 +119,14 @@
         <option value="$PROJECT_DIR$/src/Merger.java" />
         <option value="$PROJECT_DIR$/src/XmlPreparer.java" />
         <option value="$PROJECT_DIR$/src/QASeparator.java" />
+        <option value="$PROJECT_DIR$/src/XmlExtractor.java" />
+        <option value="$PROJECT_DIR$/src/TrainingSetSplitter.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="840" />
-    <option name="y" value="23" />
-    <option name="width" value="840" />
-    <option name="height" value="949" />
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="width" value="1440" />
+    <option name="height" value="900" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -85,6 +134,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -106,7 +156,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -134,7 +183,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.XmlPreparer">
+  <component name="RunManager" selected="Application.TrainingSetSplitter">
     <configuration name="Merger" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Merger" />
       <module name="merger" />
@@ -156,8 +205,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="XmlPreparer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="XmlPreparer" />
+    <configuration name="TrainingSetSplitter" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="TrainingSetSplitter" />
+      <module name="merger" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="XmlExtractor" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="XmlExtractor" />
       <module name="merger" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -165,7 +221,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.XmlPreparer" />
+        <item itemvalue="Application.TrainingSetSplitter" />
+        <item itemvalue="Application.XmlExtractor" />
         <item itemvalue="Application.Playground" />
         <item itemvalue="Application.QAFilter" />
         <item itemvalue="Application.Merger" />
@@ -177,7 +234,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="5a108c3e-6d47-4e5d-a647-0e7ca3f29338" name="Default Changelist" comment="" />
+      <changelist id="8c67dbe3-389a-4d5c-8cde-fd81f736ff80" name="Default Changelist" comment="" />
       <created>1560528034938</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -186,9 +243,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="840" y="23" width="840" height="949" extended-state="0" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13283208" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21316166" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -197,7 +255,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32970297" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2134715" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.213253" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -266,25 +324,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/XmlPreparer.java">
+    <entry file="file://$PROJECT_DIR$/src/QASeparator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-233">
-          <caret line="43" column="37" selection-start-line="43" selection-start-column="37" selection-end-line="43" selection-end-column="37" />
+        <state relative-caret-position="200">
+          <caret line="64" column="43" selection-start-line="64" selection-start-column="43" selection-end-line="64" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#selectKQuestions#0;class#XmlPreparer#0" />
-            <element signature="method#clean#0;class#XmlPreparer#0" />
+            <element signature="e#19423#19438#0" expanded="true" />
+            <element signature="e#19522#19537#0" expanded="true" />
+            <element signature="method#hasTag#0;class#QASeparator#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/QASeparator.java">
+    <entry file="file://$PROJECT_DIR$/src/XmlExtractor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2">
-          <caret line="10" column="27" lean-forward="true" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
+        <state relative-caret-position="384">
+          <caret line="84" column="51" lean-forward="true" selection-start-line="84" selection-start-column="51" selection-end-line="84" selection-end-column="51" />
           <folding>
-            <element signature="method#getQ#0;class#QASeparator#0" />
-            <element signature="method#hasTag#0;class#QASeparator#0" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TrainingSetSplitter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1278#1293#0" expanded="true" />
+            <element signature="e#1842#1851#0" expanded="true" />
+            <element signature="e#1994#2003#0" expanded="true" />
+            <element signature="e#2149#2158#0" expanded="true" />
+            <element signature="method#convertNodeToString#0;class#TrainingSetSplitter#0" />
+            <element signature="method#clean#0;class#TrainingSetSplitter#0" />
           </folding>
         </state>
       </provider>
