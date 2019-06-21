@@ -31,13 +31,19 @@ public class TrainingSetSplitter {
 
     public static void main(String[] args) throws ParserConfigurationException, IOException, SAXException {
 
-        String inputFile = "/Users/vitou/Workspace/scientific_paper_question_generator/data/intermediate/ai.stackexchange.com/ai.stackexchange.com.xml";
-        String outputFolder = "/Users/vitou/Workspace/scientific_paper_question_generator/data/intermediate/ai.stackexchange.com";
+//        String inputFile = "/Users/vitou/Workspace/scientific_paper_question_generator/data/intermediate/ai.stackexchange.com/ai.stackexchange.com.xml";
+//        String outputFolder = "/Users/vitou/Workspace/scientific_paper_question_generator/data/intermediate/ai.stackexchange.com";
 
-        int numTrain = 5;
-        int numDev = 1;
-        int numTest = 2;
-//        int numTrain = Integer.parseInt(args[0]);
+
+
+//        int numTrain = 5;
+//        int numDev = 1;
+//        int numTest = 2;
+        int numTrain = Integer.parseInt(args[0]);
+        int numDev = Integer.parseInt(args[1]);
+        int numTest = Integer.parseInt(args[2]);
+        String inputFile = args[3];
+        String outputFolder = args[4];
 
         File fXmlFile = new File(inputFile);
         DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();

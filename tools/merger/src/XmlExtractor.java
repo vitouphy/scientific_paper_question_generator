@@ -36,13 +36,13 @@ public class XmlExtractor {
     public static void main(String[] args) throws ParserConfigurationException, IOException, SAXException {
 
         // Specify the file
-//        NUM_QUESTIONS = Integer.parseInt(args[0]);
-        String inputFile = "/Users/vitou/Workspace/scientific_paper_question_generator/data/raw/ai.stackexchange.com/Posts.xml";
-        String outputFile = "/Users/vitou/Workspace/scientific_paper_question_generator/data/intermediate/ai.stackexchange.com/ai.stackexchange.com.xml";
+        NUM_QUESTIONS = Integer.parseInt(args[0]);
+//        String inputFile = "/Users/vitou/Workspace/scientific_paper_question_generator/data/raw/ai.stackexchange.com/Posts.xml";
+//        String outputFile = "/Users/vitou/Workspace/scientific_paper_question_generator/data/intermediate/ai.stackexchange.com/ai.stackexchange.com.xml";
 //        String inputFile = "/Users/vitou/Workspaces/AizawaLab/scientific_question_generation/data/ai.stackexchange.com/Posts.xml";
 //        String outputFile = "/Users/vitou/Workspaces/AizawaLab/scientific_question_generation/analysis_001/data/ai.stackexchange.com.xml";
-//        String inputFile = args[1];
-//        String outputFile = args[2];
+        String inputFile = args[1];
+        String outputFile = args[2];
         System.out.println("Expected Number of Question: " + NUM_QUESTIONS);
 
         long startTime = System.nanoTime();
