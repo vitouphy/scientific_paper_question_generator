@@ -161,11 +161,17 @@ if __name__ == "__main__":
 
     # Sanitize Training Data
     train_df = sanitize(train_df)
+    # train_df.dropna(subset=['AnswerBody'], inplace=True)
+    train_df = train_df[train_df['AnswerBody'].apply(len) != 0]
+
     dev_df = sanitize(dev_df)
+    # dev_df.dropna(subset=['AnswerBody'], inplace=True)
+    dev_df = dev_df[dev_df['AnswerBody'].apply(len) != 0]
+
     test_df = sanitize(test_df)
-    train_df.dropna(subset=['AnswerBody'], inplace=True)
-    dev_df.dropna(subset=['AnswerBody'], inplace=True)
-    test_df.dropna(subset=['AnswerBody'], inplace=True)
+    # test_df.dropna(subset=['AnswerBody'], inplace=True)
+    test_df = test_df[test_df['AnswerBody'].apply(len) != 0]
+
     df = pd.concat([train_df, dev_df, test_df])
 
     word_freq = get_vocabs(df)
