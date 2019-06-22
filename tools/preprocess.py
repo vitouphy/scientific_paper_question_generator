@@ -151,6 +151,8 @@ if __name__ == "__main__":
     dst_folder = args.dst_folder
     num_words = args.num_words 
     num_tags = args.num_tags 
+    print (model)
+    print (num_tags)
 
     # Reading Train, Dev, Test Files
     train_df = read_train_data(src_folder, 'train.xml')
@@ -161,6 +163,9 @@ if __name__ == "__main__":
     train_df = sanitize(train_df)
     dev_df = sanitize(dev_df)
     test_df = sanitize(test_df)
+    train_df.dropna(subset=['AnswerBody'], inplace=True)
+    dev_df.dropna(subset=['AnswerBody'], inplace=True)
+    test_df.dropna(subset=['AnswerBody'], inplace=True)
     df = pd.concat([train_df, dev_df, test_df])
 
     word_freq = get_vocabs(df)

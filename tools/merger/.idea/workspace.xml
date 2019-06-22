@@ -2,40 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c67dbe3-389a-4d5c-8cde-fd81f736ff80" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/extractor.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/merger/Playground.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/merger/Playground.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/merger/QASeparator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/merger/QASeparator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/merger/TrainingSetSplitter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/merger/TrainingSetSplitter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/merger/XmlExtractor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/merger/XmlExtractor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/merger/html/Html4EscapeSymbolsInitializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/merger/html/Html4EscapeSymbolsInitializer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/merger/html/Html5EscapeSymbolsInitializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/merger/html/Html5EscapeSymbolsInitializer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/merger/html/HtmlEscape$InternalStringReader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/merger/html/HtmlEscape$InternalStringReader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/merger/html/HtmlEscape.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/merger/html/HtmlEscape.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/merger/html/HtmlEscapeLevel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/merger/html/HtmlEscapeLevel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/merger/html/HtmlEscapeSymbols$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/merger/html/HtmlEscapeSymbols$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/merger/html/HtmlEscapeSymbols$Reference.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/merger/html/HtmlEscapeSymbols$Reference.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/merger/html/HtmlEscapeSymbols$References.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/merger/html/HtmlEscapeSymbols$References.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/merger/html/HtmlEscapeSymbols.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/merger/html/HtmlEscapeSymbols.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/merger/html/HtmlEscapeType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/merger/html/HtmlEscapeType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/merger/html/HtmlEscapeUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/merger/html/HtmlEscapeUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/merger/xml/Xml10EscapeSymbolsInitializer$Xml10CodepointValidator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/merger/xml/Xml10EscapeSymbolsInitializer$Xml10CodepointValidator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/merger/xml/Xml10EscapeSymbolsInitializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/merger/xml/Xml10EscapeSymbolsInitializer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/merger/xml/Xml11EscapeSymbolsInitializer$Xml11CodepointValidator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/merger/xml/Xml11EscapeSymbolsInitializer$Xml11CodepointValidator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/merger/xml/Xml11EscapeSymbolsInitializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/merger/xml/Xml11EscapeSymbolsInitializer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/merger/xml/XmlCodepointValidator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/merger/xml/XmlCodepointValidator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/merger/xml/XmlEscape$InternalStringReader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/merger/xml/XmlEscape$InternalStringReader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/merger/xml/XmlEscape.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/merger/xml/XmlEscape.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/merger/xml/XmlEscapeLevel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/merger/xml/XmlEscapeLevel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/merger/xml/XmlEscapeSymbols$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/merger/xml/XmlEscapeSymbols$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/merger/xml/XmlEscapeSymbols$Reference.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/merger/xml/XmlEscapeSymbols$Reference.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/merger/xml/XmlEscapeSymbols$References.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/merger/xml/XmlEscapeSymbols$References.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/merger/xml/XmlEscapeSymbols.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/merger/xml/XmlEscapeSymbols.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/merger/xml/XmlEscapeType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/merger/xml/XmlEscapeType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/merger/xml/XmlEscapeUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/merger/xml/XmlEscapeUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../analysis/figures/ai.stackexchange.com/boxplot_answer_length.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../analysis/figures/ai.stackexchange.com/dist_answer_token.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../analysis/figures/ai.stackexchange.com/hist_score.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../analysis/figures/ai.stackexchange.com/hist_score.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../analysis/figures/ai.stackexchange.com/question_type_chart.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../analysis/figures/ai.stackexchange.com/question_type_chart.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../analysis/figures/ai.stackexchange.com/wordcloud.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../analysis/figures/ai.stackexchange.com/wordcloud.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../preprocess.py" beforeDir="false" afterPath="$PROJECT_DIR$/../preprocess.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../sanitizer.py" beforeDir="false" afterPath="$PROJECT_DIR$/../sanitizer.py" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -52,20 +24,39 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/XmlExtractor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="38" column="39" selection-start-line="38" selection-start-column="39" selection-end-line="38" selection-end-column="39" />
+            <state relative-caret-position="389">
+              <caret line="76" column="45" lean-forward="true" selection-start-line="76" selection-start-column="45" selection-end-line="76" selection-end-column="45" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="method#selectKQuestions#0;class#XmlExtractor#0" />
+                <element signature="method#merge#0;class#XmlExtractor#0" />
+                <element signature="method#clean#0;class#XmlExtractor#0" />
+                <element signature="method#convertNodeToHtml#0;class#XmlExtractor#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/QASeparator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="598">
+              <caret line="75" column="29" lean-forward="true" selection-start-line="75" selection-start-column="29" selection-end-line="75" selection-end-column="29" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#19423#19438#0" expanded="true" />
+                <element signature="e#19522#19537#0" expanded="true" />
+                <element signature="method#hasTag#0;class#QASeparator#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/TrainingSetSplitter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+            <state relative-caret-position="-548">
+              <caret line="32" selection-start-line="32" selection-end-line="32" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#convertNodeToString#0;class#TrainingSetSplitter#0" />
@@ -110,9 +101,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
+    <option name="x" value="-1770" />
     <option name="y" value="23" />
-    <option name="width" value="902" />
-    <option name="height" value="952" />
+    <option name="width" value="1206" />
+    <option name="height" value="969" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -120,8 +112,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -138,6 +128,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -224,9 +216,9 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="902" height="952" extended-state="0" />
+    <frame x="-1770" y="23" width="1206" height="969" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24069767" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18213059" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -304,37 +296,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/QASeparator.java">
+    <entry file="file://$PROJECT_DIR$/src/TrainingSetSplitter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="64" column="43" selection-start-line="64" selection-start-column="43" selection-end-line="64" selection-end-column="43" />
+        <state relative-caret-position="-548">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#19423#19438#0" expanded="true" />
-            <element signature="e#19522#19537#0" expanded="true" />
-            <element signature="method#hasTag#0;class#QASeparator#0" />
+            <element signature="method#convertNodeToString#0;class#TrainingSetSplitter#0" />
+            <element signature="method#clean#0;class#TrainingSetSplitter#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/XmlExtractor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="38" column="39" selection-start-line="38" selection-start-column="39" selection-end-line="38" selection-end-column="39" />
+        <state relative-caret-position="389">
+          <caret line="76" column="45" lean-forward="true" selection-start-line="76" selection-start-column="45" selection-end-line="76" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#selectKQuestions#0;class#XmlExtractor#0" />
+            <element signature="method#merge#0;class#XmlExtractor#0" />
+            <element signature="method#clean#0;class#XmlExtractor#0" />
+            <element signature="method#convertNodeToHtml#0;class#XmlExtractor#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/TrainingSetSplitter.java">
+    <entry file="file://$PROJECT_DIR$/src/QASeparator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+        <state relative-caret-position="598">
+          <caret line="75" column="29" lean-forward="true" selection-start-line="75" selection-start-column="29" selection-end-line="75" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#convertNodeToString#0;class#TrainingSetSplitter#0" />
-            <element signature="method#clean#0;class#TrainingSetSplitter#0" />
+            <element signature="e#19423#19438#0" expanded="true" />
+            <element signature="e#19522#19537#0" expanded="true" />
+            <element signature="method#hasTag#0;class#QASeparator#0" />
           </folding>
         </state>
       </provider>
