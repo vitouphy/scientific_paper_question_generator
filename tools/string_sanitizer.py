@@ -67,5 +67,5 @@ def sanitize_tags(tags):
 
     tokens = re.split('<|>', tags)
     arr = [ token for token in tokens if len(token) > 0 ]
-    return arr
-    # return " ".join(arr)
+    # return arr
+    return " ".join(arr)

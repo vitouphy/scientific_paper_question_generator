@@ -90,10 +90,7 @@ def get_tags_dict(df):
 
     tag_dict = {}
     for index, row in df.iterrows():
-        # Count tag in Tags 
-        # print (row['Tags'])
-        # tags = sanitize_tags(row['Tags'])
-        tags = row['Tags']
+        tags = row['Tags'].split()
         for tag in tags:
             if tag not in tag_dict:
                 tag_dict[tag] = 0
