@@ -14,12 +14,11 @@ def sanitize_row(item):
     row['Tags'] = sanitize_tags(row['Tags'])
     return row
 
-def sanitize(name, src_file, dst_file):
+def sanitize(df):
 
-    data = parse(src_file)
-    df = pd.DataFrame(data, columns=headers)
 
-    startTime = time.time()
+
+    # startTime = time.time()
     pool = mp.Pool(mp.cpu_count())
 
     # Clean Title, Tag, QuestionBoy, AnswerBodyeach row
@@ -33,8 +32,8 @@ def sanitize(name, src_file, dst_file):
     result = pd.DataFrame(result, columns=headers)
     pool.close()
     pool.join()
-    endTime = time.time()
-    print("total conversion time: {:0.2f} s".format(endTime - startTime))
+    # endTime = time.time()
+    # print("total conversion time: {:0.2f} s".format(endTime - startTime))
 
     return result
     # result.to_csv(dst_file, columns=headers, index=False)

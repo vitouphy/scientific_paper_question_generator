@@ -1,10 +1,11 @@
 import argparse
 from sanitizer import sanitize
 import pandas as pd
-from parser import headers
+from parser import headers, parse
 import numpy as np
 import multiprocessing as mp
 import os
+from string_sanitizer import sanitize_tags
   
 def get_vocabs(df):
 
@@ -56,50 +57,56 @@ def get_vocab_dict(df):
 
     return word_dict
 
-def choose_n_words(word_freq, n):
-    sort_words = sorted(word_freq.items(), key=lambda x: x[1], reverse=True)
-    top_n_words = sort_words[:n]
-    word_list = [ word for (word, count) in top_n_words ]
-    return sorted(word_list)
+def get_tags(df):
 
-def save_word_to_file(words, dst_folder):
-    dst_file = os.path.join(dst_folder, 'vocab.txt')
-    f = open(dst_file, "w")
-    for word in words:
-        f.write(word)
-        f.write('\n')
-    f.close()
+    """ Parallel Compute the Tag Frequency of a DataFrame """
 
-def split_and_save_df_to_files(df, data_ratio, dst_folder):
-    # print (data_ratio)
-    # Fill in data if no info provided
-    if data_ratio is None:
-        total = len(df)
-        num_train = int(total * .7)
-        num_dev = int(total * .2)
-        num_test = total - num_train - num_dev
-    else:
-        num_train, num_dev, num_test = [int(x) for x in data_ratio]
-    
-    # Shuffling the data
-    df = df.sample(frac=1).reset_index(drop=True) 
-
-    # Split up data into 3 partitions   
-    df_train = df[:num_train]
-    df_dev = df[num_train:num_train + num_dev]
-    df_test = df[num_train + num_dev :]
-
-    # Use 3 Process to Save Data to 3 Diff Files
+    num_partitions = 10
     num_cores = mp.cpu_count()
+    df_split = np.array_split(df, num_partitions)
     pool = mp.Pool(num_cores)
-    rows = [
-        (df_train, os.path.join(dst_folder, "train")),
-        (df_dev, os.path.join(dst_folder, "dev")),
-        (df_test, os.path.join(dst_folder, "test"))
-    ]
-    dict_list = [pool.apply(save_train_data, args=(df, path)) for (df, path) in rows]
+    dict_list = pool.map(get_tags_dict, df_split)
     pool.close()
     pool.join()
+
+    tag_freq = {}
+    for tag_dict in dict_list:
+        for tag, count in tag_dict.items():
+            if tag not in tag_freq:
+                tag_freq[tag] = 0
+            tag_freq[tag] += count
+
+    return tag_freq   
+
+def get_tags_dict(df):
+
+    """ Count frequency of each word in the dataframe 
+        Args:
+        - DataFrame df
+
+        Returns:
+        - Word Dictionary
+    """
+
+    tag_dict = {}
+    for index, row in df.iterrows():
+        # Count tag in Tags 
+        # print (row['Tags'])
+        # tags = sanitize_tags(row['Tags'])
+        tags = row['Tags']
+        for tag in tags:
+            if tag not in tag_dict:
+                tag_dict[tag] = 0
+            tag_dict[tag] += 1
+
+    return tag_dict
+
+def save_arr_to_file(items, dst_folder, filename):
+    dst_file = os.path.join(dst_folder, filename)
+    f = open(dst_file, "w")
+    for word, freq in items:
+        f.write("{} {}\n".format(word, freq))
+    f.close()
 
 def save_train_data(df, dst_folder):
 
@@ -122,48 +129,64 @@ def save_train_data(df, dst_folder):
         ft.write('\n')
     ft.close()
 
+def read_train_data(src_folder, filename):
+    file = os.path.join(src_folder, filename)
+    data = parse(file)
+    df = pd.DataFrame(data, columns=headers)
+    return df
+
 if __name__ == "__main__":
 
+    # Parse the arguments
     parser = argparse.ArgumentParser(description='Parse XML into CSV and Clean Them')
-    parser.add_argument('--mode', action="store", dest="mode", 
-                        help='type of mode (sanitize or full)')
-    parser.add_argument('--split_ratio', action="store", dest="split_ratio",
-                        help='split into train/dev/test in int number')
-    parser.add_argument('--name', action="store", dest="name")
-    parser.add_argument('--src', action="store", dest="src_file")
+    parser.add_argument('model')
+    parser.add_argument('--src', action="store", dest="src_folder")
     parser.add_argument('--dst', action="store", dest="dst_folder")
-
-    # Case for mode == full preprocessing
     parser.add_argument('--num_words', type=int, default=10000,
                         action="store", dest="num_words")
-
+    parser.add_argument('--num_tags', type=int, default=10000,
+                        action="store", dest="num_tags")
+    
     # Getting parameters argument
     args = parser.parse_args()
-    name = args.name
-    src_file = args.src_file
+    model = args.model
+    src_folder = args.src_folder
     dst_folder = args.dst_folder
-    num_words = args.num_words
-    mode = args.mode
+    num_words = args.num_words 
+    num_tags = args.num_tags 
 
-    data_ratio = None
-    if args.split_ratio is not None:
-        data_ratio = args.split_ratio.split('/')
+    # Reading Train, Dev, Test Files
+    train_df = read_train_data(src_folder, 'train.xml')
+    dev_df = read_train_data(src_folder, 'dev.xml')
+    test_df = read_train_data(src_folder, 'test.xml')
 
-    if mode == "sanitize":
-        dst_file = os.path.join(dst_folder, name + ".csv")
-        df = sanitize(name, src_file, dst_file)
-        df.to_csv(dst_file, columns=headers, index=False)
+    # Sanitize Training Data
+    train_df = sanitize(train_df)
+    dev_df = sanitize(dev_df)
+    test_df = sanitize(test_df)
+    df = pd.concat([train_df, dev_df, test_df])
 
-    elif mode == "full":
-        dst_file = os.path.join(dst_folder, name + ".csv")
-        df = sanitize(name, src_file, dst_file)
-        df.to_csv(dst_file, columns=headers, index=False)
+    word_freq = get_vocabs(df)
+    sorted_words = sorted(word_freq.items(), key=lambda x: x[1], reverse=True)
+    top_k_words = sorted_words[:num_words]
+    save_arr_to_file(sorted_words, dst_folder, "vocabs.txt")
+    save_arr_to_file(top_k_words, dst_folder, "vocabs_{}.txt".format(len(top_k_words)))
 
-        # Prepare the vocab file
-        word_freq = get_vocabs(df)
-        words = choose_n_words(word_freq, num_words)
-        save_word_to_file(words, dst_folder)
+    tag_freq = get_tags(df)
+    sorted_tags = sorted(tag_freq.items(), key=lambda x: x[1], reverse=True)
+    top_k_tags = sorted_tags[:num_tags]
+    save_arr_to_file(sorted_tags, dst_folder, "tags.txt")
+    save_arr_to_file(top_k_tags, dst_folder, "tags_{}.txt".format(len(top_k_tags)))
 
-        # Prepare the training/dev/test file
-        split_and_save_df_to_files(df, data_ratio, dst_folder)
+    if model == "seq2seq":
 
+        train_df.to_csv(os.path.join(dst_folder, 'train.csv'), 
+                        columns=headers, index=False)
+        dev_df.to_csv(os.path.join(dst_folder, 'dev.csv'), 
+                        columns=headers, index=False)
+        test_df.to_csv(os.path.join(dst_folder, 'test.csv'), 
+                        columns=headers, index=False)
+
+        save_train_data(train_df, os.path.join(dst_folder, "train"))
+        save_train_data(dev_df, os.path.join(dst_folder, "dev"))
+        save_train_data(test_df, os.path.join(dst_folder, "test"))

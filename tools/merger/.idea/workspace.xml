@@ -2,51 +2,40 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c67dbe3-389a-4d5c-8cde-fd81f736ff80" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/TrainingSetSplitter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../analysis_001/data/ai.stackexchange.com_answers.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../analysis_001/data/ai.stackexchange.com_questions.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../analysis_001/data/cs.stackexchange.com_answers.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../analysis_001/data/cs.stackexchange.com_questions.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../analysis_001/figures/ai.stackexchange.com/boxplot_answer_length.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../analysis_001/figures/ai.stackexchange.com/dist_answer_token.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../analysis_001/figures/ai.stackexchange.com/hist_score.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../analysis_001/figures/ai.stackexchange.com/question_type_chart.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../analysis_001/figures/ai.stackexchange.com/wordcloud.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../analysis_001/figures/cs.stackexchange.com/boxplot_answer_length.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../analysis_001/figures/cs.stackexchange.com/boxplot_answers_length.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../analysis_001/figures/cs.stackexchange.com/boxplot_titles_length.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../analysis_001/figures/cs.stackexchange.com/dist_answer_token.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../analysis_001/figures/cs.stackexchange.com/dist_answers_token.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../analysis_001/figures/cs.stackexchange.com/dist_titles_token.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../analysis_001/figures/cs.stackexchange.com/hist_score.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../analysis_001/figures/cs.stackexchange.com/question_type_chart.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../analysis_001/figures/cs.stackexchange.com/wordcloud.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../analysis_001/figures/stats.stackexchange.com/boxplot_answer_length.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../analysis_001/figures/stats.stackexchange.com/boxplot_answers_length.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../analysis_001/figures/stats.stackexchange.com/boxplot_titles_length.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../analysis_001/figures/stats.stackexchange.com/dist_answer_token.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../analysis_001/figures/stats.stackexchange.com/dist_answers_token.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../analysis_001/figures/stats.stackexchange.com/dist_titles_token.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../analysis_001/figures/stats.stackexchange.com/hist_score.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../analysis_001/figures/stats.stackexchange.com/question_type_chart.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../analysis_001/figures/stats.stackexchange.com/wordcloud.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../analysis_001/outputs/ai.stackexchange.com/ai_analysis.pickle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../analysis_001/outputs/cs.stackexchange.com/cs_analysis.pickle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../analysis_001/outputs/stats.stackexchange.com/stats_analysis.pickle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../analysis_001/outputs/stats.stackexchange.com/summary.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../analysis_001/outputs/summary.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../analysis_001/src/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../analysis_001/src/analysis.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../analysis_001/src/analysis_draft.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../analysis_001/src/column_analysis.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../analysis_001/src/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../analysis_001/src/question_counter.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../analysis_001/src/requirements.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extractor.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/merger/Playground.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/merger/Playground.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/merger/QASeparator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/merger/QASeparator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/merger/XmlPreparer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/XmlPreparer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/XmlExtractor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/merger/TrainingSetSplitter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/merger/TrainingSetSplitter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/merger/XmlExtractor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/merger/XmlExtractor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/merger/html/Html4EscapeSymbolsInitializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/merger/html/Html4EscapeSymbolsInitializer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/merger/html/Html5EscapeSymbolsInitializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/merger/html/Html5EscapeSymbolsInitializer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/merger/html/HtmlEscape$InternalStringReader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/merger/html/HtmlEscape$InternalStringReader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/merger/html/HtmlEscape.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/merger/html/HtmlEscape.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/merger/html/HtmlEscapeLevel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/merger/html/HtmlEscapeLevel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/merger/html/HtmlEscapeSymbols$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/merger/html/HtmlEscapeSymbols$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/merger/html/HtmlEscapeSymbols$Reference.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/merger/html/HtmlEscapeSymbols$Reference.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/merger/html/HtmlEscapeSymbols$References.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/merger/html/HtmlEscapeSymbols$References.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/merger/html/HtmlEscapeSymbols.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/merger/html/HtmlEscapeSymbols.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/merger/html/HtmlEscapeType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/merger/html/HtmlEscapeType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/merger/html/HtmlEscapeUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/merger/html/HtmlEscapeUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/merger/xml/Xml10EscapeSymbolsInitializer$Xml10CodepointValidator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/merger/xml/Xml10EscapeSymbolsInitializer$Xml10CodepointValidator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/merger/xml/Xml10EscapeSymbolsInitializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/merger/xml/Xml10EscapeSymbolsInitializer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/merger/xml/Xml11EscapeSymbolsInitializer$Xml11CodepointValidator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/merger/xml/Xml11EscapeSymbolsInitializer$Xml11CodepointValidator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/merger/xml/Xml11EscapeSymbolsInitializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/merger/xml/Xml11EscapeSymbolsInitializer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/merger/xml/XmlCodepointValidator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/merger/xml/XmlCodepointValidator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/merger/xml/XmlEscape$InternalStringReader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/merger/xml/XmlEscape$InternalStringReader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/merger/xml/XmlEscape.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/merger/xml/XmlEscape.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/merger/xml/XmlEscapeLevel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/merger/xml/XmlEscapeLevel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/merger/xml/XmlEscapeSymbols$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/merger/xml/XmlEscapeSymbols$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/merger/xml/XmlEscapeSymbols$Reference.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/merger/xml/XmlEscapeSymbols$Reference.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/merger/xml/XmlEscapeSymbols$References.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/merger/xml/XmlEscapeSymbols$References.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/merger/xml/XmlEscapeSymbols.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/merger/xml/XmlEscapeSymbols.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/merger/xml/XmlEscapeType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/merger/xml/XmlEscapeType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/merger/xml/XmlEscapeUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/merger/xml/XmlEscapeUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../preprocess.py" beforeDir="false" afterPath="$PROJECT_DIR$/../preprocess.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sanitizer.py" beforeDir="false" afterPath="$PROJECT_DIR$/../sanitizer.py" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -63,8 +52,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/XmlExtractor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
-              <caret line="84" column="51" lean-forward="true" selection-start-line="84" selection-start-column="51" selection-end-line="84" selection-end-column="51" />
+            <state relative-caret-position="160">
+              <caret line="38" column="39" selection-start-line="38" selection-start-column="39" selection-end-line="38" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -75,14 +64,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/TrainingSetSplitter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
+            <state relative-caret-position="208">
+              <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1278#1293#0" expanded="true" />
-                <element signature="e#1842#1851#0" expanded="true" />
-                <element signature="e#1994#2003#0" expanded="true" />
-                <element signature="e#2149#2158#0" expanded="true" />
                 <element signature="method#convertNodeToString#0;class#TrainingSetSplitter#0" />
                 <element signature="method#clean#0;class#TrainingSetSplitter#0" />
               </folding>
@@ -124,9 +109,10 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="width" value="1440" />
-    <option name="height" value="900" />
+  <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
+    <option name="width" value="902" />
+    <option name="height" value="952" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -134,6 +120,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -145,18 +132,12 @@
             <path>
               <item name="merger" type="b2602c69:ProjectViewProjectNode" />
               <item name="merger" type="462c0819:PsiDirectoryNode" />
-              <item name=".idea" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="merger" type="b2602c69:ProjectViewProjectNode" />
-              <item name="merger" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -243,10 +224,9 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="23" width="902" height="952" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21316166" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24069767" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -255,7 +235,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32970297" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.213253" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.2127907" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -339,8 +319,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/XmlExtractor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="84" column="51" lean-forward="true" selection-start-line="84" selection-start-column="51" selection-end-line="84" selection-end-column="51" />
+        <state relative-caret-position="160">
+          <caret line="38" column="39" selection-start-line="38" selection-start-column="39" selection-end-line="38" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -349,14 +329,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/TrainingSetSplitter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
+        <state relative-caret-position="208">
+          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1278#1293#0" expanded="true" />
-            <element signature="e#1842#1851#0" expanded="true" />
-            <element signature="e#1994#2003#0" expanded="true" />
-            <element signature="e#2149#2158#0" expanded="true" />
             <element signature="method#convertNodeToString#0;class#TrainingSetSplitter#0" />
             <element signature="method#clean#0;class#TrainingSetSplitter#0" />
           </folding>
