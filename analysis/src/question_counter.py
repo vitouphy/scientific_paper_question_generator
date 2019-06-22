@@ -12,7 +12,7 @@ wh_list = [
 ]
 
 # Do, Be, Has
-aux_list = [
+yes_no_list = [
     'do',
     'does',
     'did',
@@ -30,13 +30,13 @@ def count_question(titles):
     ''' Count each type of questions '''
     
     wh_count = 0
-    aux_count = 0
+    yes_no_count = 0
     for title in titles:
         is_wh = False
         token = title.split()[0]
 
         if token in wh_list: 
             wh_count += 1
-        elif token in aux_list:
-            aux_count += 1
-    return wh_count, aux_count
+        elif token in yes_no_list:
+            yes_no_count += 1
+    return wh_count, yes_no_count

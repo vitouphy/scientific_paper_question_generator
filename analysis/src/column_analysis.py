@@ -10,7 +10,7 @@ def get_arr_info(arr, column, save_dir, render=False):
     
     # Describe overview of data
     print ("Overview (num tokens):")
-    print ("=========")
+    print ("======================")
     print (arr.describe())
     
     # Box plot of the data
@@ -35,7 +35,7 @@ def get_arr_info(arr, column, save_dir, render=False):
     
     # Display Distrubtion of the data
     
-    num_bins = 20
+    num_bins = 15
     
     sns.set()
     sns.set_style("white")
@@ -61,7 +61,7 @@ def get_arr_info(arr, column, save_dir, render=False):
     ax5.set_xlabel("num of tokens")
     ax5.set_ylabel("num of " + column)
     
-    plt.suptitle("Distribution of Answer\'s token")
+    plt.suptitle("Distribution of {}\'s token".format(column))
     plt.savefig(os.path.join(save_dir, 'dist_{}_token.png'.format(column)), dpi=300)
     if render: plt.show()
     

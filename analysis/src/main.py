@@ -48,8 +48,8 @@ def create_wordcloud(dict, save_dir):
     plt.axis("off")
     plt.savefig(os.path.join(save_dir, 'wordcloud.png'), dpi=600)
 
-def save_pie_chart(wh_count, aux_count, normal, save_dir):
-    total = wh_count + aux_count + normal
+def save_pie_chart(wh_count, yes_no_count, normal, save_dir):
+    total = wh_count + yes_no_count + normal
     sns.set(style="darkgrid")
     plt.figure()
     fig1, ax1 = plt.subplots()
@@ -62,8 +62,8 @@ def save_pie_chart(wh_count, aux_count, normal, save_dir):
     sns.set_palette("Blues")
 
     ax1.pie(
-        [ wh_count, aux_count, normal], 
-        labels=['wh-question', 'aux-question', 'normal'],
+        [ wh_count, yes_no_count, normal], 
+        labels=['wh-question', 'yes-no-question', 'normal'],
         autopct=absolute_value
     )
     ax1.axis('equal')
@@ -79,46 +79,43 @@ def prepare_save_output_directory(name):
     
     return save_dir
 
-def prepare_save_directory(name):
-    save_dir = "../figures/"
-    save_dir = os.path.join(save_dir, name)
+# def prepare_save_directory(name):
+#     save_dir = "../figures/"
+#     save_dir = os.path.join(save_dir, name)
 
-    if not os.path.exists(save_dir):
-        os.mkdir(save_dir)
-        print("Directory " , save_dir ,  " Created ") 
+#     if not os.path.exists(save_dir):
+#         os.mkdir(save_dir)
+#         print("Directory " , save_dir ,  " Created ") 
     
-    return save_dir
+#     return save_dir
 
-def read_files(name, question_file, answer_file):
+def read_files(train_file, dev_file, test_file):
     # Import data files
-    questions = pd.read_csv('../data/' + name + '_questions.csv')
-    answers = pd.read_csv('../data/' + name + '_answers.csv')
+    df_train = pd.read_csv(train_file)
+    df_dev = pd.read_csv(dev_file)
+    df_test = pd.read_csv(test_file)
+    df = pd.concat([df_train, df_dev, df_test])
 
     def get_answer_length(row):
-        a = row['Body']
+        a = row['AnswerBody']
         return len(a.split())
-
-    answers.dropna(subset=['Body'], inplace=True)
-    answers['AnswerLength'] = answers.apply(get_answer_length, axis=1)
+    df['AnswerLength'] = df.apply(get_answer_length, axis=1)
 
     def get_title_length(row):
         a = row['Title']
         return len(a.split())
+    df['TitleLength'] = df.apply(get_title_length, axis=1)
 
-    questions.dropna(subset=['Title'], inplace=True)
-    questions['TitleLength'] = questions.apply(get_title_length, axis=1)
+    return df
 
-    return questions, answers
-
-def get_answers_per_score(answers, save_dir, render=False):
+def get_answers_per_score(df, save_dir, render=False):
     # Check how many answers per each score
     num_answers = []
     for i in range(13):
-        a_score = answers['Score'] == i
+        a_score = df['AnswerScore'] == i
         num = a_score.sum()
         num_answers.append(num)
 
-    plt.figure()
     sns.set()
     sns.set_style("white")
     sns.set_palette("hls")
@@ -128,77 +125,91 @@ def get_answers_per_score(answers, save_dir, render=False):
     ax.set_xlabel('Score')
     ax.set_ylabel('number of answers')
     plt.savefig(os.path.join(save_dir, 'hist_score.png'), dpi=300)
-    if render: plt.show()
 
-    print ("Number of Answer at Score: ")
-    for i, v in enumerate(num_answers):
-        print ("Score {}: {}".format(i, v))
 
-def process(name, question_file, answer_file, dst):   
-    save_dir = prepare_save_directory(name)
-    questions, answers = read_files(name, question_file, answer_file)
+    # print ("Number of Answer at Score: ")
+    # for i, v in enumerate(num_answers):
+    #     print ("Score {}: {}".format(i, v))
+
+def process(train_file, dev_file, test_file, tags_file, dst_folder):   
+    # save_dir = prepare_save_directory(dst_folder)
+    df = read_files(train_file, dev_file, test_file)
 
     # Question's Title Analysis
-    titles = questions['Title']
-    wh_count, aux_count = count_question(titles)
-    normal = len(titles) - wh_count - aux_count
-    save_pie_chart(wh_count, aux_count, normal, save_dir) 
+    titles = df['Title']
+    wh_count, yes_no_count = count_question(titles)
+    total = len(titles)
+    normal = total - wh_count - yes_no_count
+    save_pie_chart(wh_count, yes_no_count, normal, dst_folder)
 
     print ("WH-Question: {}".format(wh_count))
-    print ("AUX-Question: {}".format(aux_count))
+    print ("Yes-No-Question: {}".format(yes_no_count))
     print ("Total : {}".format(len(titles)))
 
     # Get Answers of Each Score
-    get_answers_per_score(answers, save_dir)
+    get_answers_per_score(df, dst_folder)
 
     # Answer Length Analysis
+    print ("\n")
+    print ("======================")
     print ("Answer Length Analysis")
-    print ("======================\n")
-    get_arr_info(answers.AnswerLength, 'answers', save_dir)
+    get_arr_info(df.AnswerLength, 'answers', dst_folder)
 
     # Question Title Length Analysis
+    print ("\n")
+    print ("======================")
     print ("Question Title Length Analysis")
-    print ("======================\n")
-    get_arr_info(questions.TitleLength, 'titles', save_dir)
+    get_arr_info(df.TitleLength, 'titles', dst_folder)
 
     # Analysis the tags
     tags_dict = {}
-    for tags in questions['Tags']:
-        for t in tags.split():
-            if t not in tags_dict:
-                tags_dict[t] = 0
-            tags_dict[t] += 1
+    f = open(tags_file, 'r')
+    for line in f.readlines():
+        elements = line.split()
+        word = elements[0]
+        freq = int(elements[1])
+        tags_dict[word] = freq
 
-    create_wordcloud(tags_dict, save_dir) 
-    vocab = export_vocab(questions, answers)
+    create_wordcloud(tags_dict, dst_folder) 
+    
+    # tags_dict = {}
+    # for tags in questions['Tags']:
+    #     for t in tags.split():
+    #         if t not in tags_dict:
+    #             tags_dict[t] = 0
+    #         tags_dict[t] += 1
 
-    dict = {
-        'vocab': vocab, 
-        'tags': tags_dict
-    }
-    out_dir = prepare_save_output_directory(name)
-    out_file = os.path.join(out_dir, "analysis.pickle")
-    pickle_out = open(out_file, "wb")
-    pickle.dump(dict, pickle_out)
-    pickle_out.close()
+    # create_wordcloud(tags_dict, save_dir) 
+    # vocab = export_vocab(questions, answers)
+
+    # dict = {
+    #     'vocab': vocab, 
+    #     'tags': tags_dict
+    # }
+    # out_dir = prepare_save_output_directory(name)
+    # out_file = os.path.join(out_dir, "analysis.pickle")
+    # pickle_out = open(out_file, "wb")
+    # pickle.dump(dict, pickle_out)
+    # pickle_out.close()
     
 
 if __name__ == "__main__":
 
     # Get ArgParse
     parser = argparse.ArgumentParser(description='Run analysis')
-    parser.add_argument('--name', action="store", dest="name")
-    parser.add_argument('--src', action="store", dest="src_folder")
+    parser.add_argument('--src_train', action="store", dest="train_file")
+    parser.add_argument('--src_dev', action="store", dest="dev_file")
+    parser.add_argument('--src_test', action="store", dest="test_file")
+    parser.add_argument('--src_tags', action="store", dest="tags_file")
     parser.add_argument('--dst', action="store", dest="dst_folder")
     args = parser.parse_args()
 
     # Get parameters
-    name = args.name
-    src = args.src_folder
-    dst = args.dst_folder
+    train_file = args.train_file
+    dev_file = args.dev_file
+    test_file = args.test_file
+    tags_file = args.tags_file
+    dst_folder = args.dst_folder
 
-    question_file = name + "_questions.csv"
-    answer_file = name + "_answers.csv"
-
-    process(name, question_file, answer_file, dst)  # Run
+    process(train_file, dev_file, test_file, tags_file, dst_folder)  # Run
     
