@@ -98,11 +98,14 @@ def get_tags_dict(df):
 
     return tag_dict
 
-def save_arr_to_file(items, dst_folder, filename):
+def save_arr_to_file(items, dst_folder, filename, save_freq=True):
     dst_file = os.path.join(dst_folder, filename)
     f = open(dst_file, "w")
     for word, freq in items:
-        f.write("{} {}\n".format(word, freq))
+        if save_freq:
+            f.write("{} {}\n".format(word, freq))
+        else:
+            f.write("{}\n".format(word))
     f.close()
 
 def save_train_data(df, dst_folder):
@@ -177,16 +180,24 @@ if __name__ == "__main__":
     word_freq = get_vocabs(df)
     sorted_words = sorted(word_freq.items(), key=lambda x: x[1], reverse=True)
     top_k_words = sorted_words[:num_words]
-    save_arr_to_file(sorted_words, dst_folder, "vocabs.txt")
-    save_arr_to_file(top_k_words, dst_folder, "vocabs_{}.txt".format(len(top_k_words)))
+    # save_arr_to_file(sorted_words, dst_folder, "vocabs.txt")
+    # save_arr_to_file(top_k_words, dst_folder, "vocabs_{}.txt".format(len(top_k_words)))
 
     tag_freq = get_tags(df)
     sorted_tags = sorted(tag_freq.items(), key=lambda x: x[1], reverse=True)
     top_k_tags = sorted_tags[:num_tags]
-    save_arr_to_file(sorted_tags, dst_folder, "tags.txt")
-    save_arr_to_file(top_k_tags, dst_folder, "tags_{}.txt".format(len(top_k_tags)))
+    # save_arr_to_file(sorted_tags, dst_folder, "tags.txt")
+    # save_arr_to_file(top_k_tags, dst_folder, "tags_{}.txt".format(len(top_k_tags)))
 
     if model == "seq2seq":
+
+        save_arr_to_file(sorted_words, dst_folder, "vocabs.txt")
+        save_arr_to_file(top_k_words, dst_folder, 
+                        "vocabs_{}.txt".format(len(top_k_words)), save_freq=False)
+        save_arr_to_file(sorted_tags, dst_folder, "tags.txt")
+        save_arr_to_file(top_k_tags, dst_folder, 
+                        "tags_{}.txt".format(len(top_k_tags)), save_freq=False)
+
 
         train_df.to_csv(os.path.join(dst_folder, 'train.csv'), 
                         columns=headers, index=False)
