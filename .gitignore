@@ -9,3 +9,4 @@ __pycache__
 data/
 tmp
 tmp/
+server_tmp/
