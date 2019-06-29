@@ -16,9 +16,9 @@ vocab_path = "data/vocabs.txt"
 VOCAB_SIZE = 100000000
 
 CHUNK_SIZE = 15000 # num examples per chunk, for the chunked data
-train_bin_path = os.path.join(finished_path, "train.bin")
-valid_bin_path = os.path.join(finished_path, "valid.bin")
-test_bin_path = os.path.join(finished_path, "test.bin")
+train_bin_path = ""
+valid_bin_path = ""
+test_bin_path = ""
 
 def make_folder(folder_path):
     if not os.path.exists(folder_path):
@@ -97,13 +97,21 @@ def chunk_file(set_name, chunks_dir, bin_file):
 
 if __name__ == "__main__":
     
+    parser = argparse.ArgumentParser(description="Convert seq2seq data to chunk bins")
     parser.add_argument("--data_folder",
                         dest="data_folder", 
                         required=True,
                         help="Folder for storing raw and clean data")
+    args = parser.parse_args()
+    data_folder = args.data_folder
+
     src_folder = os.path.join(data_folder, src_folder)
-    finish_path = os.path.join(data_folder, finish_path)
+    finished_path = os.path.join(data_folder, finished_path)
     chunk_path = os.path.join(data_folder, chunk_path)
+
+    train_bin_path = os.path.join(finished_path, "train.bin")
+    valid_bin_path = os.path.join(finished_path, "valid.bin")
+    test_bin_path  = os.path.join(finished_path, "test.bin")
 
     # Create bin file for train, val, test
     delete_folder(finished_path)
