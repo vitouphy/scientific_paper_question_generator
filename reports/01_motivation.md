@@ -1,4 +1,4 @@
-## Question Generation Summarization
+## Report 01 - Motivation and Focus
 
 
 
@@ -30,14 +30,25 @@ Link: https://data.stackexchange.com/
 
 Obviously, our ACL dataset does not contain any question corresponding to each section or paragraph. We look around and stumble upon **stackexchange**, a website where people asks questions to the community hoping to find answers to their coding, statitics, or other tech-related problem.
 
+![alt text](./images/stackoverflow_property.png "Logo Title Text 1")
+
+
 What we are interested in are only **title**, **tags** and **answer**.
 
-One of its sub-website, https://ai.stackexchange.com/, has good discussons on AI topic or other machine-learning related proble. Unfortunately, the size of the corpus is very small (4K of questions and 5.3K of answers, at the time of writing).
+One of its sub-websites, https://ai.stackexchange.com/, has good discussons on AI topic or other machine-learning related proble. Unfortunately, the size of the corpus is very small (4K of questions and 5.3K of answers, at the time of writing).
+
+There is also https://stats.stackexchange.com/ which most of questions are related to statistics. The corpus is fairly big but it seems most tags are not AI or CS related. That is why we did not select this dataset as our fcous.
+
+![alt text](./images/stackexchange_corpus.png)
 
 
 
-property of question answer and so onAdd info on Statistics
+Instead of using ai.stackexchange.com, we use **stackoverflow.com**. The downside to this is stackoverflow website contains too much information (18M questions and 27M answers) and many of them are about coding. This is not exactly what we want since our initial idea was to work with scientific paper.As a result, we extracted top tags in ai.stackexchange.com. Manually, match those tags with tags in stackoverflow website.**Note**: The tags used in ai.stackexchange.com are not the same as ones in stackoverflow.
 
+**For example:**
 
+- "neural-network" in one site
 
-Instead of using ai.stackexchange.com, we use stackoverflow.com. The downside to this is stackoverflow website contains a lot of information (18M questions and 27M answers) and many of them are about coding. This is not exactly what we want since our initial idea was to work with scientific paper.As a result, we extracted top tags in ai.stackexchange.com. Manually, match those tags with tags in stackoverflow website.**Note**: The tags used in ai.stackexchange.com are not the same as ones in stackoverflow.**For example:**"neural-network" in one site"neural-network**s**" in anotherWith these tags, we are ready to extract relevants post from stackoverflow.
+- "neural-network**s**" in another
+
+With these tags, we are ready to extract relevants post from stackoverflow.
