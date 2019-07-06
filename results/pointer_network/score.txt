@@ -1,0 +1,44 @@
+Pointer Generator Network
+BLEU: https://github.com/tensorflow/nmt/blob/master/nmt/scripts/bleu.py
+
+===============
+Decoder: Greedy
+===============
+BLEU= 1.72, 16.3/3.6/0.8/0.3
+(BP=0.924, ratio=0.926, hyp_len=278825, ref_len=300993)
+---------------------------------------------
+1 ROUGE-1 Average_R: 0.16015 (95%-conf.int. 0.15828 - 0.16206)
+1 ROUGE-1 Average_P: 0.17147 (95%-conf.int. 0.16972 - 0.17341)
+1 ROUGE-1 Average_F: 0.15608 (95%-conf.int. 0.15442 - 0.15776)
+---------------------------------------------
+1 ROUGE-2 Average_R: 0.03724 (95%-conf.int. 0.03628 - 0.03825)
+1 ROUGE-2 Average_P: 0.04040 (95%-conf.int. 0.03937 - 0.04147)
+1 ROUGE-2 Average_F: 0.03633 (95%-conf.int. 0.03540 - 0.03727)
+---------------------------------------------
+1 ROUGE-L Average_R: 0.14778 (95%-conf.int. 0.14605 - 0.14955)
+1 ROUGE-L Average_P: 0.15729 (95%-conf.int. 0.15559 - 0.15906)
+1 ROUGE-L Average_F: 0.14355 (95%-conf.int. 0.14197 - 0.14518)
+
+===============
+Decoder: Beam=5
+===============
+BLEU= 2.04, 15.9/3.4/1.0/0.4
+(BP=0.948, ratio=0.950, hyp_len=285808, ref_len=300993)
+---------------------------------------------
+1 ROUGE-1 Average_R: 0.14988 (95%-conf.int. 0.14808 - 0.15160)
+1 ROUGE-1 Average_P: 0.16624 (95%-conf.int. 0.16430 - 0.16814)
+1 ROUGE-1 Average_F: 0.14926 (95%-conf.int. 0.14754 - 0.15084)
+---------------------------------------------
+1 ROUGE-2 Average_R: 0.03607 (95%-conf.int. 0.03500 - 0.03714)
+1 ROUGE-2 Average_P: 0.04237 (95%-conf.int. 0.04119 - 0.04351)
+1 ROUGE-2 Average_F: 0.03668 (95%-conf.int. 0.03565 - 0.03770)
+---------------------------------------------
+1 ROUGE-L Average_R: 0.13919 (95%-conf.int. 0.13749 - 0.14081)
+1 ROUGE-L Average_P: 0.15369 (95%-conf.int. 0.15186 - 0.15542)
+1 ROUGE-L Average_F: 0.13828 (95%-conf.int. 0.13668 - 0.13981)
+
+================
+Decoder: Beam=10
+================
+BLEU= 1.94, 14.7/3.1/0.9/0.4
+(BP=0.962, ratio=0.963, hyp_len=289739, ref_len=300993)
