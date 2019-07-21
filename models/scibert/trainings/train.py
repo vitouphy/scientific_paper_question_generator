@@ -8,7 +8,7 @@ import tensorflow as tf
 from torch.nn.utils import clip_grad_norm_
 
 from torch.optim import Adagrad
-
+import time
 from shutil import copyfile
 from data_util.batcher import Batcher
 from data_util.data import Vocab, ids2words
@@ -21,7 +21,7 @@ from bert_serving.client import BertClient
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-
+import sys
 import copy
 from models.bert_lstm import BertLSTMModel
 
@@ -30,6 +30,7 @@ use_cuda = args.use_gpu and torch.cuda.is_available()
 class Train(object):
     def __init__(self):
         self.vocab = Vocab(args.vocab_path, args.vocab_size)
+        sys.stdout.flush()
         self.batcher = Batcher(args.train_data_path, self.vocab, mode='train',
                                batch_size=args.batch_size, single_pass=False)
         time.sleep(15)
@@ -55,12 +56,19 @@ class Train(object):
 
     def trainIters(self):
         running_avg_loss = 0
+        s_time = time.time()
         for t in range(args.max_iteration):
             batch = self.batcher.next_batch()
             loss = self.trainOneBatch(batch)
             running_avg_loss = calc_running_avg_loss(loss, running_avg_loss, decay=0.999)
             save_running_avg_loss(running_avg_loss, t, self.train_summary_writer)
-            print ("timestep: {}, loss: {}".format(t, running_avg_loss))
+            
+            # Print every 100 steps
+            if (t+1) % 100 == 0:
+                time_run = time.time() - s_time
+                s_time = time.time()
+                print ("timestep: {}, loss: {}, time: {}s".format(t, running_avg_loss))
+                sys.stdout.flush()
 
             # Save the model every 1000 steps
             if (t+1) % args.save_every_itr == 0:
@@ -84,6 +92,7 @@ class Train(object):
         self.eval_batcher = Batcher(args.eval_data_path, self.vocab, mode='eval',
                                batch_size=args.batch_size, single_pass=True)
         time.sleep(15)
+        t1 = time.time()
         batch = self.eval_batcher.next_batch()
         running_avg_loss = 0
         while batch is not None:
@@ -93,8 +102,10 @@ class Train(object):
             batch = self.eval_batcher.next_batch()
 
         # Save the evaluation score
-        print ("Evaluation Loss: {}".format(running_avg_loss))
+        time_spent = time.time() - t1
+        print ("Evaluation Loss: {}, Time: {}s".format(running_avg_loss, time_spent))
         save_running_avg_loss(running_avg_loss, timestep, self.eval_summary_writer)
+        sys.stdout.flush()
 
 if __name__ == '__main__':
     train_processor = Train()

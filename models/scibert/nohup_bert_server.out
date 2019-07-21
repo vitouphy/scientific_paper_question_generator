@@ -1,0 +1,42 @@
+nohup: ignoring input
+I:[35mVENTILATOR[0m:[__i:__i: 67]:freeze, optimize and export graph, could take a while...
+usage: /home/vitou/workspace/projects/scientific_paper_QG/.env/bin/bert-serving-start -model_dir /home/vitou/workspace/pre-trained/scibert_scivocab_uncased -show_tokens_to_client -num_worker=4 -max_seq_len 150
+                 ARG   VALUE
+__________________________________________________
+           ckpt_name = bert_model.ckpt
+         config_name = bert_config.json
+                cors = *
+                 cpu = False
+          device_map = []
+       do_lower_case = True
+  fixed_embed_length = False
+                fp16 = False
+ gpu_memory_fraction = 0.5
+       graph_tmp_dir = None
+    http_max_connect = 10
+           http_port = None
+        mask_cls_sep = False
+      max_batch_size = 256
+         max_seq_len = 150
+           model_dir = /home/vitou/workspace/pre-trained/scibert_scivocab_uncased
+          num_worker = 4
+       pooling_layer = [-2]
+    pooling_strategy = REDUCE_MEAN
+                port = 5555
+            port_out = 5556
+       prefetch_size = 10
+ priority_batch_size = 16
+show_tokens_to_client = True
+     tuned_model_dir = None
+             verbose = False
+                 xla = False
+
+I:[36mGRAPHOPT[0m:[gra:opt: 52]:model config: /home/vitou/workspace/pre-trained/scibert_scivocab_uncased/bert_config.json
+I:[36mGRAPHOPT[0m:[gra:opt: 55]:checkpoint: /home/vitou/workspace/pre-trained/scibert_scivocab_uncased/bert_model.ckpt
+I:[36mGRAPHOPT[0m:[gra:opt: 59]:build graph...
+I:[36mGRAPHOPT[0m:[gra:opt:128]:load parameters from checkpoint...
+I:[36mGRAPHOPT[0m:[gra:opt:132]:optimize...
+I:[36mGRAPHOPT[0m:[gra:opt:140]:freeze...
+I:[36mGRAPHOPT[0m:[gra:opt:145]:write graph to a tmp file: /tmp/tmpsy2q9snm
+I:[35mVENTILATOR[0m:[__i:__i: 75]:optimized graph is stored at: /tmp/tmpsy2q9snm
+I:[35mVENTILATOR[0m:[__i:_ru:129]:bind all sockets
