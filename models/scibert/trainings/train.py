@@ -5,84 +5,96 @@ import time
 import argparse
 
 import tensorflow as tf
-import torch
-# from model import Model
 from torch.nn.utils import clip_grad_norm_
 
 from torch.optim import Adagrad
 
 from shutil import copyfile
-from data_util import config
 from data_util.batcher import Batcher
-from data_util.data import Vocab
+from data_util.data import Vocab, ids2words
+from data_util.argparser import args
+from trainings.train_utils import get_output_from_batch, calc_running_avg_loss, save_running_avg_loss
 
 from models.decoder import DecoderLSTM
-# from data_util.utils import calc_running_avg_loss
-# from train_util import get_input_from_batch, get_output_from_batch
 from bert_serving.client import BertClient
 
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
 
+import copy
+from models.bert_lstm import BertLSTMModel
 
-use_cuda = config.use_gpu and torch.cuda.is_available()
-
-HIDDEN_SIZE = 768
-OUTPUT_SIZE = 100
+use_cuda = args.use_gpu and torch.cuda.is_available()
 
 class Train(object):
     def __init__(self):
-        self.vocab = Vocab(config.vocab_path, config.vocab_size)
-        OUTPUT_SIZE = self.vocab.size()
-        self.batcher = Batcher(config.train_data_path, self.vocab, mode='train',
-                               batch_size=4, single_pass=False)
+        self.vocab = Vocab(args.vocab_path, args.vocab_size)
+        self.batcher = Batcher(args.train_data_path, self.vocab, mode='train',
+                               batch_size=args.batch_size, single_pass=False)
+        time.sleep(15)
+        vocab_size = self.vocab.size()
+        self.model = BertLSTMModel(args.hidden_size, self.vocab.size(), args.max_dec_steps)
+        if use_cuda:
+            self.model = self.model.cuda()
 
-        self.bertClient = BertClient()
-        self.decoder = DecoderLSTM(HIDDEN_SIZE, OUTPUT_SIZE)
+        self.model_optimizer = torch.optim.Adagrad(self.model.parameters(), lr=args.lr)
+        self.summary_writer = tf.summary.FileWriter(args.logs)
 
-        # time.sleep(15)
-        #
-        # train_dir = os.path.join(config.log_root, 'train')
-        # if not os.path.exists(train_dir):
-        #     os.mkdir(train_dir)
-        #
-        # self.model_dir = os.path.join(train_dir, 'model')
-        # if not os.path.exists(self.model_dir):
-        #     os.mkdir(self.model_dir)
-
-        # copy config file to the experiment folder
-        # src_config = os.path.join(config.project_folder, "data_util/config.py")
-        # dst_config = os.path.join(config.log_root, "config.py")
-        # copyfile(src_config, dst_config)
-
-        # self.summary_writer = tf.summary.FileWriter(train_dir)
 
     def trainOneBatch(self, batch):
-        # Encoding sentences
-        encoded_state = self.bertClient.encode(batch.enc_batch, is_tokenized=True, show_tokens=True)
-        encoded_state = torch.Tensor(encoded_state)  # batch_size * 768
-        print (encoded_state.size())
-
-        # Decoding
-        # For the first timestep
-        # self.decoder(encoded_state, encoded_state)
-
-
+        self.model_optimizer.zero_grad()
+        loss = self.model(batch)
+        loss.backward()
+        self.model_optimizer.step()
+        return loss.item() / args.max_dec_steps
 
     def trainIters(self):
-        batch = self.batcher.next_batch()
-        self.trainOneBatch(batch)
-        # print (batch)
-        # print (batch.enc_batch[0])
-        # print (batch.dec_batch[0])
+        running_avg_loss = 0
+        for t in range(args.max_iteration):
+            batch = self.batcher.next_batch()
+            loss = self.trainOneBatch(batch)
+            running_avg_loss = calc_running_avg_loss(loss, running_avg_loss, decay=0.999)
+            save_running_avg_loss("train", running_avg_loss, t, self.summary_writer)
+            print ("timestep: {}, loss: {}".format(t, running_avg_loss))
+            # Save the model every 1000 steps
+            if (t+1) % 10 == 0:
+                self.save_checkpoint(t, running_avg_loss)
+                self.model.eval()
+                self.evaluate(t)
+                self.model.train()
+
+
+    def save_checkpoint(self, step, loss):
+        checkpoint_file = "checkpoint_{}".format(step)
+        checkpoint_path = os.path.join(args.logs, checkpoint_file)
+        torch.save({
+            'timestep': step,
+            'model_state_dict': self.model.decoder.state_dict(),
+            'optimizer_state_dict': self.model_optimizer.state_dict(),
+            'loss': loss
+        }, checkpoint_path)
+
+    def evaluate(self, timestep):
+        self.eval_batcher = Batcher(args.eval_data_path, self.vocab, mode='eval',
+                               batch_size=2, single_pass=True)
+        time.sleep(15)
+        batch = self.eval_batcher.next_batch()
+        running_avg_loss = 0
+        while batch is not None:
+            loss = self.model(batch)
+            loss = loss / args.max_dec_steps
+            running_avg_loss = calc_running_avg_loss(loss, running_avg_loss)
+            batch = self.eval_batcher.next_batch()
+        # Save the evaluation score
+        print ("Evaluation Loss: {}".format(running_avg_loss))
+        save_running_avg_loss("eval", running_avg_loss, timestep, self.summary_writer)
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description="Train script")
-    parser.add_argument("-m",
-                        dest="model_file_path",
-                        required=False,
-                        default=None,
-                        help="Model file for retraining (default: None).")
-    args = parser.parse_args()
-
     train_processor = Train()
     train_processor.trainIters()
-    # train_processor.trainIters(config.max_iterations, args.model_file_path)
+            # print ("\n\n==============")
+            # print ("Ground Truth:")
+            # print (ids2words(batch.dec_batch[0][1:].tolist(), self.vocab))
+            # print ("Generated:")
+            # print (ids2words(answers[0].tolist(), self.vocab))

@@ -127,11 +127,18 @@ def abstract2ids(abstract_words, vocab, article_oovs):
   return ids
 
 
+def ids2words(id_list, vocab):
+    for end in range(len(id_list)-1, -1, -1):
+        if id_list[end] != 1:  #PAD Token index
+            break
+    list = outputids2words(id_list[:end+1], vocab, None)
+    return " ".join(list)
+
 def outputids2words(id_list, vocab, article_oovs):
   words = []
   for i in id_list:
     try:
-      w = vocab.id2word(i) # might be [UNK]
+      w = vocab.id2word(i) # might be [UNK])
     except ValueError as e: # w is OOV
       assert article_oovs is not None, "Error: model produced a word ID that isn't in the vocabulary. This should not happen in baseline (no pointer-generator) mode"
       article_oov_idx = i - vocab.size()

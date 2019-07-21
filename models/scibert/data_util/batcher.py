@@ -8,11 +8,12 @@ from threading import Thread
 import numpy as np
 import tensorflow as tf
 
-from . import config
 from . import data
+from data_util.argparser import args
 
 import random
 random.seed(1234)
+
 
 
 class Example(object):
@@ -24,8 +25,8 @@ class Example(object):
 
     # Process the article
     article_words = article.split()
-    if len(article_words) > config.max_enc_steps:
-      article_words = article_words[:config.max_enc_steps]
+    if len(article_words) > args.max_enc_steps:
+      article_words = article_words[:args.max_enc_steps]
     # self.enc_len = len(article_words) # store the length after truncation but before padding
     # self.enc_input = [vocab.word2id(w) for w in article_words] # list of word ids; OOVs are represented by the id for UNK token
     self.enc_len = len(article_words)
@@ -37,7 +38,7 @@ class Example(object):
     abs_ids = [vocab.word2id(w) for w in abstract_words] # list of word ids; OOVs are represented by the id for UNK token
 
     # Get the decoder input sequence and target sequence
-    self.dec_input, self.target = self.get_dec_inp_targ_seqs(abs_ids, config.max_dec_steps, start_decoding, stop_decoding)
+    self.dec_input, self.target = self.get_dec_inp_targ_seqs(abs_ids, args.max_dec_steps, start_decoding, stop_decoding)
     self.dec_len = len(self.dec_input)
 
     # Store the original strings
@@ -108,12 +109,12 @@ class Batch(object):
   def init_decoder_seq(self, example_list):
     # Pad the inputs and targets
     for ex in example_list:
-      ex.pad_decoder_inp_targ(config.max_dec_steps, self.pad_id)
+      ex.pad_decoder_inp_targ(args.max_dec_steps, self.pad_id)
 
     # Initialize the numpy arrays.
-    self.dec_batch = np.zeros((self.batch_size, config.max_dec_steps), dtype=np.int32)
-    self.target_batch = np.zeros((self.batch_size, config.max_dec_steps), dtype=np.int32)
-    self.dec_padding_mask = np.zeros((self.batch_size, config.max_dec_steps), dtype=np.float32)
+    self.dec_batch = np.zeros((self.batch_size, args.max_dec_steps), dtype=np.int32)
+    self.target_batch = np.zeros((self.batch_size, args.max_dec_steps), dtype=np.int32)
+    self.dec_padding_mask = np.zeros((self.batch_size, args.max_dec_steps), dtype=np.float32)
     self.dec_lens = np.zeros((self.batch_size), dtype=np.int32)
 
     # Fill in the numpy arrays
