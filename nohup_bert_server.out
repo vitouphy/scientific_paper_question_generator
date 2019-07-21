@@ -1,0 +1,168 @@
+nohup: ignoring input
+I:[35mVENTILATOR[0m:[__i:__i: 67]:freeze, optimize and export graph, could take a while...
+usage: /home/vitou/workspace/projects/scientific_paper_QG/.env/bin/bert-serving-start -model_dir /home/vitou/workspace/pre-trained/scibert_scivocab_uncased -show_tokens_to_client -num_worker=1 -max_seq_len 150
+                 ARG   VALUE
+__________________________________________________
+           ckpt_name = bert_model.ckpt
+         config_name = bert_config.json
+                cors = *
+                 cpu = False
+          device_map = []
+       do_lower_case = True
+  fixed_embed_length = False
+                fp16 = False
+ gpu_memory_fraction = 0.5
+       graph_tmp_dir = None
+    http_max_connect = 10
+           http_port = None
+        mask_cls_sep = False
+      max_batch_size = 256
+         max_seq_len = 150
+           model_dir = /home/vitou/workspace/pre-trained/scibert_scivocab_uncased
+          num_worker = 1
+       pooling_layer = [-2]
+    pooling_strategy = REDUCE_MEAN
+                port = 5555
+            port_out = 5556
+       prefetch_size = 10
+ priority_batch_size = 16
+show_tokens_to_client = True
+     tuned_model_dir = None
+             verbose = False
+                 xla = False
+
+I:[36mGRAPHOPT[0m:[gra:opt: 52]:model config: /home/vitou/workspace/pre-trained/scibert_scivocab_uncased/bert_config.json
+I:[36mGRAPHOPT[0m:[gra:opt: 55]:checkpoint: /home/vitou/workspace/pre-trained/scibert_scivocab_uncased/bert_model.ckpt
+I:[36mGRAPHOPT[0m:[gra:opt: 59]:build graph...
+I:[36mGRAPHOPT[0m:[gra:opt:128]:load parameters from checkpoint...
+I:[36mGRAPHOPT[0m:[gra:opt:132]:optimize...
+I:[36mGRAPHOPT[0m:[gra:opt:140]:freeze...
+I:[36mGRAPHOPT[0m:[gra:opt:145]:write graph to a tmp file: /tmp/tmpij48uumh
+I:[35mVENTILATOR[0m:[__i:__i: 75]:optimized graph is stored at: /tmp/tmpij48uumh
+I:[35mVENTILATOR[0m:[__i:_ru:129]:bind all sockets
+I:[35mVENTILATOR[0m:[__i:_ru:133]:open 8 ventilator-worker sockets
+I:[35mVENTILATOR[0m:[__i:_ru:136]:start the sink
+I:[32mSINK[0m:[__i:_ru:306]:ready
+I:[35mVENTILATOR[0m:[__i:_ge:222]:get devices
+I:[35mVENTILATOR[0m:[__i:_ge:255]:device map: 
+		worker  0 -> gpu  0
+I:[33mWORKER-0[0m:[__i:_ru:530]:use device gpu: 0, load graph from /tmp/tmpij48uumh
+I:[33mWORKER-0[0m:[__i:gen:558]:ready and listening!
+I:[35mVENTILATOR[0m:[__i:_ru:164]:all set, ready to serve request!
+I:[35mVENTILATOR[0m:[__i:_ru:180]:new config request	req id: 1	client: b'4529ffa4-81aa-4596-9669-027a09f94e23'
+I:[32mSINK[0m:[__i:_ru:348]:send config	client b'4529ffa4-81aa-4596-9669-027a09f94e23'
+I:[35mVENTILATOR[0m:[__i:_ru:196]:new encode request	req id: 2	size: 16	client: b'4529ffa4-81aa-4596-9669-027a09f94e23'
+I:[32mSINK[0m:[__i:_ru:342]:job register	size: 16	job id: b'4529ffa4-81aa-4596-9669-027a09f94e23#2'
+I:[33mWORKER-0[0m:[__i:gen:567]:new job	socket: 0	size: 16	client: b'4529ffa4-81aa-4596-9669-027a09f94e23#2'
+I:[32mSINK[0m:[__i:_ru:334]:collect b'TOKENS' b'4529ffa4-81aa-4596-9669-027a09f94e23#2' (E:0/T:16/A:16)
+I:[33mWORKER-0[0m:[__i:_ru:542]:job done	size: (16, 768)	client: b'4529ffa4-81aa-4596-9669-027a09f94e23#2'
+I:[32mSINK[0m:[__i:_ru:334]:collect b'EMBEDDINGS' b'4529ffa4-81aa-4596-9669-027a09f94e23#2' (E:16/T:16/A:16)
+I:[32mSINK[0m:[__i:_ru:357]:send back	size: 16	job id: b'4529ffa4-81aa-4596-9669-027a09f94e23#2'
+I:[35mVENTILATOR[0m:[__i:_ru:180]:new config request	req id: 1	client: b'5bfa45df-5e9b-4155-a479-c74a9ef1ad99'
+I:[32mSINK[0m:[__i:_ru:348]:send config	client b'5bfa45df-5e9b-4155-a479-c74a9ef1ad99'
+I:[35mVENTILATOR[0m:[__i:_ru:196]:new encode request	req id: 2	size: 16	client: b'5bfa45df-5e9b-4155-a479-c74a9ef1ad99'
+I:[32mSINK[0m:[__i:_ru:342]:job register	size: 16	job id: b'5bfa45df-5e9b-4155-a479-c74a9ef1ad99#2'
+I:[33mWORKER-0[0m:[__i:gen:567]:new job	socket: 0	size: 16	client: b'5bfa45df-5e9b-4155-a479-c74a9ef1ad99#2'
+I:[32mSINK[0m:[__i:_ru:334]:collect b'TOKENS' b'5bfa45df-5e9b-4155-a479-c74a9ef1ad99#2' (E:0/T:16/A:16)
+I:[33mWORKER-0[0m:[__i:_ru:542]:job done	size: (16, 768)	client: b'5bfa45df-5e9b-4155-a479-c74a9ef1ad99#2'
+I:[32mSINK[0m:[__i:_ru:334]:collect b'EMBEDDINGS' b'5bfa45df-5e9b-4155-a479-c74a9ef1ad99#2' (E:16/T:16/A:16)
+I:[32mSINK[0m:[__i:_ru:357]:send back	size: 16	job id: b'5bfa45df-5e9b-4155-a479-c74a9ef1ad99#2'
+I:[35mVENTILATOR[0m:[__i:_ru:180]:new config request	req id: 1	client: b'86c170a4-7029-461f-875e-0518937e0b44'
+I:[32mSINK[0m:[__i:_ru:348]:send config	client b'86c170a4-7029-461f-875e-0518937e0b44'
+I:[35mVENTILATOR[0m:[__i:_ru:196]:new encode request	req id: 2	size: 16	client: b'86c170a4-7029-461f-875e-0518937e0b44'
+I:[32mSINK[0m:[__i:_ru:342]:job register	size: 16	job id: b'86c170a4-7029-461f-875e-0518937e0b44#2'
+I:[33mWORKER-0[0m:[__i:gen:567]:new job	socket: 0	size: 16	client: b'86c170a4-7029-461f-875e-0518937e0b44#2'
+I:[32mSINK[0m:[__i:_ru:334]:collect b'TOKENS' b'86c170a4-7029-461f-875e-0518937e0b44#2' (E:0/T:16/A:16)
+I:[33mWORKER-0[0m:[__i:_ru:542]:job done	size: (16, 768)	client: b'86c170a4-7029-461f-875e-0518937e0b44#2'
+I:[32mSINK[0m:[__i:_ru:334]:collect b'EMBEDDINGS' b'86c170a4-7029-461f-875e-0518937e0b44#2' (E:16/T:16/A:16)
+I:[32mSINK[0m:[__i:_ru:357]:send back	size: 16	job id: b'86c170a4-7029-461f-875e-0518937e0b44#2'
+I:[35mVENTILATOR[0m:[__i:_ru:180]:new config request	req id: 1	client: b'c2674b80-83ea-42ab-93c7-26d1bcef2321'
+I:[32mSINK[0m:[__i:_ru:348]:send config	client b'c2674b80-83ea-42ab-93c7-26d1bcef2321'
+I:[35mVENTILATOR[0m:[__i:_ru:196]:new encode request	req id: 2	size: 16	client: b'c2674b80-83ea-42ab-93c7-26d1bcef2321'
+I:[32mSINK[0m:[__i:_ru:342]:job register	size: 16	job id: b'c2674b80-83ea-42ab-93c7-26d1bcef2321#2'
+I:[33mWORKER-0[0m:[__i:gen:567]:new job	socket: 0	size: 16	client: b'c2674b80-83ea-42ab-93c7-26d1bcef2321#2'
+I:[32mSINK[0m:[__i:_ru:334]:collect b'TOKENS' b'c2674b80-83ea-42ab-93c7-26d1bcef2321#2' (E:0/T:16/A:16)
+I:[33mWORKER-0[0m:[__i:_ru:542]:job done	size: (16, 768)	client: b'c2674b80-83ea-42ab-93c7-26d1bcef2321#2'
+I:[32mSINK[0m:[__i:_ru:334]:collect b'EMBEDDINGS' b'c2674b80-83ea-42ab-93c7-26d1bcef2321#2' (E:16/T:16/A:16)
+I:[32mSINK[0m:[__i:_ru:357]:send back	size: 16	job id: b'c2674b80-83ea-42ab-93c7-26d1bcef2321#2'
+I:[35mVENTILATOR[0m:[__i:_ru:180]:new config request	req id: 1	client: b'798b7574-764c-4196-bbbb-7b02a58b50b9'
+I:[32mSINK[0m:[__i:_ru:348]:send config	client b'798b7574-764c-4196-bbbb-7b02a58b50b9'
+I:[35mVENTILATOR[0m:[__i:_ru:196]:new encode request	req id: 2	size: 16	client: b'798b7574-764c-4196-bbbb-7b02a58b50b9'
+I:[32mSINK[0m:[__i:_ru:342]:job register	size: 16	job id: b'798b7574-764c-4196-bbbb-7b02a58b50b9#2'
+I:[33mWORKER-0[0m:[__i:gen:567]:new job	socket: 0	size: 16	client: b'798b7574-764c-4196-bbbb-7b02a58b50b9#2'
+I:[32mSINK[0m:[__i:_ru:334]:collect b'TOKENS' b'798b7574-764c-4196-bbbb-7b02a58b50b9#2' (E:0/T:16/A:16)
+I:[33mWORKER-0[0m:[__i:_ru:542]:job done	size: (16, 768)	client: b'798b7574-764c-4196-bbbb-7b02a58b50b9#2'
+I:[32mSINK[0m:[__i:_ru:334]:collect b'EMBEDDINGS' b'798b7574-764c-4196-bbbb-7b02a58b50b9#2' (E:16/T:16/A:16)
+I:[32mSINK[0m:[__i:_ru:357]:send back	size: 16	job id: b'798b7574-764c-4196-bbbb-7b02a58b50b9#2'
+I:[35mVENTILATOR[0m:[__i:_ru:180]:new config request	req id: 1	client: b'6861931b-aff0-4b7b-bf78-a42bed44e5d1'
+I:[32mSINK[0m:[__i:_ru:348]:send config	client b'6861931b-aff0-4b7b-bf78-a42bed44e5d1'
+I:[35mVENTILATOR[0m:[__i:_ru:196]:new encode request	req id: 2	size: 16	client: b'6861931b-aff0-4b7b-bf78-a42bed44e5d1'
+I:[32mSINK[0m:[__i:_ru:342]:job register	size: 16	job id: b'6861931b-aff0-4b7b-bf78-a42bed44e5d1#2'
+I:[33mWORKER-0[0m:[__i:gen:567]:new job	socket: 0	size: 16	client: b'6861931b-aff0-4b7b-bf78-a42bed44e5d1#2'
+I:[32mSINK[0m:[__i:_ru:334]:collect b'TOKENS' b'6861931b-aff0-4b7b-bf78-a42bed44e5d1#2' (E:0/T:16/A:16)
+I:[33mWORKER-0[0m:[__i:_ru:542]:job done	size: (16, 768)	client: b'6861931b-aff0-4b7b-bf78-a42bed44e5d1#2'
+I:[32mSINK[0m:[__i:_ru:334]:collect b'EMBEDDINGS' b'6861931b-aff0-4b7b-bf78-a42bed44e5d1#2' (E:16/T:16/A:16)
+I:[32mSINK[0m:[__i:_ru:357]:send back	size: 16	job id: b'6861931b-aff0-4b7b-bf78-a42bed44e5d1#2'
+I:[35mVENTILATOR[0m:[__i:_ru:196]:new encode request	req id: 3	size: 16	client: b'6861931b-aff0-4b7b-bf78-a42bed44e5d1'
+I:[32mSINK[0m:[__i:_ru:342]:job register	size: 16	job id: b'6861931b-aff0-4b7b-bf78-a42bed44e5d1#3'
+I:[33mWORKER-0[0m:[__i:gen:567]:new job	socket: 0	size: 16	client: b'6861931b-aff0-4b7b-bf78-a42bed44e5d1#3'
+I:[32mSINK[0m:[__i:_ru:334]:collect b'TOKENS' b'6861931b-aff0-4b7b-bf78-a42bed44e5d1#3' (E:0/T:16/A:16)
+I:[33mWORKER-0[0m:[__i:_ru:542]:job done	size: (16, 768)	client: b'6861931b-aff0-4b7b-bf78-a42bed44e5d1#3'
+I:[32mSINK[0m:[__i:_ru:334]:collect b'EMBEDDINGS' b'6861931b-aff0-4b7b-bf78-a42bed44e5d1#3' (E:16/T:16/A:16)
+I:[32mSINK[0m:[__i:_ru:357]:send back	size: 16	job id: b'6861931b-aff0-4b7b-bf78-a42bed44e5d1#3'
+I:[35mVENTILATOR[0m:[__i:_ru:196]:new encode request	req id: 4	size: 16	client: b'6861931b-aff0-4b7b-bf78-a42bed44e5d1'
+I:[33mWORKER-0[0m:[__i:gen:567]:new job	socket: 0	size: 16	client: b'6861931b-aff0-4b7b-bf78-a42bed44e5d1#4'
+I:[32mSINK[0m:[__i:_ru:342]:job register	size: 16	job id: b'6861931b-aff0-4b7b-bf78-a42bed44e5d1#4'
+I:[32mSINK[0m:[__i:_ru:334]:collect b'TOKENS' b'6861931b-aff0-4b7b-bf78-a42bed44e5d1#4' (E:0/T:16/A:16)
+I:[33mWORKER-0[0m:[__i:_ru:542]:job done	size: (16, 768)	client: b'6861931b-aff0-4b7b-bf78-a42bed44e5d1#4'
+I:[32mSINK[0m:[__i:_ru:334]:collect b'EMBEDDINGS' b'6861931b-aff0-4b7b-bf78-a42bed44e5d1#4' (E:16/T:16/A:16)
+I:[32mSINK[0m:[__i:_ru:357]:send back	size: 16	job id: b'6861931b-aff0-4b7b-bf78-a42bed44e5d1#4'
+I:[35mVENTILATOR[0m:[__i:_ru:196]:new encode request	req id: 5	size: 16	client: b'6861931b-aff0-4b7b-bf78-a42bed44e5d1'
+I:[32mSINK[0m:[__i:_ru:342]:job register	size: 16	job id: b'6861931b-aff0-4b7b-bf78-a42bed44e5d1#5'
+I:[33mWORKER-0[0m:[__i:gen:567]:new job	socket: 0	size: 16	client: b'6861931b-aff0-4b7b-bf78-a42bed44e5d1#5'
+I:[32mSINK[0m:[__i:_ru:334]:collect b'TOKENS' b'6861931b-aff0-4b7b-bf78-a42bed44e5d1#5' (E:0/T:16/A:16)
+I:[33mWORKER-0[0m:[__i:_ru:542]:job done	size: (16, 768)	client: b'6861931b-aff0-4b7b-bf78-a42bed44e5d1#5'
+I:[32mSINK[0m:[__i:_ru:334]:collect b'EMBEDDINGS' b'6861931b-aff0-4b7b-bf78-a42bed44e5d1#5' (E:16/T:16/A:16)
+I:[32mSINK[0m:[__i:_ru:357]:send back	size: 16	job id: b'6861931b-aff0-4b7b-bf78-a42bed44e5d1#5'
+I:[35mVENTILATOR[0m:[__i:_ru:196]:new encode request	req id: 6	size: 16	client: b'6861931b-aff0-4b7b-bf78-a42bed44e5d1'
+I:[32mSINK[0m:[__i:_ru:342]:job register	size: 16	job id: b'6861931b-aff0-4b7b-bf78-a42bed44e5d1#6'
+I:[33mWORKER-0[0m:[__i:gen:567]:new job	socket: 0	size: 16	client: b'6861931b-aff0-4b7b-bf78-a42bed44e5d1#6'
+I:[32mSINK[0m:[__i:_ru:334]:collect b'TOKENS' b'6861931b-aff0-4b7b-bf78-a42bed44e5d1#6' (E:0/T:16/A:16)
+I:[33mWORKER-0[0m:[__i:_ru:542]:job done	size: (16, 768)	client: b'6861931b-aff0-4b7b-bf78-a42bed44e5d1#6'
+I:[32mSINK[0m:[__i:_ru:334]:collect b'EMBEDDINGS' b'6861931b-aff0-4b7b-bf78-a42bed44e5d1#6' (E:16/T:16/A:16)
+I:[32mSINK[0m:[__i:_ru:357]:send back	size: 16	job id: b'6861931b-aff0-4b7b-bf78-a42bed44e5d1#6'
+I:[35mVENTILATOR[0m:[__i:_ru:196]:new encode request	req id: 7	size: 16	client: b'6861931b-aff0-4b7b-bf78-a42bed44e5d1'
+I:[32mSINK[0m:[__i:_ru:342]:job register	size: 16	job id: b'6861931b-aff0-4b7b-bf78-a42bed44e5d1#7'
+I:[33mWORKER-0[0m:[__i:gen:567]:new job	socket: 0	size: 16	client: b'6861931b-aff0-4b7b-bf78-a42bed44e5d1#7'
+I:[32mSINK[0m:[__i:_ru:334]:collect b'TOKENS' b'6861931b-aff0-4b7b-bf78-a42bed44e5d1#7' (E:0/T:16/A:16)
+I:[33mWORKER-0[0m:[__i:_ru:542]:job done	size: (16, 768)	client: b'6861931b-aff0-4b7b-bf78-a42bed44e5d1#7'
+I:[32mSINK[0m:[__i:_ru:334]:collect b'EMBEDDINGS' b'6861931b-aff0-4b7b-bf78-a42bed44e5d1#7' (E:16/T:16/A:16)
+I:[32mSINK[0m:[__i:_ru:357]:send back	size: 16	job id: b'6861931b-aff0-4b7b-bf78-a42bed44e5d1#7'
+I:[35mVENTILATOR[0m:[__i:_ru:196]:new encode request	req id: 8	size: 16	client: b'6861931b-aff0-4b7b-bf78-a42bed44e5d1'
+I:[32mSINK[0m:[__i:_ru:342]:job register	size: 16	job id: b'6861931b-aff0-4b7b-bf78-a42bed44e5d1#8'
+I:[33mWORKER-0[0m:[__i:gen:567]:new job	socket: 0	size: 16	client: b'6861931b-aff0-4b7b-bf78-a42bed44e5d1#8'
+I:[32mSINK[0m:[__i:_ru:334]:collect b'TOKENS' b'6861931b-aff0-4b7b-bf78-a42bed44e5d1#8' (E:0/T:16/A:16)
+I:[33mWORKER-0[0m:[__i:_ru:542]:job done	size: (16, 768)	client: b'6861931b-aff0-4b7b-bf78-a42bed44e5d1#8'
+I:[32mSINK[0m:[__i:_ru:334]:collect b'EMBEDDINGS' b'6861931b-aff0-4b7b-bf78-a42bed44e5d1#8' (E:16/T:16/A:16)
+I:[32mSINK[0m:[__i:_ru:357]:send back	size: 16	job id: b'6861931b-aff0-4b7b-bf78-a42bed44e5d1#8'
+I:[35mVENTILATOR[0m:[__i:_ru:196]:new encode request	req id: 9	size: 16	client: b'6861931b-aff0-4b7b-bf78-a42bed44e5d1'
+I:[32mSINK[0m:[__i:_ru:342]:job register	size: 16	job id: b'6861931b-aff0-4b7b-bf78-a42bed44e5d1#9'
+I:[33mWORKER-0[0m:[__i:gen:567]:new job	socket: 0	size: 16	client: b'6861931b-aff0-4b7b-bf78-a42bed44e5d1#9'
+I:[32mSINK[0m:[__i:_ru:334]:collect b'TOKENS' b'6861931b-aff0-4b7b-bf78-a42bed44e5d1#9' (E:0/T:16/A:16)
+I:[33mWORKER-0[0m:[__i:_ru:542]:job done	size: (16, 768)	client: b'6861931b-aff0-4b7b-bf78-a42bed44e5d1#9'
+I:[32mSINK[0m:[__i:_ru:334]:collect b'EMBEDDINGS' b'6861931b-aff0-4b7b-bf78-a42bed44e5d1#9' (E:16/T:16/A:16)
+I:[32mSINK[0m:[__i:_ru:357]:send back	size: 16	job id: b'6861931b-aff0-4b7b-bf78-a42bed44e5d1#9'
+I:[35mVENTILATOR[0m:[__i:_ru:196]:new encode request	req id: 10	size: 16	client: b'6861931b-aff0-4b7b-bf78-a42bed44e5d1'
+I:[33mWORKER-0[0m:[__i:gen:567]:new job	socket: 0	size: 16	client: b'6861931b-aff0-4b7b-bf78-a42bed44e5d1#10'
+I:[32mSINK[0m:[__i:_ru:342]:job register	size: 16	job id: b'6861931b-aff0-4b7b-bf78-a42bed44e5d1#10'
+I:[32mSINK[0m:[__i:_ru:334]:collect b'TOKENS' b'6861931b-aff0-4b7b-bf78-a42bed44e5d1#10' (E:0/T:16/A:16)
+I:[33mWORKER-0[0m:[__i:_ru:542]:job done	size: (16, 768)	client: b'6861931b-aff0-4b7b-bf78-a42bed44e5d1#10'
+I:[32mSINK[0m:[__i:_ru:334]:collect b'EMBEDDINGS' b'6861931b-aff0-4b7b-bf78-a42bed44e5d1#10' (E:16/T:16/A:16)
+I:[32mSINK[0m:[__i:_ru:357]:send back	size: 16	job id: b'6861931b-aff0-4b7b-bf78-a42bed44e5d1#10'
+I:[35mVENTILATOR[0m:[__i:_ru:196]:new encode request	req id: 11	size: 16	client: b'6861931b-aff0-4b7b-bf78-a42bed44e5d1'
+I:[32mSINK[0m:[__i:_ru:342]:job register	size: 16	job id: b'6861931b-aff0-4b7b-bf78-a42bed44e5d1#11'
+I:[33mWORKER-0[0m:[__i:gen:567]:new job	socket: 0	size: 16	client: b'6861931b-aff0-4b7b-bf78-a42bed44e5d1#11'
+I:[32mSINK[0m:[__i:_ru:334]:collect b'TOKENS' b'6861931b-aff0-4b7b-bf78-a42bed44e5d1#11' (E:0/T:16/A:16)
+I:[33mWORKER-0[0m:[__i:_ru:542]:job done	size: (16, 768)	client: b'6861931b-aff0-4b7b-bf78-a42bed44e5d1#11'
+I:[32mSINK[0m:[__i:_ru:334]:collect b'EMBEDDINGS' b'6861931b-aff0-4b7b-bf78-a42bed44e5d1#11' (E:16/T:16/A:16)
+I:[32mSINK[0m:[__i:_ru:357]:send back	size: 16	job id: b'6861931b-aff0-4b7b-bf78-a42bed44e5d1#11'
