@@ -26,6 +26,8 @@ class BertLSTMModel(nn.Module):
         # Encoding sentences
         encoded_state = self.bertClient.encode(enc_batch, is_tokenized=True)
         h_0 = torch.Tensor(encoded_state).unsqueeze(0)  # batch_size * 768
+        if use_cuda:
+            h_0 = h_0.cuda()
         hidden_state = (h_0, h_0)
 
         loss = 0
@@ -33,8 +35,8 @@ class BertLSTMModel(nn.Module):
             # Pass info to decoder
             x = dec_batch[:, t]  # Batch * 1 (for each timestep)
             output, hidden_state = self.decoder(x, hidden_state)  # Output: batch * vocab_size (prob.)
-            y = torch.LongTensor(dec_batch[:, t+1])  # y : batch * 1
-
+            #y = torch.LongTensor(dec_batch[:, t+1])  # y : batch * 1
+            y = dec_batch[:, t+1]
             # Compute the loss
             rows_loss = self.criterion(output, y)
             batch_loss = (dec_padding_mask[:,t] * rows_loss).mean()  # Mask the output

@@ -2,6 +2,9 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
+from data_util.argparser import args
+use_cuda = args.use_gpu and torch.cuda.is_available()
+
 class DecoderLSTM(nn.Module):
     def __init__(self, hidden_size, output_size):
         super(DecoderLSTM, self).__init__()
@@ -15,7 +18,7 @@ class DecoderLSTM(nn.Module):
         self.softmax = nn.LogSoftmax(dim=2)
 
     def forward(self, input, hidden):
-        input = torch.LongTensor(input)  # batch * 1
+        # input = torch.LongTensor(input)  # batch * 1
         input = self.embedding(input)  # batch * embedding
         input = input.unsqueeze(1)  # batch * seq * embedding
         output, hidden = self.lstm(input, hidden)
