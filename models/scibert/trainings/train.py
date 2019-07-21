@@ -39,7 +39,11 @@ class Train(object):
             self.model = self.model.cuda()
 
         self.model_optimizer = torch.optim.Adagrad(self.model.parameters(), lr=args.lr)
-        self.summary_writer = tf.summary.FileWriter(args.logs)
+
+        train_logs = os.path.join(args.logs, "train_logs")
+        eval_logs = os.path.join(args.logs, "eval_logs")
+        self.train_summary_writer = tf.summary.FileWriter(train_logs)
+        self.eval_summary_writer = tf.summary.FileWriter(eval_logs)
 
 
     def trainOneBatch(self, batch):
@@ -55,10 +59,11 @@ class Train(object):
             batch = self.batcher.next_batch()
             loss = self.trainOneBatch(batch)
             running_avg_loss = calc_running_avg_loss(loss, running_avg_loss, decay=0.999)
-            save_running_avg_loss("train", running_avg_loss, t, self.summary_writer)
+            save_running_avg_loss(running_avg_loss, t, self.train_summary_writer)
             print ("timestep: {}, loss: {}".format(t, running_avg_loss))
+
             # Save the model every 1000 steps
-            if (t+1) % 10 == 0:
+            if (t+1) % args.save_every_itr == 0:
                 self.save_checkpoint(t, running_avg_loss)
                 self.model.eval()
                 self.evaluate(t)
@@ -77,7 +82,7 @@ class Train(object):
 
     def evaluate(self, timestep):
         self.eval_batcher = Batcher(args.eval_data_path, self.vocab, mode='eval',
-                               batch_size=2, single_pass=True)
+                               batch_size=args.batch_size, single_pass=True)
         time.sleep(15)
         batch = self.eval_batcher.next_batch()
         running_avg_loss = 0
@@ -86,15 +91,11 @@ class Train(object):
             loss = loss / args.max_dec_steps
             running_avg_loss = calc_running_avg_loss(loss, running_avg_loss)
             batch = self.eval_batcher.next_batch()
+
         # Save the evaluation score
         print ("Evaluation Loss: {}".format(running_avg_loss))
-        save_running_avg_loss("eval", running_avg_loss, timestep, self.summary_writer)
+        save_running_avg_loss(running_avg_loss, timestep, self.eval_summary_writer)
 
 if __name__ == '__main__':
     train_processor = Train()
     train_processor.trainIters()
-            # print ("\n\n==============")
-            # print ("Ground Truth:")
-            # print (ids2words(batch.dec_batch[0][1:].tolist(), self.vocab))
-            # print ("Generated:")
-            # print (ids2words(answers[0].tolist(), self.vocab))

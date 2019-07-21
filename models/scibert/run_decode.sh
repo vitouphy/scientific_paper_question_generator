@@ -12,5 +12,6 @@ python3 trainings/decode.py \
 --decode_data_path=${DATA_FOLDER}/chunked/test/test_*.bin \
 --vocab_path=${DATA_FOLDER}/vocabs.txt \
 --logs=$LOG \
---checkpoint=${LOG}/checkpoint_9 \
---output_name=checkpoint_9
+--checkpoint=${LOG}/checkpoint_159 \
+--output_name=checkpoint_159_b5 \
+--beam_size=5

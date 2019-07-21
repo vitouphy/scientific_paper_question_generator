@@ -2,8 +2,6 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-from data_util.argparser import args
-use_cuda = args.use_gpu and torch.cuda.is_available()
 
 class DecoderLSTM(nn.Module):
     def __init__(self, hidden_size, output_size):
