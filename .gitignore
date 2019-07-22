@@ -13,3 +13,4 @@ server_tmp/
 results/
 tmp*/
 nohup*
+bert_service/
