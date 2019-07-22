@@ -1,6 +1,6 @@
 nohup: ignoring input
 I:[35mVENTILATOR[0m:[__i:__i: 67]:freeze, optimize and export graph, could take a while...
-usage: /home/vitou/workspace/projects/scientific_paper_QG/.env/bin/bert-serving-start -model_dir /home/vitou/workspace/pre-trained/scibert_scivocab_uncased -show_tokens_to_client -num_worker=4 -max_seq_len 150
+usage: /home/vitou/workspace/projects/scientific_paper_QG/.env/bin/bert-serving-start -model_dir /home/vitou/workspace/pre-trained/scibert_scivocab_uncased -show_tokens_to_client -num_worker=1 -max_seq_len 150
                  ARG   VALUE
 __________________________________________________
            ckpt_name = bert_model.ckpt
@@ -19,7 +19,7 @@ __________________________________________________
       max_batch_size = 256
          max_seq_len = 150
            model_dir = /home/vitou/workspace/pre-trained/scibert_scivocab_uncased
-          num_worker = 4
+          num_worker = 1
        pooling_layer = [-2]
     pooling_strategy = REDUCE_MEAN
                 port = 5555
@@ -37,6 +37,15 @@ I:[36mGRAPHOPT[0m:[gra:opt: 59]:build graph...
 I:[36mGRAPHOPT[0m:[gra:opt:128]:load parameters from checkpoint...
 I:[36mGRAPHOPT[0m:[gra:opt:132]:optimize...
 I:[36mGRAPHOPT[0m:[gra:opt:140]:freeze...
-I:[36mGRAPHOPT[0m:[gra:opt:145]:write graph to a tmp file: /tmp/tmpsy2q9snm
-I:[35mVENTILATOR[0m:[__i:__i: 75]:optimized graph is stored at: /tmp/tmpsy2q9snm
+I:[36mGRAPHOPT[0m:[gra:opt:145]:write graph to a tmp file: /tmp/tmp2h48ntge
+I:[35mVENTILATOR[0m:[__i:__i: 75]:optimized graph is stored at: /tmp/tmp2h48ntge
 I:[35mVENTILATOR[0m:[__i:_ru:129]:bind all sockets
+I:[35mVENTILATOR[0m:[__i:_ru:133]:open 8 ventilator-worker sockets
+I:[35mVENTILATOR[0m:[__i:_ru:136]:start the sink
+I:[32mSINK[0m:[__i:_ru:306]:ready
+I:[35mVENTILATOR[0m:[__i:_ge:222]:get devices
+I:[35mVENTILATOR[0m:[__i:_ge:255]:device map: 
+		worker  0 -> gpu  0
+I:[33mWORKER-0[0m:[__i:_ru:530]:use device gpu: 0, load graph from /tmp/tmp2h48ntge
+I:[33mWORKER-0[0m:[__i:gen:558]:ready and listening!
+I:[35mVENTILATOR[0m:[__i:_ru:164]:all set, ready to serve request!

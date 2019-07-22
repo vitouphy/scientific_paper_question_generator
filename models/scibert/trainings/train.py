@@ -67,15 +67,16 @@ class Train(object):
             if (t+1) % 100 == 0:
                 time_run = time.time() - s_time
                 s_time = time.time()
-                print ("timestep: {}, loss: {}, time: {}s".format(t, running_avg_loss))
+                print ("timestep: {}, loss: {}, time: {}s".format(t, running_avg_loss, time_run))
                 sys.stdout.flush()
 
             # Save the model every 1000 steps
             if (t+1) % args.save_every_itr == 0:
-                self.save_checkpoint(t, running_avg_loss)
-                self.model.eval()
-                self.evaluate(t)
-                self.model.train()
+                with torch.no_grad():
+                    self.save_checkpoint(t, running_avg_loss)
+                    self.model.eval()
+                    self.evaluate(t)
+                    self.model.train()
 
 
     def save_checkpoint(self, step, loss):
@@ -89,7 +90,7 @@ class Train(object):
         }, checkpoint_path)
 
     def evaluate(self, timestep):
-        self.eval_batcher = Batcher(args.eval_data_path, self.vocab, mode='eval',
+        self.eval_batcher = Batcher(args.eval_data_path, self.vocab, mode='train',
                                batch_size=args.batch_size, single_pass=True)
         time.sleep(15)
         t1 = time.time()

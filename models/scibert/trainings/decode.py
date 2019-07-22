@@ -3,6 +3,7 @@ from __future__ import unicode_literals, print_function, division
 import os
 import time
 import argparse
+import sys
 
 import tensorflow as tf
 from torch.nn.utils import clip_grad_norm_
@@ -71,6 +72,8 @@ class Decoder(object):
             # Encoding sentences
             encoded_state = self.bertClient.encode(enc_batch, is_tokenized=True)
             h_0 = torch.Tensor(encoded_state).unsqueeze(0)  # 1 *batch_size * 768 (hidden => batch second)
+            if use_cuda:
+                h_0 = h_0.cuda()
             hidden_state = (h_0, h_0)
 
             # Generate answer
@@ -92,7 +95,7 @@ class Decoder(object):
                 for i, each_decode in enumerate(output):
                     prev_proba = proba_list[i]
                     prev_generated = generated_list[i]
-                    arr = each_decode.detach().numpy()  # log-probab of each word
+                    arr = each_decode.detach().cpu().numpy()  # log-probab of each word
                     indices = arr.argsort()[-self.beam_size:][::-1]  #index
                     for idx in indices:
                         proba = arr[idx] + proba_list[i]  # new probab and prev
@@ -106,6 +109,9 @@ class Decoder(object):
                 new_generated = []
                 new_hidden = torch.Tensor()
                 new_cell = torch.Tensor()
+                if use_cuda:
+                    new_hidden = new_hidden.cuda()
+                    new_cell = new_cell.cuda()
 
                 # Select top b sequences
                 for state in states[:self.beam_size]:
@@ -129,8 +135,9 @@ class Decoder(object):
             sentence = ids2words(answer, self.vocab)
             self.file.write("{}\n".format(sentence))
             print ("Writing line #{} to file ...".format(count+1))
-            count += 1
+            sys.stdout.flush()
 
+            count += 1
             batch = self.batcher.next_batch()
 
 

@@ -1,0 +1,822 @@
+max_size of vocab was specified as 10000; we now have 10000 words. Stopping reading.
+Finished constructing vocabulary of 10000 total words. Last word added: f5
+timestep: 99, loss: 6.334854699827762, time: 71.9061975479126s
+timestep: 199, loss: 6.1854224386095735, time: 72.04126858711243s
+timestep: 299, loss: 6.005111149704299, time: 71.72193574905396s
+timestep: 399, loss: 5.823146967968149, time: 71.76663756370544s
+timestep: 499, loss: 5.636793985056555, time: 71.8821861743927s
+timestep: 599, loss: 5.457089283693542, time: 71.93705415725708s
+timestep: 699, loss: 5.284125779267941, time: 71.69617319107056s
+timestep: 799, loss: 5.121512119240495, time: 71.70943760871887s
+timestep: 899, loss: 4.968233785543575, time: 71.78353929519653s
+timestep: 999, loss: 4.823204350704729, time: 72.02808904647827s
+WARNING:tensorflow:Bucket input queue is empty when calling next_batch. Bucket queue size: 0, Input queue size: 0
+example_generator completed reading all datafiles. No more data.
+Evaluation Loss: 3.4138095378875732, Time: 164.90423727035522s
+timestep: 1099, loss: 4.689518870242482, time: 252.94306755065918s
+timestep: 1199, loss: 4.563970526111941, time: 71.65432381629944s
+timestep: 1299, loss: 4.4452998869128475, time: 71.72723627090454s
+timestep: 1399, loss: 4.33432131898509, time: 71.6306722164154s
+timestep: 1499, loss: 4.233730772637385, time: 72.05017256736755s
+timestep: 1599, loss: 4.138818401411515, time: 71.82088899612427s
+timestep: 1699, loss: 4.048199053811333, time: 71.70755648612976s
+timestep: 1799, loss: 3.9655515432774053, time: 71.60632944107056s
+timestep: 1899, loss: 3.888762362274923, time: 72.0344717502594s
+timestep: 1999, loss: 3.8176965392413584, time: 71.96468019485474s
+WARNING:tensorflow:Bucket input queue is empty when calling next_batch. Bucket queue size: 0, Input queue size: 0
+example_generator completed reading all datafiles. No more data.
+Evaluation Loss: 3.111480236053467, Time: 165.42712473869324s
+timestep: 2099, loss: 3.7528848433166377, time: 253.18358898162842s
+timestep: 2199, loss: 3.692061966142185, time: 72.05799412727356s
+timestep: 2299, loss: 3.6340271396412067, time: 71.84057879447937s
+timestep: 2399, loss: 3.580962863527932, time: 71.8877182006836s
+timestep: 2499, loss: 3.5300327604537283, time: 71.66714978218079s
+timestep: 2599, loss: 3.4840637637728102, time: 71.39393019676208s
+timestep: 2699, loss: 3.440761703218411, time: 71.94304466247559s
+timestep: 2799, loss: 3.3998882745970387, time: 71.94879794120789s
+timestep: 2899, loss: 3.3597995768699973, time: 71.79721212387085s
+timestep: 2999, loss: 3.3241276612251807, time: 71.97530007362366s
+WARNING:tensorflow:Bucket input queue is empty when calling next_batch. Bucket queue size: 0, Input queue size: 0
+example_generator completed reading all datafiles. No more data.
+Evaluation Loss: 2.965230703353882, Time: 165.3570637702942s
+timestep: 3099, loss: 3.2909504299293606, time: 253.2300899028778s
+timestep: 3199, loss: 3.2593603329189857, time: 71.79851746559143s
+timestep: 3299, loss: 3.231060129441239, time: 71.79097628593445s
+timestep: 3399, loss: 3.206153039432058, time: 71.81363725662231s
+timestep: 3499, loss: 3.179895984940712, time: 71.98368668556213s
+timestep: 3599, loss: 3.1564572659082017, time: 72.04413604736328s
+timestep: 3699, loss: 3.13513119087121, time: 71.76004147529602s
+timestep: 3799, loss: 3.1149278671758567, time: 71.96491599082947s
+timestep: 3899, loss: 3.0945050866889727, time: 71.78619837760925s
+timestep: 3999, loss: 3.0756758539236384, time: 72.20612692832947s
+WARNING:tensorflow:Bucket input queue is empty when calling next_batch. Bucket queue size: 0, Input queue size: 0
+example_generator completed reading all datafiles. No more data.
+Evaluation Loss: 2.884206771850586, Time: 165.0990240573883s
+timestep: 4099, loss: 3.058933611686783, time: 253.19619941711426s
+timestep: 4199, loss: 3.042520517585249, time: 71.62597823143005s
+timestep: 4299, loss: 3.0265591241908227, time: 71.96820974349976s
+timestep: 4399, loss: 3.0035596582660875, time: 71.94905304908752s
+timestep: 4499, loss: 2.9700595362883844, time: 71.93611001968384s
+timestep: 4599, loss: 2.9412910406088764, time: 71.63350415229797s
+timestep: 4699, loss: 2.9205343262596855, time: 71.82915449142456s
+timestep: 4799, loss: 2.8994111888238865, time: 71.95271587371826s
+timestep: 4899, loss: 2.879424819293146, time: 71.82872915267944s
+timestep: 4999, loss: 2.858292262351647, time: 71.65018939971924s
+WARNING:tensorflow:Bucket input queue is empty when calling next_batch. Bucket queue size: 0, Input queue size: 0
+example_generator completed reading all datafiles. No more data.
+Evaluation Loss: 2.8217580318450928, Time: 164.97527956962585s
+timestep: 5099, loss: 2.838465293836942, time: 253.13756918907166s
+timestep: 5199, loss: 2.824946148357937, time: 71.83487343788147s
+timestep: 5299, loss: 2.8097057849637053, time: 71.8778064250946s
+timestep: 5399, loss: 2.7975897306132422, time: 72.08138298988342s
+timestep: 5499, loss: 2.784279773879394, time: 71.852224111557s
+timestep: 5599, loss: 2.77077707307116, time: 71.785564661026s
+timestep: 5699, loss: 2.75739801054438, time: 71.9466381072998s
+timestep: 5799, loss: 2.7465604472030773, time: 71.8870780467987s
+timestep: 5899, loss: 2.739068766191694, time: 71.82871460914612s
+timestep: 5999, loss: 2.731045366840889, time: 71.86291313171387s
+WARNING:tensorflow:Bucket input queue is empty when calling next_batch. Bucket queue size: 0, Input queue size: 0
+example_generator completed reading all datafiles. No more data.
+Evaluation Loss: 2.7734577655792236, Time: 165.3853189945221s
+timestep: 6099, loss: 2.7243635077974764, time: 253.26233863830566s
+timestep: 6199, loss: 2.7151845100759036, time: 71.80708861351013s
+timestep: 6299, loss: 2.7067760548541875, time: 71.67489171028137s
+timestep: 6399, loss: 2.699565243678333, time: 71.89021706581116s
+timestep: 6499, loss: 2.694426860207769, time: 71.938227891922s
+timestep: 6599, loss: 2.6868643240621526, time: 71.9225857257843s
+timestep: 6699, loss: 2.6784264164579286, time: 71.81846857070923s
+timestep: 6799, loss: 2.673602118538087, time: 72.01510715484619s
+timestep: 6899, loss: 2.6693739507758307, time: 71.83562779426575s
+timestep: 6999, loss: 2.664123078141329, time: 71.96374106407166s
+WARNING:tensorflow:Bucket input queue is empty when calling next_batch. Bucket queue size: 0, Input queue size: 0
+example_generator completed reading all datafiles. No more data.
+Evaluation Loss: 2.730205535888672, Time: 165.05946826934814s
+timestep: 7099, loss: 2.6590589433261256, time: 253.1167016029358s
+timestep: 7199, loss: 2.6524388276588104, time: 71.84962701797485s
+timestep: 7299, loss: 2.6473919310142286, time: 72.19680738449097s
+timestep: 7399, loss: 2.645200618572904, time: 71.76090264320374s
+timestep: 7499, loss: 2.642162236026034, time: 71.96801257133484s
+timestep: 7599, loss: 2.6388443728970596, time: 71.86616706848145s
+timestep: 7699, loss: 2.6370378975089555, time: 71.94347786903381s
+timestep: 7799, loss: 2.63240501505618, time: 72.04423141479492s
+timestep: 7899, loss: 2.6274702525118685, time: 71.98810601234436s
+timestep: 7999, loss: 2.6244367666873183, time: 71.99417614936829s
+WARNING:tensorflow:Bucket input queue is empty when calling next_batch. Bucket queue size: 0, Input queue size: 0
+example_generator completed reading all datafiles. No more data.
+Evaluation Loss: 2.6971964836120605, Time: 165.17480731010437s
+timestep: 8099, loss: 2.6221084516441064, time: 253.58901715278625s
+timestep: 8199, loss: 2.6177157467435244, time: 72.16340279579163s
+timestep: 8299, loss: 2.614034567340266, time: 72.05960869789124s
+timestep: 8399, loss: 2.6122877057207017, time: 71.77606534957886s
+timestep: 8499, loss: 2.6088341886698063, time: 71.96155023574829s
+timestep: 8599, loss: 2.6067682664474474, time: 71.99150371551514s
+timestep: 8699, loss: 2.603581452806744, time: 72.01209855079651s
+timestep: 8799, loss: 2.59001406158378, time: 72.01362562179565s
+timestep: 8899, loss: 2.5732418020788024, time: 72.29988551139832s
+timestep: 8999, loss: 2.5589520611884087, time: 72.11121010780334s
+WARNING:tensorflow:Bucket input queue is empty when calling next_batch. Bucket queue size: 0, Input queue size: 0
+example_generator completed reading all datafiles. No more data.
+Evaluation Loss: 2.6694135665893555, Time: 165.57057166099548s
+timestep: 9099, loss: 2.5504222578681204, time: 253.98539972305298s
+timestep: 9199, loss: 2.5385274733784047, time: 72.39494633674622s
+timestep: 9299, loss: 2.529579921194397, time: 71.91248273849487s
+timestep: 9399, loss: 2.5207639787513774, time: 72.11715865135193s
+timestep: 9499, loss: 2.509720718512423, time: 71.96384787559509s
+timestep: 9599, loss: 2.5015581578528456, time: 72.12704133987427s
+timestep: 9699, loss: 2.493365356738394, time: 72.02760863304138s
+timestep: 9799, loss: 2.4842595923561315, time: 71.77818250656128s
+timestep: 9899, loss: 2.4762157183587843, time: 71.7153422832489s
+timestep: 9999, loss: 2.473975043517722, time: 72.08678936958313s
+WARNING:tensorflow:Bucket input queue is empty when calling next_batch. Bucket queue size: 0, Input queue size: 0
+example_generator completed reading all datafiles. No more data.
+Evaluation Loss: 2.6537744998931885, Time: 165.54817271232605s
+timestep: 10099, loss: 2.470261866385031, time: 253.66457796096802s
+timestep: 10199, loss: 2.4665550550647137, time: 71.60113596916199s
+timestep: 10299, loss: 2.46215753019729, time: 71.95893383026123s
+timestep: 10399, loss: 2.4584200386764805, time: 72.13660502433777s
+timestep: 10499, loss: 2.4558754244700194, time: 72.30049800872803s
+timestep: 10599, loss: 2.4510516190533167, time: 71.91172242164612s
+timestep: 10699, loss: 2.447268426836338, time: 72.10678505897522s
+timestep: 10799, loss: 2.443635061461578, time: 71.87571668624878s
+timestep: 10899, loss: 2.4415398157718347, time: 71.96616053581238s
+timestep: 10999, loss: 2.43772366425123, time: 71.89067482948303s
+WARNING:tensorflow:Bucket input queue is empty when calling next_batch. Bucket queue size: 0, Input queue size: 0
+example_generator completed reading all datafiles. No more data.
+Evaluation Loss: 2.632640838623047, Time: 164.99977564811707s
+timestep: 11099, loss: 2.435423996795082, time: 253.30646014213562s
+timestep: 11199, loss: 2.432217030457744, time: 71.78964233398438s
+timestep: 11299, loss: 2.4325611455238954, time: 71.90086507797241s
+timestep: 11399, loss: 2.4315068980534074, time: 72.05201458930969s
+timestep: 11499, loss: 2.43021131735531, time: 72.01588702201843s
+timestep: 11599, loss: 2.4263903477417244, time: 71.92427086830139s
+timestep: 11699, loss: 2.423546045633964, time: 72.16749668121338s
+timestep: 11799, loss: 2.4229048173597327, time: 72.01335024833679s
+timestep: 11899, loss: 2.4204745895514144, time: 72.11827230453491s
+timestep: 11999, loss: 2.4188440673522282, time: 71.81605863571167s
+WARNING:tensorflow:Bucket input queue is empty when calling next_batch. Bucket queue size: 0, Input queue size: 0
+example_generator completed reading all datafiles. No more data.
+Evaluation Loss: 2.6095054149627686, Time: 165.11894273757935s
+timestep: 12099, loss: 2.4165379273663126, time: 253.25979375839233s
+timestep: 12199, loss: 2.4173347996294154, time: 71.97352004051208s
+timestep: 12299, loss: 2.416400816603994, time: 71.66580533981323s
+timestep: 12399, loss: 2.415448290191021, time: 71.96245765686035s
+timestep: 12499, loss: 2.4151794852349, time: 71.90070056915283s
+timestep: 12599, loss: 2.4126974740355136, time: 71.88741135597229s
+timestep: 12699, loss: 2.41228729739476, time: 71.81250977516174s
+timestep: 12799, loss: 2.4101387207729985, time: 72.0490243434906s
+timestep: 12899, loss: 2.409869242359606, time: 72.01121258735657s
+timestep: 12999, loss: 2.410237777908147, time: 72.30912661552429s
+WARNING:tensorflow:Bucket input queue is empty when calling next_batch. Bucket queue size: 0, Input queue size: 0
+example_generator completed reading all datafiles. No more data.
+Evaluation Loss: 2.5857598781585693, Time: 165.02811312675476s
+timestep: 13099, loss: 2.4056527335021562, time: 253.35854315757751s
+timestep: 13199, loss: 2.392163966224987, time: 72.0367341041565s
+timestep: 13299, loss: 2.382651967323724, time: 72.05459594726562s
+timestep: 13399, loss: 2.369482267832244, time: 72.01674175262451s
+timestep: 13499, loss: 2.3568975920891013, time: 72.08962917327881s
+timestep: 13599, loss: 2.3485139585786023, time: 72.03315019607544s
+timestep: 13699, loss: 2.340329923839285, time: 72.01937174797058s
+timestep: 13799, loss: 2.332957280031837, time: 72.2571792602539s
+timestep: 13899, loss: 2.3233900331738164, time: 72.31926846504211s
+timestep: 13999, loss: 2.3169242537535757, time: 72.01965641975403s
+WARNING:tensorflow:Bucket input queue is empty when calling next_batch. Bucket queue size: 0, Input queue size: 0
+example_generator completed reading all datafiles. No more data.
+Evaluation Loss: 2.587615728378296, Time: 165.38385701179504s
+timestep: 14099, loss: 2.311768431009622, time: 253.55153608322144s
+timestep: 14199, loss: 2.3074629030180582, time: 72.15174794197083s
+timestep: 14299, loss: 2.306599634128214, time: 72.06164741516113s
+timestep: 14399, loss: 2.304434060213457, time: 72.0819959640503s
+timestep: 14499, loss: 2.3000027547423816, time: 71.79074335098267s
+timestep: 14599, loss: 2.2974245227462644, time: 72.08898282051086s
+timestep: 14699, loss: 2.298042178872452, time: 72.22286295890808s
+timestep: 14799, loss: 2.298614055904133, time: 72.20780539512634s
+timestep: 14899, loss: 2.2964509360864276, time: 72.03935480117798s
+timestep: 14999, loss: 2.294680872574842, time: 71.96363377571106s
+WARNING:tensorflow:Bucket input queue is empty when calling next_batch. Bucket queue size: 0, Input queue size: 0
+example_generator completed reading all datafiles. No more data.
+Evaluation Loss: 2.5671489238739014, Time: 165.1358106136322s
+timestep: 15099, loss: 2.2933248197882268, time: 253.61611485481262s
+timestep: 15199, loss: 2.289885389189922, time: 72.09545755386353s
+timestep: 15299, loss: 2.290436082044401, time: 71.94012832641602s
+timestep: 15399, loss: 2.289361751065525, time: 72.09125471115112s
+timestep: 15499, loss: 2.2893213087982622, time: 71.80272507667542s
+timestep: 15599, loss: 2.288427073148572, time: 71.92236995697021s
+timestep: 15699, loss: 2.2882350100264057, time: 72.15907049179077s
+timestep: 15799, loss: 2.285764650499022, time: 72.15769147872925s
+timestep: 15899, loss: 2.285425664150858, time: 72.13956427574158s
+timestep: 15999, loss: 2.2852329794626343, time: 71.96743750572205s
+WARNING:tensorflow:Bucket input queue is empty when calling next_batch. Bucket queue size: 0, Input queue size: 0
+example_generator completed reading all datafiles. No more data.
+Evaluation Loss: 2.5532639026641846, Time: 165.1555049419403s
+timestep: 16099, loss: 2.282708536093307, time: 253.22484922409058s
+timestep: 16199, loss: 2.2816752237780817, time: 72.08026361465454s
+timestep: 16299, loss: 2.2797854999557448, time: 71.96905469894409s
+timestep: 16399, loss: 2.279154845662682, time: 72.11311769485474s
+timestep: 16499, loss: 2.2778622299399456, time: 72.10106825828552s
+timestep: 16599, loss: 2.27827676534977, time: 72.02690124511719s
+timestep: 16699, loss: 2.279563501414319, time: 71.94627404212952s
+timestep: 16799, loss: 2.2796513123652624, time: 72.24122047424316s
+timestep: 16899, loss: 2.280553603529956, time: 72.09226560592651s
+timestep: 16999, loss: 2.2786264826832836, time: 72.08687925338745s
+WARNING:tensorflow:Bucket input queue is empty when calling next_batch. Bucket queue size: 0, Input queue size: 0
+example_generator completed reading all datafiles. No more data.
+Evaluation Loss: 2.543102979660034, Time: 165.16089034080505s
+timestep: 17099, loss: 2.2779060692901725, time: 253.3915674686432s
+timestep: 17199, loss: 2.2768429539025714, time: 72.14267539978027s
+timestep: 17299, loss: 2.2789839173398803, time: 71.88144040107727s
+timestep: 17399, loss: 2.279705813375438, time: 72.05768465995789s
+timestep: 17499, loss: 2.272851971061961, time: 71.93268489837646s
+timestep: 17599, loss: 2.2595439720696247, time: 72.05818223953247s
+timestep: 17699, loss: 2.2427588260279268, time: 71.73393416404724s
+timestep: 17799, loss: 2.2291497695285476, time: 72.00795364379883s
+timestep: 17899, loss: 2.223990622781898, time: 72.12130689620972s
+timestep: 17999, loss: 2.215789479903369, time: 72.06208372116089s
+WARNING:tensorflow:Bucket input queue is empty when calling next_batch. Bucket queue size: 0, Input queue size: 0
+example_generator completed reading all datafiles. No more data.
+Evaluation Loss: 2.544107437133789, Time: 165.16314935684204s
+timestep: 18099, loss: 2.211756650344269, time: 253.3765425682068s
+timestep: 18199, loss: 2.2090476529760545, time: 72.39751052856445s
+timestep: 18299, loss: 2.205466117084073, time: 72.13234686851501s
+timestep: 18399, loss: 2.202865233715926, time: 71.83005857467651s
+timestep: 18499, loss: 2.20174092614572, time: 72.36593508720398s
+timestep: 18599, loss: 2.2008961592242673, time: 71.96376180648804s
+timestep: 18699, loss: 2.197029066993657, time: 72.06037902832031s
+timestep: 18799, loss: 2.190917330461067, time: 71.82315373420715s
+timestep: 18899, loss: 2.189101329394449, time: 71.97916531562805s
+timestep: 18999, loss: 2.1904273617410244, time: 72.11625409126282s
+WARNING:tensorflow:Bucket input queue is empty when calling next_batch. Bucket queue size: 0, Input queue size: 0
+example_generator completed reading all datafiles. No more data.
+Evaluation Loss: 2.535050868988037, Time: 165.5194010734558s
+timestep: 19099, loss: 2.186877686209279, time: 253.85414099693298s
+timestep: 19199, loss: 2.1854076294637363, time: 72.59788346290588s
+timestep: 19299, loss: 2.1830619657739314, time: 72.28855419158936s
+timestep: 19399, loss: 2.179852636519687, time: 72.06290245056152s
+timestep: 19499, loss: 2.179065804466093, time: 71.91386198997498s
+timestep: 19599, loss: 2.178395945046218, time: 72.14742136001587s
+timestep: 19699, loss: 2.1792406548685737, time: 72.03539609909058s
+timestep: 19799, loss: 2.1787207963312105, time: 71.98967981338501s
+timestep: 19899, loss: 2.1785235308657818, time: 71.90817022323608s
+timestep: 19999, loss: 2.1775912078174735, time: 72.21288204193115s
+WARNING:tensorflow:Bucket input queue is empty when calling next_batch. Bucket queue size: 0, Input queue size: 0
+example_generator completed reading all datafiles. No more data.
+Evaluation Loss: 2.518442392349243, Time: 165.46529841423035s
+timestep: 20099, loss: 2.177448077482546, time: 253.58302783966064s
+timestep: 20199, loss: 2.1769326697847213, time: 72.2787971496582s
+timestep: 20299, loss: 2.1746935552434716, time: 71.83343052864075s
+timestep: 20399, loss: 2.17407346417009, time: 72.30880165100098s
+timestep: 20499, loss: 2.1756567832772165, time: 72.21901893615723s
+timestep: 20599, loss: 2.1754024093266677, time: 72.39173197746277s
+timestep: 20699, loss: 2.175838925270659, time: 72.38601183891296s
+timestep: 20799, loss: 2.1772441911365545, time: 72.28103446960449s
+timestep: 20899, loss: 2.1763104694439392, time: 72.3171534538269s
+timestep: 20999, loss: 2.1767867504112632, time: 72.12415599822998s
+WARNING:tensorflow:Bucket input queue is empty when calling next_batch. Bucket queue size: 0, Input queue size: 0
+example_generator completed reading all datafiles. No more data.
+Evaluation Loss: 2.510159969329834, Time: 164.9178490638733s
+timestep: 21099, loss: 2.1765819478871586, time: 253.23584985733032s
+timestep: 21199, loss: 2.178336290151707, time: 72.03838396072388s
+timestep: 21299, loss: 2.1788205424355107, time: 71.93552947044373s
+timestep: 21399, loss: 2.1800495289754784, time: 72.067866563797s
+timestep: 21499, loss: 2.1820363412589994, time: 72.11523866653442s
+timestep: 21599, loss: 2.182995089379387, time: 71.83621120452881s
+timestep: 21699, loss: 2.1823732856165274, time: 71.669273853302s
+timestep: 21799, loss: 2.180146547007583, time: 71.8049967288971s
+timestep: 21899, loss: 2.1691014558467288, time: 72.41589331626892s
+timestep: 21999, loss: 2.1593449246299494, time: 72.0802834033966s
+WARNING:tensorflow:Bucket input queue is empty when calling next_batch. Bucket queue size: 0, Input queue size: 0
+example_generator completed reading all datafiles. No more data.
+Evaluation Loss: 2.5038394927978516, Time: 164.98166489601135s
+timestep: 22099, loss: 2.1496305452421334, time: 253.00292587280273s
+timestep: 22199, loss: 2.140877969832387, time: 72.35828804969788s
+timestep: 22299, loss: 2.13112120114232, time: 72.22535133361816s
+timestep: 22399, loss: 2.1241496195293346, time: 71.94828414916992s
+timestep: 22499, loss: 2.119200076960087, time: 72.08534407615662s
+timestep: 22599, loss: 2.1185463352277405, time: 72.28857517242432s
+timestep: 22699, loss: 2.113214100434982, time: 71.82853269577026s
+timestep: 22799, loss: 2.111652311785871, time: 72.12774276733398s
+timestep: 22899, loss: 2.1099258851212053, time: 72.03405404090881s
+timestep: 22999, loss: 2.106878284975642, time: 71.90400314331055s
+WARNING:tensorflow:Bucket input queue is empty when calling next_batch. Bucket queue size: 0, Input queue size: 0
+example_generator completed reading all datafiles. No more data.
+Evaluation Loss: 2.5013787746429443, Time: 165.15759110450745s
+timestep: 23099, loss: 2.1032505238159476, time: 253.4390468597412s
+timestep: 23199, loss: 2.1048130110798753, time: 72.06551575660706s
+timestep: 23299, loss: 2.102379986061625, time: 72.15920639038086s
+timestep: 23399, loss: 2.102731229208854, time: 72.01289677619934s
+timestep: 23499, loss: 2.1020733200259247, time: 72.0822868347168s
+timestep: 23599, loss: 2.1003129057861, time: 72.06740427017212s
+timestep: 23699, loss: 2.0995707046674505, time: 72.10397553443909s
+timestep: 23799, loss: 2.100485475034476, time: 71.80055046081543s
+timestep: 23899, loss: 2.096790217031421, time: 71.84829449653625s
+timestep: 23999, loss: 2.0982280746073987, time: 72.20187711715698s
+WARNING:tensorflow:Bucket input queue is empty when calling next_batch. Bucket queue size: 0, Input queue size: 0
+example_generator completed reading all datafiles. No more data.
+Evaluation Loss: 2.4968175888061523, Time: 165.07160091400146s
+timestep: 24099, loss: 2.0990532269166406, time: 253.2863428592682s
+timestep: 24199, loss: 2.0991754141947356, time: 72.12357878684998s
+timestep: 24299, loss: 2.0974240851669532, time: 72.20248198509216s
+timestep: 24399, loss: 2.0969203675544006, time: 72.09973216056824s
+timestep: 24499, loss: 2.0968981837102367, time: 71.6158242225647s
+timestep: 24599, loss: 2.097362792597233, time: 72.28285002708435s
+timestep: 24699, loss: 2.098052617718822, time: 72.1962571144104s
+timestep: 24799, loss: 2.0992225671585967, time: 72.18152952194214s
+timestep: 24899, loss: 2.098699243604877, time: 72.03416323661804s
+timestep: 24999, loss: 2.1006351795001494, time: 71.99941754341125s
+WARNING:tensorflow:Bucket input queue is empty when calling next_batch. Bucket queue size: 0, Input queue size: 0
+example_generator completed reading all datafiles. No more data.
+Evaluation Loss: 2.484173059463501, Time: 165.32039999961853s
+timestep: 25099, loss: 2.1009594869361337, time: 253.29850363731384s
+timestep: 25199, loss: 2.1021306405719593, time: 72.46235299110413s
+timestep: 25299, loss: 2.1014316047024844, time: 71.95183491706848s
+timestep: 25399, loss: 2.100544774826985, time: 72.09969282150269s
+timestep: 25499, loss: 2.102194257299019, time: 71.96228671073914s
+timestep: 25599, loss: 2.1031980072378866, time: 72.05220818519592s
+timestep: 25699, loss: 2.1049309685607094, time: 72.13725423812866s
+timestep: 25799, loss: 2.1041539276331838, time: 72.10238742828369s
+timestep: 25899, loss: 2.1037630683358985, time: 72.00739312171936s
+timestep: 25999, loss: 2.1045555466439625, time: 72.2990288734436s
+WARNING:tensorflow:Bucket input queue is empty when calling next_batch. Bucket queue size: 0, Input queue size: 0
+example_generator completed reading all datafiles. No more data.
+Evaluation Loss: 2.4789910316467285, Time: 164.84801197052002s
+timestep: 26099, loss: 2.1040894205260394, time: 253.26697540283203s
+timestep: 26199, loss: 2.09257197923465, time: 72.04464673995972s
+timestep: 26299, loss: 2.0750815135621714, time: 72.03698873519897s
+timestep: 26399, loss: 2.0639429296939533, time: 72.15139245986938s
+timestep: 26499, loss: 2.0616182214322034, time: 72.19130206108093s
+timestep: 26599, loss: 2.0552262086333957, time: 71.75990509986877s
+timestep: 26699, loss: 2.046115363459529, time: 72.06958293914795s
+timestep: 26799, loss: 2.040246205597179, time: 72.46194696426392s
+timestep: 26899, loss: 2.036563885919785, time: 71.99031376838684s
+timestep: 26999, loss: 2.0341636205826297, time: 71.80565428733826s
+WARNING:tensorflow:Bucket input queue is empty when calling next_batch. Bucket queue size: 0, Input queue size: 0
+example_generator completed reading all datafiles. No more data.
+Evaluation Loss: 2.4883673191070557, Time: 165.18981790542603s
+timestep: 27099, loss: 2.0340078543014273, time: 253.51365399360657s
+timestep: 27199, loss: 2.030183932974266, time: 72.04204750061035s
+timestep: 27299, loss: 2.030206283198975, time: 71.98275637626648s
+timestep: 27399, loss: 2.0315025347765956, time: 72.38017129898071s
+timestep: 27499, loss: 2.031227516707187, time: 72.08943367004395s
+timestep: 27599, loss: 2.0297787293824743, time: 72.23190379142761s
+timestep: 27699, loss: 2.0289343028579814, time: 72.10854983329773s
+timestep: 27799, loss: 2.029389172820561, time: 71.75924324989319s
+timestep: 27899, loss: 2.030202460692748, time: 72.05680179595947s
+timestep: 27999, loss: 2.031549934810687, time: 72.18348813056946s
+WARNING:tensorflow:Bucket input queue is empty when calling next_batch. Bucket queue size: 0, Input queue size: 0
+example_generator completed reading all datafiles. No more data.
+Evaluation Loss: 2.481260061264038, Time: 164.6101095676422s
+timestep: 28099, loss: 2.0316816577275665, time: 252.55190253257751s
+timestep: 28199, loss: 2.0303209980201395, time: 71.6894600391388s
+timestep: 28299, loss: 2.0289695707178987, time: 72.0475263595581s
+timestep: 28399, loss: 2.02987624254352, time: 71.82803583145142s
+timestep: 28499, loss: 2.0314459723770733, time: 71.4151701927185s
+timestep: 28599, loss: 2.03491004953562, time: 71.5083076953888s
+timestep: 28699, loss: 2.0355957463419316, time: 71.41554975509644s
+timestep: 28799, loss: 2.0365638509422825, time: 71.4334888458252s
+timestep: 28899, loss: 2.038056349639417, time: 71.8429229259491s
+timestep: 28999, loss: 2.0380954797236366, time: 71.77472805976868s
+WARNING:tensorflow:Bucket input queue is empty when calling next_batch. Bucket queue size: 0, Input queue size: 0
+example_generator completed reading all datafiles. No more data.
+Evaluation Loss: 2.4694857597351074, Time: 165.25118231773376s
+timestep: 29099, loss: 2.0368267852258133, time: 253.57913970947266s
+timestep: 29199, loss: 2.0352901049823893, time: 72.21539950370789s
+timestep: 29299, loss: 2.034220791821935, time: 72.26002311706543s
+timestep: 29399, loss: 2.0363922717558967, time: 71.53350305557251s
+timestep: 29499, loss: 2.036849804165429, time: 72.24495077133179s
+timestep: 29599, loss: 2.0374069266738384, time: 72.01473498344421s
+timestep: 29699, loss: 2.0364958282812746, time: 72.07350730895996s
+timestep: 29799, loss: 2.037703496701878, time: 72.05221724510193s
+timestep: 29899, loss: 2.0390395878671894, time: 71.71065330505371s
+timestep: 29999, loss: 2.0400572350825508, time: 71.78384900093079s
+WARNING:tensorflow:Bucket input queue is empty when calling next_batch. Bucket queue size: 0, Input queue size: 0
+example_generator completed reading all datafiles. No more data.
+Evaluation Loss: 2.4653592109680176, Time: 165.6453459262848s
+timestep: 30099, loss: 2.041023372525943, time: 253.6655023097992s
+timestep: 30199, loss: 2.0409900152005416, time: 72.25082778930664s
+timestep: 30299, loss: 2.041440726002702, time: 72.16961455345154s
+timestep: 30399, loss: 2.041547653294414, time: 72.52800679206848s
+timestep: 30499, loss: 2.042668421321991, time: 72.13028383255005s
+timestep: 30599, loss: 2.036579788011398, time: 72.28757071495056s
+timestep: 30699, loss: 2.0280248691970337, time: 72.2200756072998s
+timestep: 30799, loss: 2.019442304359351, time: 72.25321936607361s
+timestep: 30899, loss: 2.0104148070546244, time: 72.02530574798584s
+timestep: 30999, loss: 2.0030051987880317, time: 72.00086998939514s
+WARNING:tensorflow:Bucket input queue is empty when calling next_batch. Bucket queue size: 0, Input queue size: 0
+example_generator completed reading all datafiles. No more data.
+Evaluation Loss: 2.466015338897705, Time: 165.13363885879517s
+timestep: 31099, loss: 1.9995127316150916, time: 253.3662815093994s
+timestep: 31199, loss: 1.9953661947321344, time: 72.11954092979431s
+timestep: 31299, loss: 1.9924336170190107, time: 72.40538954734802s
+timestep: 31399, loss: 1.9896810265888278, time: 72.3729305267334s
+timestep: 31499, loss: 1.9876943349325449, time: 71.95066046714783s
+timestep: 31599, loss: 1.9841834599087897, time: 72.00685596466064s
+timestep: 31699, loss: 1.980761964124607, time: 72.30911779403687s
+timestep: 31799, loss: 1.9787681057491144, time: 72.04644298553467s
+timestep: 31899, loss: 1.974915349953479, time: 71.984046459198s
+timestep: 31999, loss: 1.97499427585096, time: 72.07450246810913s
+WARNING:tensorflow:Bucket input queue is empty when calling next_batch. Bucket queue size: 0, Input queue size: 0
+example_generator completed reading all datafiles. No more data.
+Evaluation Loss: 2.4682352542877197, Time: 165.09264397621155s
+timestep: 32099, loss: 1.9741384037418068, time: 253.36234545707703s
+timestep: 32199, loss: 1.971844424900095, time: 72.04066801071167s
+timestep: 32299, loss: 1.9701937435415766, time: 71.94725394248962s
+timestep: 32399, loss: 1.9707468639494343, time: 72.3317973613739s
+timestep: 32499, loss: 1.9711780737726146, time: 72.2625424861908s
+timestep: 32599, loss: 1.9733065497898212, time: 72.09075903892517s
+timestep: 32699, loss: 1.9723359265619993, time: 71.66949892044067s
+timestep: 32799, loss: 1.9735964725172233, time: 71.76103019714355s
+timestep: 32899, loss: 1.9765070071723665, time: 72.10814547538757s
+timestep: 32999, loss: 1.9789041143660622, time: 72.06422543525696s
+WARNING:tensorflow:Bucket input queue is empty when calling next_batch. Bucket queue size: 0, Input queue size: 0
+example_generator completed reading all datafiles. No more data.
+Evaluation Loss: 2.461975574493408, Time: 165.24041080474854s
+timestep: 33099, loss: 1.9794423321089067, time: 253.92000484466553s
+timestep: 33199, loss: 1.9812402836617118, time: 72.06991529464722s
+timestep: 33299, loss: 1.9805320795130061, time: 72.3554036617279s
+timestep: 33399, loss: 1.9797232517206478, time: 71.86865854263306s
+timestep: 33499, loss: 1.9807341122749038, time: 72.27051544189453s
+timestep: 33599, loss: 1.9793607511015217, time: 72.33724355697632s
+timestep: 33699, loss: 1.9799867531523427, time: 72.31442832946777s
+timestep: 33799, loss: 1.981442631292944, time: 72.1776533126831s
+timestep: 33899, loss: 1.982677871503783, time: 72.33860802650452s
+timestep: 33999, loss: 1.984009009278228, time: 72.04791712760925s
+WARNING:tensorflow:Bucket input queue is empty when calling next_batch. Bucket queue size: 0, Input queue size: 0
+example_generator completed reading all datafiles. No more data.
+Evaluation Loss: 2.4521918296813965, Time: 165.185688495636s
+timestep: 34099, loss: 1.984410325987164, time: 253.3299548625946s
+timestep: 34199, loss: 1.98484493458771, time: 72.14209961891174s
+timestep: 34299, loss: 1.9851997769947052, time: 71.99763536453247s
+timestep: 34399, loss: 1.9831418453429164, time: 72.5084376335144s
+timestep: 34499, loss: 1.9841689761696761, time: 71.90196084976196s
+timestep: 34599, loss: 1.9870198720255388, time: 72.15949964523315s
+timestep: 34699, loss: 1.9897008645688388, time: 72.2802894115448s
+timestep: 34799, loss: 1.9900790491416556, time: 72.18081498146057s
+timestep: 34899, loss: 1.988084092597793, time: 71.88043475151062s
+timestep: 34999, loss: 1.978753992053234, time: 72.25223898887634s
+WARNING:tensorflow:Bucket input queue is empty when calling next_batch. Bucket queue size: 0, Input queue size: 0
+example_generator completed reading all datafiles. No more data.
+Evaluation Loss: 2.4537229537963867, Time: 165.13582515716553s
+timestep: 35099, loss: 1.963476821391038, time: 253.4833493232727s
+timestep: 35199, loss: 1.9562708651052287, time: 71.82431221008301s
+timestep: 35299, loss: 1.9535498182614668, time: 72.1377923488617s
+timestep: 35399, loss: 1.950443677370659, time: 72.09495568275452s
+timestep: 35499, loss: 1.945873295754063, time: 72.17613673210144s
+timestep: 35599, loss: 1.9423216580989027, time: 72.06772971153259s
+timestep: 35699, loss: 1.940692095757364, time: 72.24831461906433s
+timestep: 35799, loss: 1.935276879372872, time: 72.04332184791565s
+timestep: 35899, loss: 1.9345477738830017, time: 72.09258246421814s
+timestep: 35999, loss: 1.9312140780280889, time: 71.9872694015503s
+WARNING:tensorflow:Bucket input queue is empty when calling next_batch. Bucket queue size: 0, Input queue size: 0
+example_generator completed reading all datafiles. No more data.
+Evaluation Loss: 2.458078384399414, Time: 164.83933472633362s
+timestep: 36099, loss: 1.9311786850761772, time: 253.19701075553894s
+timestep: 36199, loss: 1.930852734297728, time: 72.09907412528992s
+timestep: 36299, loss: 1.929323312808692, time: 71.67219638824463s
+timestep: 36399, loss: 1.9276185738905696, time: 72.22815752029419s
+timestep: 36499, loss: 1.9262873737379194, time: 72.08787870407104s
+timestep: 36599, loss: 1.9239554706085622, time: 72.09830856323242s
+timestep: 36699, loss: 1.924181353145465, time: 71.89091110229492s
+timestep: 36799, loss: 1.9261788471417158, time: 72.0918481349945s
+timestep: 36899, loss: 1.9284238515544232, time: 72.39005589485168s
+timestep: 36999, loss: 1.9297500893048047, time: 71.8582227230072s
+WARNING:tensorflow:Bucket input queue is empty when calling next_batch. Bucket queue size: 0, Input queue size: 0
+example_generator completed reading all datafiles. No more data.
+Evaluation Loss: 2.4530744552612305, Time: 164.5257751941681s
+timestep: 37099, loss: 1.9289837164100723, time: 252.92808961868286s
+timestep: 37199, loss: 1.928812686491582, time: 72.24959635734558s
+timestep: 37299, loss: 1.9300277740316318, time: 71.82446837425232s
+timestep: 37399, loss: 1.9311536884141083, time: 72.27925038337708s
+timestep: 37499, loss: 1.9319919753804977, time: 72.26158308982849s
+timestep: 37599, loss: 1.9314791309424932, time: 72.29733848571777s
+timestep: 37699, loss: 1.9310916148096253, time: 72.06479167938232s
+timestep: 37799, loss: 1.932909336717832, time: 72.26697659492493s
+timestep: 37899, loss: 1.934733610818187, time: 72.22163486480713s
+timestep: 37999, loss: 1.9361792649469305, time: 72.13084053993225s
+WARNING:tensorflow:Bucket input queue is empty when calling next_batch. Bucket queue size: 0, Input queue size: 0
+example_generator completed reading all datafiles. No more data.
+Evaluation Loss: 2.450716257095337, Time: 164.69522047042847s
+timestep: 38099, loss: 1.938305736059585, time: 252.8853108882904s
+timestep: 38199, loss: 1.9417702283173488, time: 72.15624213218689s
+timestep: 38299, loss: 1.9419756596629574, time: 72.2656500339508s
+timestep: 38399, loss: 1.9418954922782379, time: 71.66503405570984s
+timestep: 38499, loss: 1.941907180289822, time: 72.06522345542908s
+timestep: 38599, loss: 1.9421821892855984, time: 72.07942724227905s
+timestep: 38699, loss: 1.9440256606424682, time: 72.03806662559509s
+timestep: 38799, loss: 1.9436720231492213, time: 72.00561785697937s
+timestep: 38899, loss: 1.942955560060794, time: 72.06597137451172s
+timestep: 38999, loss: 1.94281526150106, time: 72.25601196289062s
+WARNING:tensorflow:Bucket input queue is empty when calling next_batch. Bucket queue size: 0, Input queue size: 0
+example_generator completed reading all datafiles. No more data.
+Evaluation Loss: 2.4428656101226807, Time: 164.88682913780212s
+timestep: 39099, loss: 1.94463193210705, time: 252.882182598114s
+timestep: 39199, loss: 1.945126480032931, time: 72.31287169456482s
+timestep: 39299, loss: 1.939742357288619, time: 72.35925936698914s
+timestep: 39399, loss: 1.928201796963937, time: 72.14837527275085s
+timestep: 39499, loss: 1.9179927144963898, time: 72.03916478157043s
+timestep: 39599, loss: 1.9114544780618654, time: 72.27148509025574s
+timestep: 39699, loss: 1.906340751854501, time: 72.38993167877197s
+timestep: 39799, loss: 1.9040437098882004, time: 72.33448362350464s
+timestep: 39899, loss: 1.9003396107021664, time: 71.98586893081665s
+timestep: 39999, loss: 1.8988029702096811, time: 72.2462260723114s
+WARNING:tensorflow:Bucket input queue is empty when calling next_batch. Bucket queue size: 0, Input queue size: 0
+example_generator completed reading all datafiles. No more data.
+Evaluation Loss: 2.449410915374756, Time: 165.57367730140686s
+timestep: 40099, loss: 1.8931830469097648, time: 254.01705265045166s
+timestep: 40199, loss: 1.8888589016869235, time: 72.0052981376648s
+timestep: 40299, loss: 1.8897329521781134, time: 72.31967663764954s
+timestep: 40399, loss: 1.8899103910223036, time: 72.26089453697205s
+timestep: 40499, loss: 1.8896926632024449, time: 71.98063564300537s
+timestep: 40599, loss: 1.8876476032669938, time: 72.06837797164917s
+timestep: 40699, loss: 1.8874578358834184, time: 72.16467094421387s
+timestep: 40799, loss: 1.886915586769745, time: 72.17685127258301s
+timestep: 40899, loss: 1.8875925047770332, time: 72.37862992286682s
+timestep: 40999, loss: 1.8906557873923286, time: 72.10892391204834s
+WARNING:tensorflow:Bucket input queue is empty when calling next_batch. Bucket queue size: 0, Input queue size: 0
+example_generator completed reading all datafiles. No more data.
+Evaluation Loss: 2.4503982067108154, Time: 164.8339786529541s
+timestep: 41099, loss: 1.8898418083961717, time: 253.02362656593323s
+timestep: 41199, loss: 1.8913481914698584, time: 72.25684833526611s
+timestep: 41299, loss: 1.8900818762017293, time: 72.023273229599s
+timestep: 41399, loss: 1.8901983948186605, time: 72.219651222229s
+timestep: 41499, loss: 1.8910949840718252, time: 72.24478602409363s
+timestep: 41599, loss: 1.8923484308250593, time: 72.28770899772644s
+timestep: 41699, loss: 1.892928374559621, time: 72.11127853393555s
+timestep: 41799, loss: 1.894188426177905, time: 72.19650650024414s
+timestep: 41899, loss: 1.8957871992728335, time: 71.92281770706177s
+timestep: 41999, loss: 1.8986903555988834, time: 71.64744162559509s
+WARNING:tensorflow:Bucket input queue is empty when calling next_batch. Bucket queue size: 0, Input queue size: 0
+example_generator completed reading all datafiles. No more data.
+Evaluation Loss: 2.447761297225952, Time: 165.1284544467926s
+timestep: 42099, loss: 1.898932425412289, time: 252.92335772514343s
+timestep: 42199, loss: 1.8984140938976528, time: 72.05957961082458s
+timestep: 42299, loss: 1.9003435003843796, time: 72.23203802108765s
+timestep: 42399, loss: 1.9029993982159792, time: 71.8801736831665s
+timestep: 42499, loss: 1.9031554351966493, time: 72.02899551391602s
+timestep: 42599, loss: 1.9032313054642334, time: 72.46286725997925s
+timestep: 42699, loss: 1.902715920426046, time: 72.19262385368347s
+timestep: 42799, loss: 1.9033090930080951, time: 71.98940420150757s
+timestep: 42899, loss: 1.902082163545569, time: 72.0531702041626s
+timestep: 42999, loss: 1.9030161504307688, time: 72.44870066642761s
+WARNING:tensorflow:Bucket input queue is empty when calling next_batch. Bucket queue size: 0, Input queue size: 0
+example_generator completed reading all datafiles. No more data.
+Evaluation Loss: 2.4388821125030518, Time: 164.87384796142578s
+timestep: 43099, loss: 1.9035368841303275, time: 253.55457472801208s
+timestep: 43199, loss: 1.9025398886077771, time: 71.90374970436096s
+timestep: 43299, loss: 1.9038584402013536, time: 71.89286804199219s
+timestep: 43399, loss: 1.9050253032081457, time: 71.65560245513916s
+timestep: 43499, loss: 1.9056154199361377, time: 71.88240313529968s
+timestep: 43599, loss: 1.904419749880911, time: 72.29725432395935s
+timestep: 43699, loss: 1.8956388706077483, time: 72.14570212364197s
+timestep: 43799, loss: 1.8890251703984688, time: 72.05229234695435s
+timestep: 43899, loss: 1.8794198659024535, time: 72.24881911277771s
+timestep: 43999, loss: 1.8741112171856753, time: 72.11968088150024s
+WARNING:tensorflow:Bucket input queue is empty when calling next_batch. Bucket queue size: 0, Input queue size: 0
+example_generator completed reading all datafiles. No more data.
+Evaluation Loss: 2.4436099529266357, Time: 165.5789442062378s
+timestep: 44099, loss: 1.8695909521424483, time: 253.7813127040863s
+timestep: 44199, loss: 1.8614767406542219, time: 72.2142984867096s
+timestep: 44299, loss: 1.8550535697603514, time: 71.85542631149292s
+timestep: 44399, loss: 1.8550718107981135, time: 71.83401155471802s
+timestep: 44499, loss: 1.8564095090557424, time: 71.89316940307617s
+timestep: 44599, loss: 1.8567234973835607, time: 72.30577969551086s
+timestep: 44699, loss: 1.853463111495785, time: 72.15586853027344s
+timestep: 44799, loss: 1.8495263852896402, time: 72.00525712966919s
+timestep: 44899, loss: 1.8481356645629947, time: 71.6504693031311s
+timestep: 44999, loss: 1.8469600948579308, time: 71.97206568717957s
+WARNING:tensorflow:Bucket input queue is empty when calling next_batch. Bucket queue size: 0, Input queue size: 0
+example_generator completed reading all datafiles. No more data.
+Evaluation Loss: 2.446115255355835, Time: 165.11311864852905s
+timestep: 45099, loss: 1.8478668791307646, time: 252.9280354976654s
+timestep: 45199, loss: 1.849212385258313, time: 72.0184473991394s
+timestep: 45299, loss: 1.8473402210509793, time: 72.21335673332214s
+timestep: 45399, loss: 1.8452391709525806, time: 72.07779145240784s
+timestep: 45499, loss: 1.8458231029815089, time: 72.06360197067261s
+timestep: 45599, loss: 1.8483840849793112, time: 71.93667721748352s
+timestep: 45699, loss: 1.850226781900813, time: 72.2031364440918s
+timestep: 45799, loss: 1.8530131727629415, time: 72.11752104759216s
+timestep: 45899, loss: 1.8530016039960113, time: 71.82275867462158s
+timestep: 45999, loss: 1.8554973226002334, time: 72.23632717132568s
+WARNING:tensorflow:Bucket input queue is empty when calling next_batch. Bucket queue size: 0, Input queue size: 0
+example_generator completed reading all datafiles. No more data.
+Evaluation Loss: 2.440361976623535, Time: 165.04168319702148s
+timestep: 46099, loss: 1.8575911871804662, time: 253.12319564819336s
+timestep: 46199, loss: 1.8575292086536035, time: 72.02092838287354s
+timestep: 46299, loss: 1.859477564111722, time: 72.32406687736511s
+timestep: 46399, loss: 1.8617962041272051, time: 72.26574945449829s
+timestep: 46499, loss: 1.8628958095073034, time: 72.21919226646423s
+timestep: 46599, loss: 1.8649009829257956, time: 71.9896490573883s
+timestep: 46699, loss: 1.8672456133834663, time: 72.30153822898865s
+timestep: 46799, loss: 1.8683082008688532, time: 72.2037706375122s
+timestep: 46899, loss: 1.868259712900486, time: 72.170982837677s
+timestep: 46999, loss: 1.8688652296358363, time: 71.81122350692749s
+WARNING:tensorflow:Bucket input queue is empty when calling next_batch. Bucket queue size: 0, Input queue size: 0
+example_generator completed reading all datafiles. No more data.
+Evaluation Loss: 2.4390299320220947, Time: 165.23031497001648s
+timestep: 47099, loss: 1.8700856111073696, time: 253.6126036643982s
+timestep: 47199, loss: 1.8718207340839847, time: 72.18507552146912s
+timestep: 47299, loss: 1.8711954313776729, time: 71.83467054367065s
+timestep: 47399, loss: 1.8712918273112422, time: 72.11689138412476s
+timestep: 47499, loss: 1.8722788765842355, time: 72.16694283485413s
+timestep: 47599, loss: 1.8728754701662882, time: 72.10098457336426s
+timestep: 47699, loss: 1.8723674239760004, time: 72.10467720031738s
+timestep: 47799, loss: 1.8721410716115097, time: 72.25965142250061s
+timestep: 47899, loss: 1.873515029228638, time: 72.16945338249207s
+timestep: 47999, loss: 1.8697496077475426, time: 72.17733073234558s
+WARNING:tensorflow:Bucket input queue is empty when calling next_batch. Bucket queue size: 0, Input queue size: 0
+example_generator completed reading all datafiles. No more data.
+Evaluation Loss: 2.4325716495513916, Time: 165.1264419555664s
+timestep: 48099, loss: 1.8620233651612845, time: 253.56612586975098s
+timestep: 48199, loss: 1.8531686976006034, time: 72.26978874206543s
+timestep: 48299, loss: 1.8470130219693786, time: 72.19404482841492s
+timestep: 48399, loss: 1.8404243493114836, time: 72.2274718284607s
+timestep: 48499, loss: 1.8372068138209008, time: 72.20465064048767s
+timestep: 48599, loss: 1.8359451010044372, time: 72.45718669891357s
+timestep: 48699, loss: 1.832122327253623, time: 72.31273674964905s
+timestep: 48799, loss: 1.8288402546102045, time: 72.10895800590515s
+timestep: 48899, loss: 1.829979914709651, time: 72.06030297279358s
+timestep: 48999, loss: 1.8307797125043976, time: 72.32351183891296s
+WARNING:tensorflow:Bucket input queue is empty when calling next_batch. Bucket queue size: 0, Input queue size: 0
+example_generator completed reading all datafiles. No more data.
+Evaluation Loss: 2.441202163696289, Time: 165.1022984981537s
+timestep: 49099, loss: 1.8292264858930183, time: 253.40481328964233s
+timestep: 49199, loss: 1.8283167761477215, time: 71.86686944961548s
+timestep: 49299, loss: 1.8263419492018735, time: 72.3740541934967s
+timestep: 49399, loss: 1.8255195079810136, time: 71.91199231147766s
+timestep: 49499, loss: 1.8245730714355683, time: 72.19861459732056s
+timestep: 49599, loss: 1.826093224817004, time: 72.17824912071228s
+timestep: 49699, loss: 1.827852522047388, time: 72.14375233650208s
+timestep: 49799, loss: 1.8295890368739123, time: 71.96296882629395s
+timestep: 49899, loss: 1.8304018645355185, time: 72.44543194770813s
+timestep: 49999, loss: 1.8285170504582715, time: 72.1358060836792s
+WARNING:tensorflow:Bucket input queue is empty when calling next_batch. Bucket queue size: 0, Input queue size: 0
+example_generator completed reading all datafiles. No more data.
+Evaluation Loss: 2.4357879161834717, Time: 165.36118531227112s
+timestep: 50099, loss: 1.8269562427853099, time: 253.5135576725006s
+timestep: 50199, loss: 1.8266331117018713, time: 72.14006400108337s
+timestep: 50299, loss: 1.8265639364084416, time: 72.12837219238281s
+timestep: 50399, loss: 1.8263732118761327, time: 72.23051881790161s
+timestep: 50499, loss: 1.8272117131631258, time: 71.97213101387024s
+timestep: 50599, loss: 1.826904722715679, time: 72.00534987449646s
+timestep: 50699, loss: 1.826215478825815, time: 72.20503282546997s
+timestep: 50799, loss: 1.8250187934639925, time: 72.06930756568909s
+timestep: 50899, loss: 1.8246224574530292, time: 72.04870343208313s
+timestep: 50999, loss: 1.824627783307357, time: 72.50273394584656s
+WARNING:tensorflow:Bucket input queue is empty when calling next_batch. Bucket queue size: 0, Input queue size: 0
+example_generator completed reading all datafiles. No more data.
+Evaluation Loss: 2.434265375137329, Time: 164.9177803993225s
+timestep: 51099, loss: 1.824965471005468, time: 253.26107454299927s
+timestep: 51199, loss: 1.8274873638201694, time: 72.0210952758789s
+timestep: 51299, loss: 1.8283621580939469, time: 72.01382303237915s
+timestep: 51399, loss: 1.830588863930871, time: 72.02809762954712s
+timestep: 51499, loss: 1.8332859563033748, time: 72.28614735603333s
+timestep: 51599, loss: 1.8361663947424882, time: 72.0320041179657s
+timestep: 51699, loss: 1.8377964986434034, time: 72.29460430145264s
+timestep: 51799, loss: 1.8396959056631261, time: 72.01539063453674s
+timestep: 51899, loss: 1.8410529597733212, time: 71.84326839447021s
+timestep: 51999, loss: 1.8422975660249223, time: 71.53701424598694s
+WARNING:tensorflow:Bucket input queue is empty when calling next_batch. Bucket queue size: 0, Input queue size: 0
+example_generator completed reading all datafiles. No more data.
+Evaluation Loss: 2.42708683013916, Time: 164.90163564682007s
+timestep: 52099, loss: 1.8438980047219862, time: 253.27453088760376s
+timestep: 52199, loss: 1.844911363947261, time: 71.94758439064026s
+timestep: 52299, loss: 1.8468010224150395, time: 72.05620884895325s
+timestep: 52399, loss: 1.837124049379524, time: 71.96588659286499s
+timestep: 52499, loss: 1.8276007070657185, time: 72.05527019500732s
+timestep: 52599, loss: 1.8223759306474343, time: 72.04664826393127s
+timestep: 52699, loss: 1.8168903252045445, time: 72.27591013908386s
+timestep: 52799, loss: 1.8115197042952298, time: 72.31593918800354s
+timestep: 52899, loss: 1.8121522265888077, time: 72.23020100593567s
+timestep: 52999, loss: 1.8060518102801753, time: 71.99070858955383s
+WARNING:tensorflow:Bucket input queue is empty when calling next_batch. Bucket queue size: 0, Input queue size: 0
+example_generator completed reading all datafiles. No more data.
+Evaluation Loss: 2.4432976245880127, Time: 165.09448313713074s
+timestep: 53099, loss: 1.8054501285532685, time: 253.466801404953s
+timestep: 53199, loss: 1.8000888867411937, time: 72.33492541313171s
+timestep: 53299, loss: 1.7992326091128914, time: 72.01579737663269s
+timestep: 53399, loss: 1.7989913314279786, time: 72.17425107955933s
+timestep: 53499, loss: 1.7988995189916919, time: 72.37022256851196s
+timestep: 53599, loss: 1.7988547550289042, time: 72.2391049861908s
+timestep: 53699, loss: 1.7977276917191272, time: 72.09351015090942s
+timestep: 53799, loss: 1.7953763393640616, time: 72.56077122688293s
+timestep: 53899, loss: 1.7945860069402322, time: 72.184077501297s
+timestep: 53999, loss: 1.7930137159432618, time: 72.19113802909851s
+WARNING:tensorflow:Bucket input queue is empty when calling next_batch. Bucket queue size: 0, Input queue size: 0
+example_generator completed reading all datafiles. No more data.
+Evaluation Loss: 2.434553384780884, Time: 165.15842390060425s
+timestep: 54099, loss: 1.79277172753478, time: 253.49816870689392s
+timestep: 54199, loss: 1.7936030423216904, time: 72.48471784591675s
+timestep: 54299, loss: 1.7941366800677712, time: 72.3101909160614s
+timestep: 54399, loss: 1.7927669529734418, time: 72.06605672836304s
+timestep: 54499, loss: 1.7944593562946378, time: 72.36712670326233s
+timestep: 54599, loss: 1.7964931237259907, time: 71.8802707195282s
+timestep: 54699, loss: 1.7990382488020331, time: 71.77022051811218s
+timestep: 54799, loss: 1.7995423229603185, time: 71.5981605052948s
+timestep: 54899, loss: 1.8007219949234388, time: 72.31368803977966s
+timestep: 54999, loss: 1.8014363745528363, time: 72.13765263557434s
+WARNING:tensorflow:Bucket input queue is empty when calling next_batch. Bucket queue size: 0, Input queue size: 0
+example_generator completed reading all datafiles. No more data.
+Evaluation Loss: 2.434433698654175, Time: 165.2613410949707s
+timestep: 55099, loss: 1.801785306757116, time: 253.36530303955078s
+timestep: 55199, loss: 1.8019906622344886, time: 72.33736228942871s
+timestep: 55299, loss: 1.80387057064344, time: 72.28309035301208s
+timestep: 55399, loss: 1.8045157426064533, time: 72.14801621437073s
+timestep: 55499, loss: 1.8047602626399246, time: 71.57066011428833s
+timestep: 55599, loss: 1.8066758250092234, time: 72.25638389587402s
+timestep: 55699, loss: 1.8053600875005, time: 72.06539249420166s
+timestep: 55799, loss: 1.8078859869953114, time: 72.28170680999756s
+timestep: 55899, loss: 1.8080948514165325, time: 72.05877447128296s
+timestep: 55999, loss: 1.8100763363469594, time: 71.94826412200928s
+WARNING:tensorflow:Bucket input queue is empty when calling next_batch. Bucket queue size: 0, Input queue size: 0
+example_generator completed reading all datafiles. No more data.
+Evaluation Loss: 2.4310665130615234, Time: 165.02367424964905s
+timestep: 56099, loss: 1.8127327100862631, time: 253.2581717967987s
+timestep: 56199, loss: 1.8137586584162635, time: 72.14295935630798s
+timestep: 56299, loss: 1.8142956894869946, time: 72.23925042152405s
+timestep: 56399, loss: 1.8161435962183294, time: 72.27406239509583s
+timestep: 56499, loss: 1.819424520904297, time: 71.86386942863464s
+timestep: 56599, loss: 1.8208053220602596, time: 71.94433736801147s
+timestep: 56699, loss: 1.8168266210629405, time: 72.38406085968018s
+timestep: 56799, loss: 1.8044233459197214, time: 72.20498490333557s
+timestep: 56899, loss: 1.7971863569951585, time: 72.10485005378723s
+timestep: 56999, loss: 1.7940602273117499, time: 72.27839374542236s
+WARNING:tensorflow:Bucket input queue is empty when calling next_batch. Bucket queue size: 0, Input queue size: 0
+example_generator completed reading all datafiles. No more data.
+Evaluation Loss: 2.4342756271362305, Time: 164.69902849197388s
+timestep: 57099, loss: 1.791209772908479, time: 252.8402121067047s
+timestep: 57199, loss: 1.784811072107666, time: 72.01146197319031s
+timestep: 57299, loss: 1.7805623684310425, time: 72.17384815216064s
+timestep: 57399, loss: 1.777450760258806, time: 71.95002698898315s
+timestep: 57499, loss: 1.774091459517698, time: 72.09701085090637s
+timestep: 57599, loss: 1.7724056288144088, time: 71.82704496383667s
+timestep: 57699, loss: 1.7719065122190687, time: 72.26018452644348s
+timestep: 57799, loss: 1.7716928224811783, time: 72.21829724311829s
+timestep: 57899, loss: 1.7709121447921983, time: 72.35299253463745s
+timestep: 57999, loss: 1.7707637300211139, time: 72.30196356773376s
+WARNING:tensorflow:Bucket input queue is empty when calling next_batch. Bucket queue size: 0, Input queue size: 0
+example_generator completed reading all datafiles. No more data.
+Evaluation Loss: 2.4319379329681396, Time: 164.7974236011505s
+timestep: 58099, loss: 1.7692404146316894, time: 253.13749957084656s
+timestep: 58199, loss: 1.76961295228967, time: 72.06954050064087s
+timestep: 58299, loss: 1.7705723307196823, time: 72.26077675819397s
+timestep: 58399, loss: 1.773565753430282, time: 72.16821646690369s
+timestep: 58499, loss: 1.7745774035186914, time: 72.07255959510803s
+timestep: 58599, loss: 1.7730829604891565, time: 72.1893482208252s
+timestep: 58699, loss: 1.773790268938359, time: 72.25444293022156s
+timestep: 58799, loss: 1.7753312039575335, time: 72.34039688110352s
+timestep: 58899, loss: 1.776616699571287, time: 72.07947778701782s
+timestep: 58999, loss: 1.777787563694031, time: 71.74812006950378s
+WARNING:tensorflow:Bucket input queue is empty when calling next_batch. Bucket queue size: 0, Input queue size: 0
+example_generator completed reading all datafiles. No more data.
+Evaluation Loss: 2.434182643890381, Time: 164.6115529537201s
+timestep: 59099, loss: 1.7788491129928328, time: 253.11234974861145s
+timestep: 59199, loss: 1.7785620537860594, time: 72.2573082447052s
+timestep: 59299, loss: 1.7783779904983423, time: 72.05934953689575s
+timestep: 59399, loss: 1.7777377634733071, time: 72.45561623573303s
+timestep: 59499, loss: 1.778201635658004, time: 72.24552035331726s
+timestep: 59599, loss: 1.7791626578961848, time: 72.3548903465271s
+timestep: 59699, loss: 1.7819276071441912, time: 72.09058356285095s
+timestep: 59799, loss: 1.7844621727963703, time: 72.41709804534912s
+timestep: 59899, loss: 1.7843342611270052, time: 72.58464026451111s
+timestep: 59999, loss: 1.785449063946108, time: 72.30821418762207s
+WARNING:tensorflow:Bucket input queue is empty when calling next_batch. Bucket queue size: 0, Input queue size: 0
+example_generator completed reading all datafiles. No more data.
+Evaluation Loss: 2.4291319847106934, Time: 164.80943059921265s
+timestep: 60099, loss: 1.7874344084569174, time: 253.1946530342102s
+timestep: 60199, loss: 1.7868174498333842, time: 72.1209065914154s
+timestep: 60299, loss: 1.7868778474681013, time: 72.20763850212097s
+timestep: 60399, loss: 1.7885462352713994, time: 71.98866844177246s
+timestep: 60499, loss: 1.7904840722963946, time: 71.94655466079712s
+timestep: 60599, loss: 1.7907713854234293, time: 72.1025083065033s
+timestep: 60699, loss: 1.7919579048488357, time: 72.28725337982178s
+timestep: 60799, loss: 1.7924236809776795, time: 71.97790789604187s
+timestep: 60899, loss: 1.793505488123337, time: 72.23468208312988s
+timestep: 60999, loss: 1.7959778512386622, time: 72.32708668708801s
+WARNING:tensorflow:Bucket input queue is empty when calling next_batch. Bucket queue size: 0, Input queue size: 0
+example_generator completed reading all datafiles. No more data.
+Evaluation Loss: 2.4244678020477295, Time: 164.52791380882263s
+timestep: 61099, loss: 1.7917644237957213, time: 252.93297958374023s
+timestep: 61199, loss: 1.78620999848457, time: 72.10696959495544s
+timestep: 61299, loss: 1.7817497599134577, time: 72.34507179260254s
+timestep: 61399, loss: 1.7778807328404882, time: 71.973393201828s
+timestep: 61499, loss: 1.7756623174560884, time: 72.39777112007141s
+timestep: 61599, loss: 1.7732071412389492, time: 72.32843589782715s
+timestep: 61699, loss: 1.7698215377304525, time: 72.37063241004944s
+timestep: 61799, loss: 1.7660179170261463, time: 72.43160700798035s
+timestep: 61899, loss: 1.7625295199008737, time: 72.47933959960938s
+timestep: 61999, loss: 1.7603864841325805, time: 72.25357127189636s
+WARNING:tensorflow:Bucket input queue is empty when calling next_batch. Bucket queue size: 0, Input queue size: 0
+example_generator completed reading all datafiles. No more data.
+Evaluation Loss: 2.4323432445526123, Time: 165.00166082382202s
+timestep: 62099, loss: 1.7573032446645123, time: 253.24520421028137s
+timestep: 62199, loss: 1.7551975700510807, time: 72.26142621040344s
+timestep: 62299, loss: 1.7522731152029711, time: 72.126962184906s
+timestep: 62399, loss: 1.7511913142479214, time: 72.10977602005005s
+timestep: 62499, loss: 1.749835931014126, time: 72.11699366569519s
+timestep: 62599, loss: 1.747940403202833, time: 72.24374318122864s
+timestep: 62699, loss: 1.7477065202486584, time: 72.46345472335815s
+timestep: 62799, loss: 1.7484043028555238, time: 72.39447069168091s
+timestep: 62899, loss: 1.7484037948787952, time: 71.89077830314636s
+timestep: 62999, loss: 1.7479018166509275, time: 72.1277585029602s
+WARNING:tensorflow:Bucket input queue is empty when calling next_batch. Bucket queue size: 0, Input queue size: 0
+example_generator completed reading all datafiles. No more data.
+Evaluation Loss: 2.433600664138794, Time: 165.81561517715454s
+timestep: 63099, loss: 1.7486876730571839, time: 253.97484970092773s
