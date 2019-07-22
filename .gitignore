@@ -12,3 +12,4 @@ tmp/
 server_tmp/
 results/
 tmp*/
+nohup*
