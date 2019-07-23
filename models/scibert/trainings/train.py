@@ -31,7 +31,7 @@ class Train(object):
     def __init__(self):
         self.vocab = Vocab(args.vocab_path, args.vocab_size)
         sys.stdout.flush()
-        self.batcher = Batcher(args.decode_data_path, self.vocab, mode='train',
+        self.batcher = Batcher(args.train_data_path, self.vocab, mode='train',
                                batch_size=args.batch_size, single_pass=False)
         time.sleep(15)
         vocab_size = self.vocab.size()
