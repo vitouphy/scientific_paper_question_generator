@@ -77,17 +77,30 @@ class Decoder(object):
             hidden_state = (h_0, h_0)
 
             # Generate answer
+            x = torch.LongTensor([2])
+            if use_cuda:
+                x = x.cuda()
+
             # answers = torch.ones((batch_size, args.max_dec_steps), dtype=torch.long)
             # for t in range(max(args.max_dec_steps, max_dec_len)-1):
-            #     x = dec_batch[:, t]  # Batch * 1 (for each timestep)
+            #     # x = dec_batch[:, t]  # Batch * 1 (for each timestep)
             #     output, hidden_state = self.decoder(x, hidden_state)  # Output: batch * vocab_size (prob.)
             #     idx = torch.argmax(output, dim=1)
             #     answers[:, t] = idx
-
+            #     x = idx
+            #
+            # x = torch.LongTensor([2])
+            # if use_cuda:
+            #     x = x.cuda()
+            # # print ("First the size is: ", x.size())
+            #
+            #
             for t in range(max(args.max_dec_steps, max_dec_len)-1):
                 decoded_size = len(proba_list)
-                x = dec_batch[:, t]  # batch=1 * 1
-                x = torch.cat([x] * decoded_size)
+                # x = dec_batch[:, t]  # batch=1 * 1
+                # x = torch.cat([x] * decoded_size)
+                # print ("SIZE: ")
+                # print (x.size())
                 output, hidden_state = self.decoder(x, hidden_state)
 
                 # Each output, find b best answers (beam search)
@@ -109,24 +122,39 @@ class Decoder(object):
                 new_generated = []
                 new_hidden = torch.Tensor()
                 new_cell = torch.Tensor()
+                # new_x = []
+                new_x = torch.LongTensor()
                 if use_cuda:
                     new_hidden = new_hidden.cuda()
                     new_cell = new_cell.cuda()
+                    new_x = new_x.cuda()
 
                 # Select top b sequences
                 for state in states[:self.beam_size]:
-                    idx = state[2]
                     new_proba_list.append(state[0])
                     new_generated.append(state[1])
+                    idx = state[2]
                     h_0 = hidden_state[0].squeeze(0)[idx].unsqueeze(0)
                     c_0 = hidden_state[1].squeeze(0)[idx].unsqueeze(0)
                     new_hidden = torch.cat((new_hidden, h_0), dim=0)
                     new_cell = torch.cat((new_cell, c_0), dim=0)
+                    # print ("The state: ", state[1][-1])
+                    new_x = torch.cat((new_x, torch.LongTensor([state[1][-1]])))
+                    # new_x.append(state[1][-1])
 
                 # Save the list
+                # print (t)
                 proba_list = new_proba_list
                 generated_list = new_generated
                 hidden_state = (new_hidden.unsqueeze(0), new_cell.unsqueeze(0))
+                # print (generated_list)
+                # print (hidden_state[0])
+                x = new_x
+                # print (x)
+                # print ("New Size: ", x.size())
+                # print (x)
+                # print (hidden_state[0].size())
+                # print ("HAHAHHAHA")
 
             # Convert from id to word
             # for answer in answers:
