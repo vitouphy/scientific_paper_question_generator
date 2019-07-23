@@ -5,15 +5,17 @@ import tensorflow as tf
 
 def get_output_from_batch(batch, use_cuda=False):
   dec_batch = Variable(torch.from_numpy(batch.dec_batch).long())
+  target_batch = Variable(torch.from_numpy(batch.target_batch).long())
   dec_padding_mask = Variable(torch.from_numpy(batch.dec_padding_mask)).float()
   dec_lens = batch.dec_lens
   max_dec_len = np.max(dec_lens)
 
   if use_cuda:
     dec_batch = dec_batch.cuda()
+    target_batch = target_batch.cuda()
     dec_padding_mask = dec_padding_mask.cuda()
 
-  return dec_batch, dec_padding_mask, max_dec_len
+  return dec_batch, target_batch, dec_padding_mask, max_dec_len
 
 def calc_running_avg_loss(loss, running_avg_loss, decay=0.99):
     if running_avg_loss == 0:  # on the first iteration just take the loss

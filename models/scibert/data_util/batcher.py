@@ -250,7 +250,6 @@ class Batcher(object):
           new_t.daemon = True
           new_t.start()
 
-
   def text_generator(self, example_generator):
     while True:
       try:

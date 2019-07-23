@@ -128,10 +128,11 @@ def abstract2ids(abstract_words, vocab, article_oovs):
 
 
 def ids2words(id_list, vocab):
-    for end in range(len(id_list)-1, -1, -1):
-        if id_list[end] != 1:  #PAD Token index
-            break
-    list = outputids2words(id_list[:end+1], vocab, None)
+    try:
+        idx = id_list.index(3)  # 3 : <EOS>
+    except:
+        idx = None
+    list = outputids2words(id_list[:idx], vocab, None)
     return " ".join(list)
 
 def outputids2words(id_list, vocab, article_oovs):
@@ -162,6 +163,7 @@ def abstract2sents(abstract):
       # sents.append(abstract[start_p+len(SENTENCE_START):end_p])
 
       # Temp Fix
+      # print (abstract)
       sents = [abstract]
     except ValueError as e: # no more sentences
       return sents
