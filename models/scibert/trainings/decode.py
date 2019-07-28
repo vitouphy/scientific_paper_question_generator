@@ -83,12 +83,22 @@ class Decoder(object):
             hidden_state = (h_0, c_0)
 
             """ Normal Approach """
-            # answers = torch.ones((batch_size, args.max_dec_steps), dtype=torch.long)
-            # for t in range(max(args.max_dec_steps, max_dec_len)):
-            #     output, hidden_state = self.decoder(x, hidden_state)  # Output: batch * vocab_size (prob.)
-            #     idx = torch.argmax(output, dim=1)
-            #     answers[:, t] = idx
-            #     x = idx
+            answers = torch.ones((batch_size, args.max_dec_steps), dtype=torch.long)
+            for t in range(max(args.max_dec_steps, max_dec_len)):
+                output, hidden_state = self.decoder(x, hidden_state)  # Output: batch * vocab_size (prob.)
+                idx = torch.argmax(output, dim=1)
+                answers[:, t] = idx
+                x = idx
+            answer = answers[0].numpy()
+            sentence = ids2words(answer, self.vocab)
+            self.file.write("{}\n".format(sentence))
+            print ("Writing line #{} to file ...".format(count+1))
+            self.file.flush()
+            sys.stdout.flush()
+
+            count += 1
+            batch = self.batcher.next_batch()
+            continue
 
             """ Beam Approach """
             for t in range(max(args.max_dec_steps, max_dec_len)-1):
@@ -127,12 +137,15 @@ class Decoder(object):
                     new_proba_list.append(state[0])
                     new_generated.append(state[1])
                     idx = state[2]
+                    y_hat = torch.LongTensor([state[1][-1]])
+                    if use_cuda:
+                        y_hat = y_hat.cuda()
 
                     h_0 = hidden_state[0].squeeze(0)[idx].unsqueeze(0)
                     c_0 = hidden_state[1].squeeze(0)[idx].unsqueeze(0)
                     new_hidden = torch.cat((new_hidden, h_0), dim=0)
                     new_cell = torch.cat((new_cell, c_0), dim=0)
-                    new_x = torch.cat((new_x, torch.LongTensor([state[1][-1]])))
+                    new_x = torch.cat((new_x, y_hat))
 
                 # Save the list
                 proba_list = new_proba_list
@@ -146,6 +159,7 @@ class Decoder(object):
             sentence = ids2words(answer, self.vocab)
             self.file.write("{}\n".format(sentence))
             print ("Writing line #{} to file ...".format(count+1))
+            self.file.flush()
             sys.stdout.flush()
 
             count += 1
