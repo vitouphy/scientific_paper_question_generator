@@ -24,6 +24,7 @@ import torch.nn.functional as F
 import sys
 import copy
 from models.bert_lstm import BertLSTMModel
+from models.seq2seq_lstm import Seq2SeqLSTM
 
 use_cuda = args.use_gpu and torch.cuda.is_available()
 
@@ -35,7 +36,8 @@ class Train(object):
                                batch_size=args.batch_size, single_pass=False)
         time.sleep(15)
         vocab_size = self.vocab.size()
-        self.model = BertLSTMModel(args.hidden_size, self.vocab.size(), args.max_dec_steps)
+        # self.model = BertLSTMModel(args.hidden_size, self.vocab.size(), args.max_dec_steps)
+        self.model = Seq2SeqLSTM(args.hidden_size, self.vocab.size(), args.max_dec_steps)
         if use_cuda:
             self.model = self.model.cuda()
 
@@ -64,7 +66,7 @@ class Train(object):
             save_running_avg_loss(running_avg_loss, t, self.train_summary_writer)
 
             # Print every 100 steps
-            if (t+1) % 100 == 0:
+            if (t+1) % 1 == 0:
                 time_run = time.time() - s_time
                 s_time = time.time()
                 print ("timestep: {}, loss: {}, time: {}s".format(t, running_avg_loss, time_run))
@@ -82,9 +84,16 @@ class Train(object):
     def save_checkpoint(self, step, loss):
         checkpoint_file = "checkpoint_{}".format(step)
         checkpoint_path = os.path.join(args.logs, checkpoint_file)
+        # torch.save({
+        #     'timestep': step,
+        #     'model_state_dict': self.model.decoder.state_dict(),
+        #     'optimizer_state_dict': self.model_optimizer.state_dict(),
+        #     'loss': loss
+        # }, checkpoint_path)
         torch.save({
             'timestep': step,
-            'model_state_dict': self.model.decoder.state_dict(),
+            'encoder_state_dict': self.model.encoder.state_dict(),
+            'decoder_state_dict': self.model.decoder.state_dict(),
             'optimizer_state_dict': self.model_optimizer.state_dict(),
             'loss': loss
         }, checkpoint_path)

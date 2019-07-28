@@ -6,16 +6,26 @@ export PYTHONPATH=`pwd`
 export PROJECT_FOLDER=/Users/vitou/Workspaces/AizawaLab/scientific_question_generation/models/scibert
 export DATA_FOLDER=/Users/vitou/Workspaces/AizawaLab/playground/scientific_question_generation/Text-Summarizer-Pytorch/data
 
-export MODEL_NAME=bert_lstm_003
+export MODEL_NAME=lstm_lstm_001
 export LOG=${PROJECT_FOLDER}/logs/${MODEL_NAME}
 mkdir -p $LOG
 
-python3 trainings/decode.py \
+# python3 trainings/decode.py \
+# --train_data_path=${DATA_FOLDER}/chunked/train/train_*.bin \
+# --eval_data_path=${DATA_FOLDER}/chunked/valid/valid_*.bin \
+# --decode_data_path=${DATA_FOLDER}/chunked/test/test_*.bin \
+# --vocab_path=${DATA_FOLDER}/vocabs.txt \
+# --logs=$LOG \
+# --checkpoint=${LOG}/checkpoint_99 \
+# --output_name=checkpoint_99_beam1 \
+# --beam_size=11
+
+python3 trainings/seq2seq_decode.py \
 --train_data_path=${DATA_FOLDER}/chunked/train/train_*.bin \
 --eval_data_path=${DATA_FOLDER}/chunked/valid/valid_*.bin \
---decode_data_path=${DATA_FOLDER}/chunked/test/test_*.bin \
+--decode_data_path=${DATA_FOLDER}/chunked/valid/valid_*.bin \
 --vocab_path=${DATA_FOLDER}/vocabs.txt \
 --logs=$LOG \
---checkpoint=${LOG}/checkpoint_2179 \
---output_name=checkpoint_2179_beam5 \
---beam_size=10
+--checkpoint=${LOG}/checkpoint_79 \
+--output_name=checkpoint_79_greedy \
+--beam_size=1

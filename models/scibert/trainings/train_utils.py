@@ -3,6 +3,20 @@ import numpy as np
 import torch
 import tensorflow as tf
 
+
+def get_input_from_batch(batch, use_cuda):
+  batch_size = len(batch.enc_lens)
+  enc_batch = Variable(torch.from_numpy(batch.enc_batch).long())
+  enc_padding_mask = Variable(torch.from_numpy(batch.enc_padding_mask)).float()
+  enc_lens = batch.enc_lens
+
+  if use_cuda:
+    enc_batch = enc_batch.cuda()
+    enc_padding_mask = enc_padding_mask.cuda()
+
+  return enc_batch, enc_padding_mask, enc_lens
+
+
 def get_output_from_batch(batch, use_cuda=False):
   dec_batch = Variable(torch.from_numpy(batch.dec_batch).long())
   target_batch = Variable(torch.from_numpy(batch.target_batch).long())

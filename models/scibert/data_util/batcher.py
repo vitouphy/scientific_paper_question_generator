@@ -27,10 +27,13 @@ class Example(object):
     article_words = article.split()
     if len(article_words) > args.max_enc_steps:
       article_words = article_words[:args.max_enc_steps]
-    # self.enc_len = len(article_words) # store the length after truncation but before padding
-    # self.enc_input = [vocab.word2id(w) for w in article_words] # list of word ids; OOVs are represented by the id for UNK token
+    """ Here """
+    self.enc_len = len(article_words) # store the length after truncation but before padding
+    self.enc_input = [vocab.word2id(w) for w in article_words] # list of word ids; OOVs are represented by the id for UNK token
+    # print (self.enc_input)
+    """ End Here """
     self.enc_len = len(article_words)
-    self.enc_input = article_words
+    # self.enc_input = article_words
 
     # Process the abstract
     abstract = ' '.join(abstract_sentences) # string
@@ -88,20 +91,20 @@ class Batch(object):
     max_enc_seq_len = max([ex.enc_len for ex in example_list])
 
     # Pad the encoder input sequences up to the length of the longest sequence
-    # for ex in example_list:
-      # ex.pad_encoder_input(max_enc_seq_len, self.pad_id)
+    for ex in example_list: # no this
+      ex.pad_encoder_input(max_enc_seq_len, self.pad_id) # no this
 
     # Initialize the numpy arrays
     # Note: our enc_batch can have different length (second dimension) for each batch because we use dynamic_rnn for the encoder.
-    # self.enc_batch = np.zeros((self.batch_size, max_enc_seq_len), dtype=object)
-    self.enc_batch = [ None ] * self.batch_size
+    self.enc_batch = np.zeros((self.batch_size, max_enc_seq_len), dtype=np.int32) # no this
+    # self.enc_batch = [ None ] * self.batch_size
     self.enc_lens = np.zeros((self.batch_size), dtype=np.int32)
     self.enc_padding_mask = np.zeros((self.batch_size, max_enc_seq_len), dtype=np.float32)
 
     # Fill in the numpy arrays
     for i, ex in enumerate(example_list):
-      # self.enc_batch[i, :] = ex.enc_input[:]
-      self.enc_batch[i] = ex.enc_input
+      self.enc_batch[i, :] = ex.enc_input[:] # no this
+      # self.enc_batch[i] = ex.enc_input
       self.enc_lens[i] = ex.enc_len
       # for j in range(ex.enc_len):
         # self.enc_padding_mask[i][j] = 1
