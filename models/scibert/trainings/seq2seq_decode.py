@@ -59,10 +59,6 @@ class Decoder(object):
         decoder_state_dict = checkpoint['decoder_state_dict']
         self.encoder.load_state_dict(encoder_state_dict)
         self.decoder.load_state_dict(decoder_state_dict)
-        for param in self.decoder.parameters():
-            print(param.data)
-            print (torch.max(param.data))
-
         self.encoder.eval()
         self.decoder.eval()
         print ("Weights Loaded")
@@ -87,12 +83,12 @@ class Decoder(object):
                 x = x.cuda()
 
             """ Normal Approach """
-            # answers = torch.ones((batch_size, args.max_dec_steps), dtype=torch.long)
-            # for t in range(max(args.max_dec_steps, max_dec_len)):
-            #     output, hidden_state = self.decoder(x, hidden_state)  # Output: batch * vocab_size (prob.)
-            #     idx = torch.argmax(output, dim=1)
-            #     answers[:, t] = idx
-            #     x = idx
+            #answers = torch.ones((batch_size, args.max_dec_steps), dtype=torch.long)
+            #for t in range(max(args.max_dec_steps, max_dec_len)):
+            #    output, hidden_state = self.decoder(x, hidden_state)  # Output: batch * vocab_size (prob.)
+            #    idx = torch.argmax(output, dim=1)
+            #    answers[:, t] = idx.detach()
+            #    x = idx
 
             """ Beam Approach """
             for t in range(max(args.max_dec_steps, max_dec_len)-1):
@@ -147,13 +143,14 @@ class Decoder(object):
                 generated_list = new_generated
                 hidden_state = (new_hidden.unsqueeze(0), new_cell.unsqueeze(0))
                 x = new_x
-
+            
             # Convert from id to word
             # answer = answers[0].numpy()
             answer = new_generated[0]
             sentence = ids2words(answer, self.vocab)
             self.file.write("{}\n".format(sentence))
             print ("Writing line #{} to file ...".format(count+1))
+            self.file.flush()
             sys.stdout.flush()
 
             count += 1
