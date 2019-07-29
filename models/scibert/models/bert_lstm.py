@@ -15,11 +15,12 @@ class BertLSTMModel(nn.Module):
         super(BertLSTMModel, self).__init__()
         self.bertClient = BertClient()
         self.decoder = DecoderLSTM(hidden_size, vocab_size)
-        self.criterion = nn.NLLLoss(reduction='none')
+        # self.criterion = nn.NLLLoss(reduction='none')
+        self.criterion = nn.NLLLoss(ignore_index=1)
         self.max_length = max_length
 
     def forward(self, batch):
-        enc_batch = batch.enc_batch
+        enc_batch = batch.enc_batch_raw
         dec_batch, target_batch, dec_padding_mask, max_dec_len = get_output_from_batch(batch, use_cuda=use_cuda)
         batch_size = len(enc_batch)
 
@@ -44,9 +45,11 @@ class BertLSTMModel(nn.Module):
                 F.dropout(hidden_state[1], p=0.2, inplace=True)
 
                 # Compute the loss
-                rows_loss = self.criterion(output, y)
-                batch_loss = (dec_padding_mask[:,t] * rows_loss).mean()  # Mask the output
-                loss += batch_loss  # Update the total loss
+                batch_loss = self.criterion(output, y)
+                loss += batch_loss
+                # rows_loss = self.criterion(output, y)
+                # batch_loss = (dec_padding_mask[:,t] * rows_loss).mean()  # Mask the output
+                # loss += batch_loss  # Update the total loss
         else:
             # use the output as the input
             x = dec_batch[:, 0]
@@ -57,10 +60,12 @@ class BertLSTMModel(nn.Module):
                 F.dropout(hidden_state[1], p=0.2, inplace=True)
 
                 # Compute the loss
-                rows_loss = self.criterion(output, y)
-                batch_loss = (dec_padding_mask[:,t] * rows_loss).mean()  # Mask the output
-                loss += batch_loss  # Update the total loss
+                batch_loss = self.criterion(output, y)
+                loss += batch_loss
+                # rows_loss = self.criterion(output, y)
+                # batch_loss = (dec_padding_mask[:,t] * rows_loss).mean()  # Mask the output
+                # loss += batch_loss  # Update the total loss
 
-                x = torch.argmax(output, dim=1)  # for the next input
+                x = torch.argmax(output, dim=1).detach()  # for the next input
 
         return loss
