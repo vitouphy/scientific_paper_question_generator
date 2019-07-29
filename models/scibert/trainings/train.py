@@ -66,7 +66,7 @@ class Train(object):
             save_running_avg_loss(running_avg_loss, t, self.train_summary_writer)
 
             # Print every 100 steps
-            if (t+1) % 1 == 0:
+            if (t+1) % 100 == 0:
                 time_run = time.time() - s_time
                 s_time = time.time()
                 print ("timestep: {}, loss: {}, time: {}s".format(t, running_avg_loss, time_run))

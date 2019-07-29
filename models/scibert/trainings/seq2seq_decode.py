@@ -59,6 +59,10 @@ class Decoder(object):
         decoder_state_dict = checkpoint['decoder_state_dict']
         self.encoder.load_state_dict(encoder_state_dict)
         self.decoder.load_state_dict(decoder_state_dict)
+        for param in self.decoder.parameters():
+            print(param.data)
+            print (torch.max(param.data))
+
         self.encoder.eval()
         self.decoder.eval()
         print ("Weights Loaded")
@@ -132,7 +136,11 @@ class Decoder(object):
                     c_0 = hidden_state[1].squeeze(0)[idx].unsqueeze(0)
                     new_hidden = torch.cat((new_hidden, h_0), dim=0)
                     new_cell = torch.cat((new_cell, c_0), dim=0)
-                    new_x = torch.cat((new_x, torch.LongTensor([state[1][-1]])))
+                    generated_idx = torch.LongTensor([state[1][-1]])
+                    if use_cuda:
+                        generated_idx = generated_idx.cuda()
+
+                    new_x = torch.cat((new_x, generated_idx))
 
                 # Save the list
                 proba_list = new_proba_list

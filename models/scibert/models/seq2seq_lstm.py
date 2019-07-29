@@ -16,7 +16,8 @@ class Seq2SeqLSTM(nn.Module):
         super(Seq2SeqLSTM, self).__init__()
         self.encoder = EncoderLSTM(hidden_size, vocab_size)
         self.decoder = DecoderLSTM(hidden_size, vocab_size)
-        self.criterion = nn.NLLLoss(reduction='none')
+        #self.criterion = nn.NLLLoss(reduction='none')
+        self.criterion = nn.NLLLoss()
         self.max_length = max_length
 
     def forward(self, batch):
@@ -41,8 +42,8 @@ class Seq2SeqLSTM(nn.Module):
 
                 # Compute the loss
                 rows_loss = self.criterion(output, y)
-                batch_loss = (dec_padding_mask[:,t] * rows_loss).mean()  # Mask the output
-                loss += batch_loss  # Update the total loss
+                #batch_loss = (dec_padding_mask[:,t] * rows_loss).mean()  # Mask the output
+                loss += rows_loss  # Update the total loss
         else:
             # use the output as the input
             x = dec_batch[:, 0]
@@ -54,9 +55,9 @@ class Seq2SeqLSTM(nn.Module):
 
                 # Compute the loss
                 rows_loss = self.criterion(output, y)
-                batch_loss = (dec_padding_mask[:,t] * rows_loss).mean()  # Mask the output
-                loss += batch_loss  # Update the total loss
+                #batch_loss = (dec_padding_mask[:,t] * rows_loss).mean()  # Mask the output
+                loss += rows_loss  # Update the total loss
 
-                x = torch.argmax(output, dim=1)  # for the next input
+                x = torch.argmax(output, dim=1).detach()  # for the next input
 
         return loss
