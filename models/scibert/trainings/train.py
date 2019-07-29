@@ -41,7 +41,7 @@ class Train(object):
         if use_cuda:
             self.model = self.model.cuda()
 
-        self.model_optimizer = torch.optim.Adagrad(self.model.parameters(), lr=args.lr)
+        self.model_optimizer = torch.optim.Adam(self.model.parameters(), lr=args.lr)
 
         train_logs = os.path.join(args.logs, "train_logs")
         eval_logs = os.path.join(args.logs, "eval_logs")
@@ -53,6 +53,9 @@ class Train(object):
         self.model_optimizer.zero_grad()
         loss = self.model(batch)
         loss.backward()
+
+        clip_grad_norm_(self.model.encoder.parameters(), 5)
+        clip_grad_norm_(self.model.decoder.parameters(), 5)
         self.model_optimizer.step()
         return loss.item() / args.max_dec_steps
 

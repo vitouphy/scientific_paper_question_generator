@@ -16,12 +16,15 @@ class DecoderLSTM(nn.Module):
         self.softmax = nn.LogSoftmax(dim=2)
 
     def forward(self, input, hidden):
-        # input = torch.LongTensor(input)  # batch * 1
+
         input = self.embedding(input)  # batch * embedding
         input = input.unsqueeze(1)  # batch * seq * embedding
+
         output, hidden = self.lstm(input, hidden)
-        output = self.softmax(self.out(output))  # batch * seq * vocab_size (prob.)
+        output = self.out(output)
+        output = self.softmax(output)  # batch * seq * vocab_size (prob.)
         output = output.squeeze(dim=1)  # batch * vocab_size (prob.)
+
         return output, hidden
 
     def initHidden(self):

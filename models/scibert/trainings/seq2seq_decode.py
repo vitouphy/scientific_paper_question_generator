@@ -83,66 +83,70 @@ class Decoder(object):
                 x = x.cuda()
 
             """ Normal Approach """
-            # answers = torch.ones((batch_size, args.max_dec_steps), dtype=torch.long)
-            # for t in range(max(args.max_dec_steps, max_dec_len)):
-            #     output, hidden_state = self.decoder(x, hidden_state)  # Output: batch * vocab_size (prob.)
-            #     idx = torch.argmax(output, dim=1)
-            #     answers[:, t] = idx
-            #     x = idx
+            answers = torch.ones((batch_size, args.max_dec_steps), dtype=torch.long)
+            for t in range(max(args.max_dec_steps, max_dec_len)):
+                output, hidden_state = self.decoder(x, hidden_state)  # Output: batch * vocab_size (prob.)
+                idx = torch.argmax(output, dim=1)
+                answers[:, t] = idx.detach()
+                x = idx
 
             """ Beam Approach """
-            for t in range(max(args.max_dec_steps, max_dec_len)-1):
-                output, hidden_state = self.decoder(x, hidden_state)
-
-                # For each sentence, find b best answers (beam search)
-                states = []  # (probab, generated, hidden_state_index)
-                for i, each_decode in enumerate(output):
-                    prev_proba = proba_list[i]
-                    prev_generated = generated_list[i]
-                    arr = each_decode.detach().cpu().numpy()  # log-probab of each word
-                    indices = arr.argsort()[-self.beam_size:][::-1]  #index
-                    for idx in indices:
-                        proba = arr[idx] + proba_list[i]  # new probab and prev
-                        generated = prev_generated.copy()
-                        generated.append(idx)
-                        states.append((proba, generated, i))
-
-                # Sort for the best generated sequence among all
-                states.sort(key=lambda x: x[0], reverse=True)
-
-                # Variables
-                new_proba_list = []
-                new_generated = []
-                new_hidden = torch.Tensor()
-                new_cell = torch.Tensor()
-                new_x = torch.LongTensor()
-
-                if use_cuda:
-                    new_hidden = new_hidden.cuda()
-                    new_cell = new_cell.cuda()
-                    new_x = new_x.cuda()
-
-                # Select top b sequences
-                for state in states[:self.beam_size]:
-                    new_proba_list.append(state[0])
-                    new_generated.append(state[1])
-                    idx = state[2]
-
-                    h_0 = hidden_state[0].squeeze(0)[idx].unsqueeze(0)
-                    c_0 = hidden_state[1].squeeze(0)[idx].unsqueeze(0)
-                    new_hidden = torch.cat((new_hidden, h_0), dim=0)
-                    new_cell = torch.cat((new_cell, c_0), dim=0)
-                    new_x = torch.cat((new_x, torch.LongTensor([state[1][-1]])))
-
-                # Save the list
-                proba_list = new_proba_list
-                generated_list = new_generated
-                hidden_state = (new_hidden.unsqueeze(0), new_cell.unsqueeze(0))
-                x = new_x
+            # for t in range(max(args.max_dec_steps, max_dec_len)-1):
+            #     output, hidden_state = self.decoder(x, hidden_state)
+            #
+            #     # For each sentence, find b best answers (beam search)
+            #     states = []  # (probab, generated, hidden_state_index)
+            #     for i, each_decode in enumerate(output):
+            #         prev_proba = proba_list[i]
+            #         prev_generated = generated_list[i]
+            #         arr = each_decode.detach().cpu().numpy()  # log-probab of each word
+            #         indices = arr.argsort()[-self.beam_size:][::-1]  #index
+            #         for idx in indices:
+            #             proba = arr[idx] + proba_list[i]  # new probab and prev
+            #             generated = prev_generated.copy()
+            #             generated.append(idx)
+            #             states.append((proba, generated, i))
+            #
+            #     # Sort for the best generated sequence among all
+            #     states.sort(key=lambda x: x[0], reverse=True)
+            #
+            #     # Variables
+            #     new_proba_list = []
+            #     new_generated = []
+            #     new_hidden = torch.Tensor()
+            #     new_cell = torch.Tensor()
+            #     new_x = torch.LongTensor()
+            #
+            #     if use_cuda:
+            #         new_hidden = new_hidden.cuda()
+            #         new_cell = new_cell.cuda()
+            #         new_x = new_x.cuda()
+            #
+            #     # Select top b sequences
+            #     for state in states[:self.beam_size]:
+            #         new_proba_list.append(state[0])
+            #         new_generated.append(state[1])
+            #         idx = state[2]
+            #
+            #         h_0 = hidden_state[0].squeeze(0)[idx].unsqueeze(0)
+            #         c_0 = hidden_state[1].squeeze(0)[idx].unsqueeze(0)
+            #         new_hidden = torch.cat((new_hidden, h_0), dim=0)
+            #         new_cell = torch.cat((new_cell, c_0), dim=0)
+            #         generated_idx = torch.LongTensor([state[1][-1]])
+            #         if use_cuda:
+            #             generated_idx = generated_idx.cuda()
+            #
+            #         new_x = torch.cat((new_x, generated_idx))
+            #
+            #     # Save the list
+            #     proba_list = new_proba_list
+            #     generated_list = new_generated
+            #     hidden_state = (new_hidden.unsqueeze(0), new_cell.unsqueeze(0))
+            #     x = new_x.detach()
 
             # Convert from id to word
-            # answer = answers[0].numpy()
-            answer = new_generated[0]
+            answer = answers[0].numpy()
+            # answer = new_generated[0]
             sentence = ids2words(answer, self.vocab)
             self.file.write("{}\n".format(sentence))
             print ("Writing line #{} to file ...".format(count+1))

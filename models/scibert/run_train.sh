@@ -1,10 +1,10 @@
 export PYTHONPATH=`pwd`
 #
-export PROJECT_FOLDER=/home/vitou/workspace/projects/scientific_paper_QG/models/scibert
-export DATA_FOLDER=/home/vitou/workspace/projects/scientific_paper_QG/data/seq2seq_data_bin
+# export PROJECT_FOLDER=/home/vitou/workspace/projects/scientific_paper_QG/models/scibert
+# export DATA_FOLDER=/home/vitou/workspace/projects/scientific_paper_QG/data/seq2seq_data_bin
 
-#export PROJECT_FOLDER=/Users/vitou/Workspaces/AizawaLab/scientific_question_generation/models/scibert
-#export DATA_FOLDER=/Users/vitou/Workspaces/AizawaLab/playground/scientific_question_generation/Text-Summarizer-Pytorch/data
+export PROJECT_FOLDER=/Users/vitou/Workspaces/AizawaLab/scientific_question_generation/models/scibert
+export DATA_FOLDER=/Users/vitou/Workspaces/AizawaLab/playground/scientific_question_generation/Text-Summarizer-Pytorch/data
 
 export MODEL_NAME=lstm_lstm_001
 export LOG=${PROJECT_FOLDER}/logs/${MODEL_NAME}
