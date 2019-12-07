@@ -1,4 +1,4 @@
-# scientific_paper_question_generator
+# Scientific Question Generator
 
 ### Motivation
 
