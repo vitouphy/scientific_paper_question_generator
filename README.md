@@ -39,6 +39,15 @@ There is also https://stats.stackexchange.com/ which most of questions are relat
 
 ![alt text](./reports/images/stackexchange_corpus.png)
 
+### Project Directories
+
+-> Tools: For preprocessing stackoverflow data
+-> Models: (models used in this project)
+   -> Pointer Network: from another repo
+   -> SciBERT: Use pretrained SciBERT's weight
+   -> AttentionSeq2Seq: from another repo
+-> Results: Result of each model reported in BLEU and Rouge
+
 
 
 Instead of using ai.stackexchange.com, we use **stackoverflow.com**. The downside to this is stackoverflow website contains too much information (18M questions and 27M answers) and many of them are about coding. This is not exactly what we want since our initial idea was to work with scientific paper.As a result, we extracted top tags in ai.stackexchange.com. Manually, match those tags with tags in stackoverflow website.**Note**: The tags used in ai.stackexchange.com are not the same as ones in stackoverflow.
