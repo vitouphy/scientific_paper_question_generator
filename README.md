@@ -28,7 +28,7 @@ Link: https://data.stackexchange.com/
 
 Obviously, our ACL dataset does not contain any question corresponding to each section or paragraph. We look around and stumble upon **stackexchange**, a website where people asks questions to the community hoping to find answers to their coding, statitics, or other tech-related problem.
 
-![alt text](./images/stackoverflow_property.png "Logo Title Text 1")
+![alt text](./reports/images/stackoverflow_property.png "Logo Title Text 1")
 
 
 What we are interested in are only **title**, **tags** and **answer**.
@@ -37,7 +37,7 @@ One of its sub-websites, https://ai.stackexchange.com/, has good discussons on A
 
 There is also https://stats.stackexchange.com/ which most of questions are related to statistics. The corpus is fairly big but it seems most tags are not AI or CS related. That is why we did not select this dataset as our fcous.
 
-![alt text](./images/stackexchange_corpus.png)
+![alt text](./reports/images/stackexchange_corpus.png)
 
 
 
